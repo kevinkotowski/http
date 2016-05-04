@@ -14,8 +14,9 @@ import static org.junit.Assert.*;
  * Created by kevinkotowski on 5/3/16.
  */
 public class HttpServerTest {
-    private InputStream in;
-    private ByteArrayOutputStream out = new ByteArrayOutputStream();
+
+    private String command = "GET";
+    private String filePath = "src/test/java/com/kevinkotowski/server/test.htm";
 
     public static InputStream ioInput(String input) {
         return new ByteArrayInputStream( input.getBytes(UTF_8) );
@@ -30,19 +31,40 @@ public class HttpServerTest {
     }
 
     @Test
-    public void plainEchoViaRun() throws Exception {
-        String message = "Kevin was here.";
-        this.in = ioInput(message);
-        HttpServer httpServer = new HttpServer(this.in, this.out);
+    public void plainEchoViaCat() throws Exception {
+        String message = this.command + " " + this.filePath;
+        InputStream in = ioInput(message);
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        HttpServer httpServer = new HttpServer(in, out);
 
-        httpServer.run();
-        System.out.println(ioOutput(this.out));
-        assertTrue(ioOutput(this.out).contains(message));
+        httpServer.cat();
+        httpServer.close();
+        System.out.println(ioOutput(out));
+        assertTrue(ioOutput(out).contains(message));
     }
 
     @Test
-    public void setFile() throws Exception {
+    public void manualSetGetFile() throws Exception {
+        String message = this.command + " " + this.filePath;
+        InputStream in = ioInput(message);
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        HttpServer httpServer = new HttpServer(in, out);
 
+        httpServer.setFilePath(this.filePath);
+        assertEquals(this.filePath, httpServer.getFilePath());
     }
 
+    @Test
+    public void scanFile() throws Exception {
+        String message = this.command + " " + this.filePath;
+        InputStream in = ioInput(message);
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        HttpServer httpServer = new HttpServer(in, out);
+
+        httpServer.scan();
+        httpServer.close();
+        System.out.println(ioOutput(out));
+        assertTrue(ioOutput(out).contains(this.command));
+        assertTrue(ioOutput(out).contains(this.filePath));
+    }
 }

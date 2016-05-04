@@ -9,7 +9,7 @@ import static java.nio.charset.StandardCharsets.UTF_8;
  */
 public class FileServer {
     private InputStream in;
-    private PrintStream out;
+//    private PrintStream out;
     private String path;
 
     public FileServer (String path) {
@@ -20,15 +20,15 @@ public class FileServer {
             System.out.println("Exception caught when trying to read file." );
             System.out.println(e.getMessage());
         }
-        this.out = new PrintStream(System.out);
+//        this.out = new PrintStream(System.out);
     }
 
-    public FileServer (InputStream in, OutputStream out) {
+    public FileServer (InputStream in) {
         this.in = in;
-        this.out = new PrintStream(out);
+//        this.out = new PrintStream(out);
     }
 
-    public String getFile() {
+    public String readFile() {
         String returnFile = null;
         try {
 //            this.out.println("Working Directory = " +
@@ -36,7 +36,6 @@ public class FileServer {
             int fileSize = this.in.available();
             byte[] content = new byte[fileSize];
             this.in.read(content);
-            this.in.close();
             returnFile = new String(content, UTF_8);
         } catch (IOException e) {
             System.out.println("Exception caught when trying to read file." );
@@ -45,4 +44,15 @@ public class FileServer {
         return returnFile;
     }
 
+    public int available() throws IOException {
+        return this.in.available();
+    }
+
+    public int read() throws IOException {
+        int returnByte = 0;
+        if (this.in.available() > 0) {
+            returnByte = this.in.read();
+        }
+        return returnByte;
+    }
 }
