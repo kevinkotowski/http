@@ -62,6 +62,7 @@ public class HttpServer {
             while (this.httpIn.available() > 0) {
                 this.httpOut.write(this.httpIn.read());
             }
+            // TODO: Use input as pathname for FileServer and echo it.
             this.httpOut.write("\nGoodbye.".getBytes(UTF_8));
             this.httpIn.close();
             this.httpOut.close();

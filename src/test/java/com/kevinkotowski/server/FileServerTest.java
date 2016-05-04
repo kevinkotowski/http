@@ -2,10 +2,7 @@ package com.kevinkotowski.server;
 
 import org.junit.Test;
 
-import javax.net.SocketFactory;
 import java.io.*;
-import java.net.ServerSocket;
-import java.net.Socket;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.junit.Assert.assertTrue;
@@ -27,26 +24,14 @@ public class FileServerTest {
     }
 
     @Test
-    public void runWithFileReader() throws Exception {
-        this.in = ioInput("");
-        FileServer fileServer = new FileServer(this.in, this.out);
-        fileServer.run();
-        assertTrue(ioOutput(this.out).contains("Goodbye, Kevin."));
-    }
-    @Test
-    public void runWithSocketOutputStream() throws Exception {
-//        this.in = ioInput("");
-//        ServerSocket serverSocket = new ServerSocket(3210);
-        FileServer fileServer = new FileServer(this.in, this.out);
-        fileServer.run();
-        assertTrue(ioOutput(this.out).contains("Goodbye, Kevin."));
-    }
-    @Test
     public void runWithInputStream() throws Exception {
-        this.in = ioInput("");
+        String mockFile = "I'm pretending to be a file.";
+        this.in = ioInput(mockFile);
+//        String path = "/Users/kevinkotowski/Development/sites/http/index.htm";
+//        this.in = new FileInputStream(path);
         FileServer fileServer = new FileServer(this.in, this.out);
-        fileServer.runInputStream();
+        fileServer.run();
         System.out.print(ioOutput(this.out));
-        assertTrue(ioOutput(this.out).contains("Goodbye, Kevin."));
+        assertTrue(ioOutput(this.out).contains(mockFile));
     }
 }
