@@ -15,6 +15,9 @@ public class HttpServer {
     private Socket clientSocket;
     private InputStream httpIn;
     private PrintStream httpOut;
+    private InputStream fileIn;
+    private PrintStream fileOut;
+    private FileServer fileServer;
     private String filePath;
 
     public static void main(String[] args) throws IOException {

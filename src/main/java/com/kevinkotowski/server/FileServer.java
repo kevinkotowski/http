@@ -12,27 +12,37 @@ public class FileServer {
     private PrintStream out;
     private String path;
 
+    public FileServer (String path) {
+        this.path = path;
+        try {
+            this.in = new FileInputStream(path);
+        } catch (IOException e) {
+            System.out.println("Exception caught when trying to read file." );
+            System.out.println(e.getMessage());
+        }
+        this.out = new PrintStream(System.out);
+    }
+
     public FileServer (InputStream in, OutputStream out) {
         this.in = in;
         this.out = new PrintStream(out);
     }
 
-    public void run() {
+    public String getFile() {
+        String returnFile = null;
         try {
 //            this.out.println("Working Directory = " +
 //                    System.getProperty("user.dir"));
-
             int fileSize = this.in.available();
             byte[] content = new byte[fileSize];
             this.in.read(content);
-            this.out.print( new String(content, UTF_8) );
             this.in.close();
-
+            returnFile = new String(content, UTF_8);
         } catch (IOException e) {
-            System.out.println("Exception caught when trying to input "
-                    + path );
+            System.out.println("Exception caught when trying to read file." );
             System.out.println(e.getMessage());
         }
+        return returnFile;
     }
 
 }

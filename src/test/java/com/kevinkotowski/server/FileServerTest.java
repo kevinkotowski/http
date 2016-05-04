@@ -15,23 +15,33 @@ public class FileServerTest {
         return new ByteArrayInputStream( input.getBytes(UTF_8) );
     }
 
-    public static String ioOutput(ByteArrayOutputStream out) {
-        try{
-            return out.toString("UTF8");
-        } catch (IOException ioe) {
-            return String.valueOf(ioe);
-        }
-    }
+//    public static String ioOutput(ByteArrayOutputStream out) {
+//        try{
+//            return out.toString("UTF8");
+//        } catch (IOException ioe) {
+//            return String.valueOf(ioe);
+//        }
+//    }
 
     @Test
     public void runWithInputStream() throws Exception {
         String mockFile = "I'm pretending to be a file.";
+        String file = null;
         this.in = ioInput(mockFile);
-//        String path = "/Users/kevinkotowski/Development/sites/http/index.htm";
-//        this.in = new FileInputStream(path);
         FileServer fileServer = new FileServer(this.in, this.out);
-        fileServer.run();
-        System.out.print(ioOutput(this.out));
-        assertTrue(ioOutput(this.out).contains(mockFile));
+        file = fileServer.getFile();
+        System.out.print(file);
+        assertTrue(file.contains(mockFile));
+    }
+
+    @Test
+    public void runWithFileInputStream() throws Exception {
+        String path = "src/test/java/com/kevinkotowski/server/test.htm";
+        String file = null;
+        this.in = new FileInputStream(path);
+        FileServer fileServer = new FileServer(this.in, this.out);
+        file = fileServer.getFile();
+        System.out.print(file);
+        assertTrue(file.contains("Kevin was here!"));
     }
 }
