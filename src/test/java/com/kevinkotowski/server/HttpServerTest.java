@@ -17,6 +17,7 @@ public class HttpServerTest {
 
     private String command = "GET";
     private String filePath = "src/test/java/com/kevinkotowski/server/test.htm";
+    private String mockFile = "<html>\n<p>Mock files rock!</p>\n</html>";
 
     public static InputStream ioInput(String input) {
         return new ByteArrayInputStream( input.getBytes(UTF_8) );
@@ -31,32 +32,22 @@ public class HttpServerTest {
     }
 
     @Test
-    public void plainEchoViaCat() throws Exception {
+    public void plainEchoOfInput() throws Exception {
         String message = this.command + " " + this.filePath;
         InputStream in = ioInput(message);
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         HttpServer httpServer = new HttpServer(in, out);
 
-        httpServer.cat();
+        httpServer.echo();
         httpServer.close();
         System.out.println(ioOutput(out));
         assertTrue(ioOutput(out).contains(message));
     }
 
     @Test
-    public void manualSetGetFile() throws Exception {
+    public void scanFileSuccessfully() throws Exception {
         String message = this.command + " " + this.filePath;
-        InputStream in = ioInput(message);
-        ByteArrayOutputStream out = new ByteArrayOutputStream();
-        HttpServer httpServer = new HttpServer(in, out);
-
-        httpServer.setFilePath(this.filePath);
-        assertEquals(this.filePath, httpServer.getFilePath());
-    }
-
-    @Test
-    public void scanFile() throws Exception {
-        String message = this.command + " " + this.filePath;
+//        message += " " + this.command + " boogy";
         InputStream in = ioInput(message);
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         HttpServer httpServer = new HttpServer(in, out);
@@ -66,5 +57,6 @@ public class HttpServerTest {
         System.out.println(ioOutput(out));
         assertTrue(ioOutput(out).contains(this.command));
         assertTrue(ioOutput(out).contains(this.filePath));
+        assertTrue(ioOutput(out).contains("Kevin was here!"));
     }
 }

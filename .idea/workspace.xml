@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f96e1eb-65be-488a-a524-f2f879f891e9" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/FileServer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/FileServerTest.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/FileServer.java" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/FileServer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpServer.java" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpServer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/FileServerTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/FileServerTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/HttpServerTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/HttpServerTest.java" />
     </list>
     <ignored path="http.iws" />
@@ -31,29 +31,13 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="FileServer.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/FileServer.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="433">
-                  <caret line="46" column="45" selection-start-line="46" selection-start-column="45" selection-end-line="46" selection-end-column="45" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="HttpServer.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpServer.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="448">
-                  <caret line="101" column="26" selection-start-line="101" selection-start-column="26" selection-end-line="101" selection-end-column="26" />
+                <state relative-caret-position="255">
+                  <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#1941#1942#0" expanded="true" />
-                    <element signature="e#1981#1982#0" expanded="true" />
-                    <element signature="e#2016#2017#0" expanded="true" />
-                    <element signature="e#2052#2053#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -62,8 +46,8 @@
           <file leaf-file-name="Echo.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/client/Echo.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="150">
-                  <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+                <state relative-caret-position="225">
+                  <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -75,23 +59,11 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="FileServerTest.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/FileServerTest.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="765">
-                  <caret line="51" column="69" selection-start-line="51" selection-start-column="69" selection-end-line="51" selection-end-column="69" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="HttpServerTest.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/HttpServerTest.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="403">
-                  <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+                <state relative-caret-position="596">
+                  <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -347,57 +319,45 @@
       <recent name="com.kevinkotowski.server" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.HttpServerTest">
-    <configuration default="false" name="HttpServerTest.plainEchoViaCat" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.Echo">
+    <configuration default="false" name="HttpServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.kevinkotowski.server.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <module name="http" />
+      <option name="MAIN_CLASS_NAME" value="com.kevinkotowski.server.HttpServer" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="3210" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.kevinkotowski.server" />
-      <option name="MAIN_CLASS_NAME" value="com.kevinkotowski.server.HttpServerTest" />
-      <option name="METHOD_NAME" value="plainEchoViaCat" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
+      <module name="http" />
       <envs />
-      <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="HttpServerTest.manualSetGetFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="Echo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.kevinkotowski.server.*" />
+          <option name="PATTERN" value="com.kevinkotowski.client.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <module name="http" />
+      <option name="MAIN_CLASS_NAME" value="com.kevinkotowski.client.Echo" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="localhost 3210" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.kevinkotowski.server" />
-      <option name="MAIN_CLASS_NAME" value="com.kevinkotowski.server.HttpServerTest" />
-      <option name="METHOD_NAME" value="manualSetGetFile" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
+      <module name="http" />
       <envs />
-      <patterns />
       <method />
     </configuration>
     <configuration default="false" name="HttpServerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
@@ -452,24 +412,30 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="HttpServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="HttpServerTest.scanFileSuccessfully" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.kevinkotowski.server.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="com.kevinkotowski.server.HttpServer" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <module name="http" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="PACKAGE_NAME" value="com.kevinkotowski.server" />
+      <option name="MAIN_CLASS_NAME" value="com.kevinkotowski.server.HttpServerTest" />
+      <option name="METHOD_NAME" value="scanFileSuccessfully" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="http" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
       <envs />
+      <patterns />
       <method />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -752,19 +718,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.HttpServerTest.plainEchoViaCat" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.HttpServerTest.manualSetGetFile" />
+      <item index="0" class="java.lang.String" itemvalue="Application.HttpServer" />
+      <item index="1" class="java.lang.String" itemvalue="Application.Echo" />
       <item index="2" class="java.lang.String" itemvalue="JUnit.HttpServerTest" />
       <item index="3" class="java.lang.String" itemvalue="JUnit.HttpServerTest.scanFile" />
-      <item index="4" class="java.lang.String" itemvalue="Application.HttpServer" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.HttpServerTest.scanFileSuccessfully" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.HttpServerTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.HttpServerTest.scanFile" />
-        <item index="2" class="java.lang.String" itemvalue="Application.HttpServer" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.HttpServerTest.manualSetGetFile" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.HttpServerTest.plainEchoViaCat" />
+        <item index="0" class="java.lang.String" itemvalue="Application.Echo" />
+        <item index="1" class="java.lang.String" itemvalue="Application.HttpServer" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.HttpServerTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.HttpServerTest.scanFileSuccessfully" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.HttpServerTest.scanFile" />
       </list>
     </recent_temporary>
   </component>
@@ -790,35 +756,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="HttpServerTest - 2016.05.04 at 15h 16m 57s.xml">
+    <history-entry file="HttpServerTest - 2016.05.04 at 16h 19m 17s.xml">
       <configuration name="HttpServerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HttpServerTest_manualSetGetFile - 2016.05.04 at 15h 03m 10s.xml">
-      <configuration name="HttpServerTest.manualSetGetFile" configurationId="JUnit" />
+    <history-entry file="HttpServerTest - 2016.05.04 at 16h 23m 59s.xml">
+      <configuration name="HttpServerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HttpServerTest_scanFile - 2016.05.04 at 14h 47m 08s.xml">
-      <configuration name="HttpServerTest.scanFile" configurationId="JUnit" />
+    <history-entry file="HttpServerTest - 2016.05.04 at 16h 32m 01s.xml">
+      <configuration name="HttpServerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HttpServerTest_scanFile - 2016.05.04 at 14h 48m 28s.xml">
-      <configuration name="HttpServerTest.scanFile" configurationId="JUnit" />
+    <history-entry file="HttpServerTest - 2016.05.04 at 16h 34m 07s.xml">
+      <configuration name="HttpServerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HttpServerTest_scanFile - 2016.05.04 at 14h 50m 01s.xml">
-      <configuration name="HttpServerTest.scanFile" configurationId="JUnit" />
+    <history-entry file="HttpServerTest - 2016.05.04 at 16h 35m 20s.xml">
+      <configuration name="HttpServerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HttpServerTest_scanFile - 2016.05.04 at 14h 51m 28s.xml">
-      <configuration name="HttpServerTest.scanFile" configurationId="JUnit" />
+    <history-entry file="HttpServerTest - 2016.05.04 at 16h 39m 36s.xml">
+      <configuration name="HttpServerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HttpServerTest_scanFile - 2016.05.04 at 14h 51m 54s.xml">
-      <configuration name="HttpServerTest.scanFile" configurationId="JUnit" />
+    <history-entry file="HttpServerTest - 2016.05.04 at 16h 42m 07s.xml">
+      <configuration name="HttpServerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HttpServerTest_scanFile - 2016.05.04 at 15h 03m 23s.xml">
-      <configuration name="HttpServerTest.scanFile" configurationId="JUnit" />
+    <history-entry file="HttpServerTest - 2016.05.04 at 16h 44m 36s.xml">
+      <configuration name="HttpServerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HttpServerTest_scanFile - 2016.05.04 at 15h 04m 21s.xml">
-      <configuration name="HttpServerTest.scanFile" configurationId="JUnit" />
+    <history-entry file="HttpServerTest - 2016.05.04 at 16h 45m 17s.xml">
+      <configuration name="HttpServerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HttpServerTest_scanFile - 2016.05.04 at 15h 16m 29s.xml">
-      <configuration name="HttpServerTest.scanFile" configurationId="JUnit" />
+    <history-entry file="HttpServerTest - 2016.05.04 at 16h 45m 55s.xml">
+      <configuration name="HttpServerTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -827,13 +793,13 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23695198" sideWeight="0.38186157" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23695198" sideWeight="0.36754176" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2546973" sideWeight="0.3424821" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2546973" sideWeight="0.36038187" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2546973" sideWeight="0.6575179" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2546973" sideWeight="0.63961816" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -875,9 +841,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
           <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -924,14 +888,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
           <folding />
         </state>
       </provider>
@@ -992,20 +948,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/FileServerTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/FileServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="51" column="69" selection-start-line="51" selection-start-column="69" selection-end-line="51" selection-end-column="69" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="493">
+          <caret line="50" column="21" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/FileServer.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/FileServerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="46" column="45" selection-start-line="46" selection-start-column="45" selection-end-line="46" selection-end-column="45" />
+        <state relative-caret-position="536">
+          <caret line="57" column="9" selection-start-line="57" selection-start-column="9" selection-end-line="57" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/HttpServerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="596">
+          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1014,8 +984,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/client/Echo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+        <state relative-caret-position="225">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1024,22 +994,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="101" column="26" selection-start-line="101" selection-start-column="26" selection-end-line="101" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1941#1942#0" expanded="true" />
-            <element signature="e#1981#1982#0" expanded="true" />
-            <element signature="e#2016#2017#0" expanded="true" />
-            <element signature="e#2052#2053#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/HttpServerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+        <state relative-caret-position="255">
+          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
