@@ -32,16 +32,16 @@ public class HttpServerTest {
     }
 
     @Test
-    public void plainEchoOfInput() throws Exception {
-        String message = this.command + " " + this.filePath;
-        InputStream in = ioInput(message);
+    public void plainEchoOfHttpInput() throws Exception {
+        String operation = "GET " + this.filePath;
+        InputStream in = ioInput(operation);
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         HttpServer httpServer = new HttpServer(in, out);
 
         httpServer.echo();
         httpServer.close();
         System.out.println(ioOutput(out));
-        assertTrue(ioOutput(out).contains(message));
+        assertTrue(ioOutput(out).contains(operation));
     }
 
     @Test
@@ -52,8 +52,7 @@ public class HttpServerTest {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         HttpServer httpServer = new HttpServer(in, out);
 
-        httpServer.scan();
-        httpServer.close();
+        httpServer.listen();
         System.out.println(ioOutput(out));
         assertTrue(ioOutput(out).contains(this.command));
         assertTrue(ioOutput(out).contains(this.filePath));
