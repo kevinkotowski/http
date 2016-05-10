@@ -2,9 +2,8 @@ package com.kevinkotowski.server;
 
 import org.junit.Test;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.InputStream;
+import java.io.*;
+import java.net.Socket;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.junit.Assert.*;
@@ -14,14 +13,25 @@ import static org.junit.Assert.*;
  */
 public class httpTest {
     @Test
-    public void launchHttpServer() throws Exception {
-        InputStream in = new ByteArrayInputStream( "".getBytes(UTF_8) );
-        ByteArrayOutputStream out = new ByteArrayOutputStream();
+    public void listenWithHttpOnNetwork() throws Exception {
+        int port = 3210;
+//        String file = "GET src/test/java/com/kevinkotowski/server/test.htm";
+//        ByteArrayInputStream in = new ByteArrayInputStream( file.getBytes(UTF_8) );
 
-        HttpServer httpServer = new HttpServer(in, out);
-        http http = new http(httpServer);
+        HttpNetwork network = new HttpNetwork(port);
+        assertEquals( port, network.getPort() );
 
-        System.out.println( out.toString("UTF8") );
-        assertTrue( out.toString("UTF8").contains("Listening") );
+        System.out.println("...before new http");
+        http http = new http(network);
+        System.out.println("...after new http");
+    }
+
+    @Test
+    public void listenWithHttpServerMockNetwork() throws Exception {
+        MockNetwork network = new MockNetwork();
+
+        System.out.println("...before new http");
+        http http = new http(network);
+        System.out.println("...after new http");
     }
 }

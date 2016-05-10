@@ -1,9 +1,6 @@
 package com.kevinkotowski.server;
 
 import java.io.*;
-import java.net.ServerSocket;
-import java.net.Socket;
-import java.util.Scanner;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
@@ -11,69 +8,48 @@ import static java.nio.charset.StandardCharsets.UTF_8;
  * Created by kevinkotowski on 5/3/16.
  */
 public class HttpServer implements Server{
-    private int portNumber = 0;
+    private int port = 0;
     private boolean isListening = false;
-    private ServerSocket serverSocket;
-    private Socket clientSocket;
-    private InputStream httpIn;
-    private PrintStream httpOut;
-    private FileInputStream fileIn = null;
+    private IONetwork network;
 
-    HttpServer(int portNumber) {
-        this.portNumber = portNumber;
-
-        try {
-            this.serverSocket = new ServerSocket(this.portNumber);
-            this.clientSocket = this.serverSocket.accept();
-            this.httpOut =
-                    new PrintStream(clientSocket.getOutputStream(), true);
-            this.httpIn = clientSocket.getInputStream();
-
-        } catch (IOException e) {
-            System.out.println("Exception caught when trying to initialize on "
-                    + " port " + portNumber + " or listening for a connection");
-            System.out.println(e.getMessage());
-        }
+    HttpServer(int port) throws IOException {
+        this.port = port;
+        this.network = new HttpNetwork(port);
     }
 
-    HttpServer(InputStream httpIn, OutputStream httpOut) {
-        this.httpIn = httpIn;
-        this.httpOut = new PrintStream(httpOut, true);
+    HttpServer(IONetwork network) {
+        this.network = network;
     }
 
     public void listen() throws IOException {
         this.isListening = true;
-        this.httpOut.write(this.status().getBytes(UTF_8));
+        System.out.println( this.status() );
 
-        HttpScanner scanner = new HttpScanner(this.httpIn);
-        if ( scanner.hasNext() ) {
-            // TODO: needs error handling
-            HttpRequest httpRequest = scanner.next();
-            httpRequest.execute(this.httpOut);
+        while ( this.network.hasNext() ) {
+            IORequest request = this.network.next();
+
+            System.out.println(request.getMethod() + " " +
+                    request.getPath());
+
+            if (request.getResponseCode().equals("200")) {
+                HttpHandler handler = new HttpHandler();
+                IOResponse response = handler.handle(request);
+                if (response.getBody() != null) {
+                    this.network.writeln( response.getBody() );
+                }
+            }
+            this.close();
         }
-        // TODO: remove when it is a background process
-        this.close();
     }
 
     public void close() throws IOException {
         this.isListening = false;
-        this.httpOut.write("Closing...\n".getBytes(UTF_8));
-        this.httpIn.close();
-        this.httpOut.close();
+        this.network.closeOut();
     }
 
     public String status() {
-        String message = new String();
-        message = this.isListening ? "Listening" : "Waiting";
-        message += " on port " + Integer.toString(this.portNumber);
-        message += "\n";
+        String message = this.isListening ? "Listening" : "Waiting";
+        message += " on port " + Integer.toString(this.port);
         return message;
-    }
-
-    public void echo() throws IOException {
-        while (this.httpIn.available() > 0) {
-            this.httpOut.write(this.httpIn.read());
-        }
-        this.httpOut.write("\n".getBytes("UTF8"));
     }
 }

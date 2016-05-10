@@ -2,16 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f96e1eb-65be-488a-a524-f2f879f891e9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/Http.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpRequest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpScanner.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/Server.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/StreamScanner.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/HttpScannerTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/httpTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/client/httpFeeder.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpNetwork.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpResponse.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpSocket.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpSockets.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IOHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IONetwork.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IORequest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IOResponse.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IOSocket.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IOSockets.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockNetwork.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockSockets.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/Http.java" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/Http.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpRequest.java" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpRequest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpScanner.java" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpScanner.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpServer.java" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpServer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/HttpScannerTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/HttpScannerTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/HttpServerTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/HttpServerTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/httpTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/httpTest.java" />
     </list>
     <ignored path="http.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,61 +48,25 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="http.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/http.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="315">
-                  <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Server.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/Server.java">
+          <file leaf-file-name="IOSocket.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IOSocket.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="120">
-                  <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+                  <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="StreamScanner.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/StreamScanner.java">
+          <file leaf-file-name="HttpSocket.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpSocket.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="135">
-                  <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+                <state relative-caret-position="585">
+                  <caret line="39" column="19" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="19" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="HttpServer.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpServer.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="551">
-                  <caret line="76" column="49" selection-start-line="76" selection-start-column="49" selection-end-line="76" selection-end-column="49" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="HttpRequest.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpRequest.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="300">
-                  <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#824#825#0" expanded="true" />
-                    <element signature="e#859#860#0" expanded="true" />
-                    <element signature="e#893#894#0" expanded="true" />
-                    <element signature="e#928#929#0" expanded="true" />
+                    <element signature="e#577#578#0" expanded="true" />
+                    <element signature="e#609#610#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -99,12 +75,89 @@
           <file leaf-file-name="HttpScanner.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpScanner.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="270">
-                  <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+                <state relative-caret-position="345">
+                  <caret line="23" column="32" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#335#336#0" expanded="true" />
-                    <element signature="e#380#381#0" expanded="true" />
+                    <element signature="e#336#337#0" expanded="true" />
+                    <element signature="e#385#386#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="HttpNetwork.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpNetwork.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="120">
+                  <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#458#459#0" expanded="true" />
+                    <element signature="e#490#491#0" expanded="true" />
+                    <element signature="e#522#523#0" expanded="true" />
+                    <element signature="e#567#568#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="IORequest.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IORequest.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="105">
+                  <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="IONetwork.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IONetwork.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="240">
+                  <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="IOHandler.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IOHandler.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="75">
+                  <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="http.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/http.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="150">
+                  <caret line="10" column="20" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="HttpRequest.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpRequest.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="225">
+                  <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+                  <folding>
+                    <element signature="e#1165#1166#0" expanded="true" />
+                    <element signature="e#1201#1202#0" expanded="true" />
+                    <element signature="e#1234#1235#0" expanded="true" />
+                    <element signature="e#1268#1269#0" expanded="true" />
+                    <element signature="e#1892#1893#0" expanded="true" />
+                    <element signature="e#1932#1933#0" expanded="true" />
+                    <element signature="e#2069#2070#0" expanded="true" />
+                    <element signature="e#2111#2112#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -114,11 +167,64 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="HttpServerTest.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="httpTest.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/httpTest.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="315">
+                  <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="HttpServerTest.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/HttpServerTest.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="491">
-                  <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+                <state relative-caret-position="75">
+                  <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="MockSockets.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockSockets.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="628">
+                  <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#1046#1047#0" expanded="true" />
+                    <element signature="e#1091#1092#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="MockNetwork.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockNetwork.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="360">
+                  <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#190#191#0" expanded="true" />
+                    <element signature="e#232#233#0" expanded="true" />
+                    <element signature="e#260#261#0" expanded="true" />
+                    <element signature="e#287#288#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="HttpSockets.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpSockets.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="315">
+                  <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -129,20 +235,8 @@
           <file leaf-file-name="HttpScannerTest.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/HttpScannerTest.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="315">
-                  <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="httpTest.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/httpTest.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="210">
-                  <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+                <state relative-caret-position="270">
+                  <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -157,8 +251,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit4 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -180,7 +274,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/File.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockSocketFactory.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockSocket.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IO.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/FileProtocolTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/DefaultFileProtocol.java" />
@@ -190,19 +283,39 @@
         <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/FileServerTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/FileServer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/Http.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/httpTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpServerable.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IOServer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/StreamParser.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpRequst.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/StreamScanner.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/http.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/Server.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IOSocketFactory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IOInStream.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IOOutStream.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IOHttp.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IONetworkHttp.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/http.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IOHandler.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/httpTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/client/httpFeeder.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockSocket.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpResponse.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IOResponse.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpScanner.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpRequest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/HttpScannerTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpServer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpNetwork.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpSockets.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IONetwork.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockSockets.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/HttpServerTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpRequest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockNetwork.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IORequest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpServer.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/HttpScannerTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IOSockets.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IOSocket.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpSocket.java" />
       </list>
     </option>
   </component>
@@ -350,6 +463,10 @@
               <option name="myItemId" value="kevinkotowski" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -362,6 +479,7 @@
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="SearchEverywhereHistoryKey" value="{&#9;null&#9;null" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -374,57 +492,45 @@
       <recent name="com.kevinkotowski.server" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.HttpServerTest.scanFileSuccessfully">
-    <configuration default="false" name="HttpServerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.http">
+    <configuration default="false" name="Echo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.kevinkotowski.server.*" />
+          <option name="PATTERN" value="com.kevinkotowski.client.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <module name="http" />
+      <option name="MAIN_CLASS_NAME" value="com.kevinkotowski.client.Echo" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="localhost 3210" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.kevinkotowski.server" />
-      <option name="MAIN_CLASS_NAME" value="com.kevinkotowski.server.HttpServerTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
+      <module name="http" />
       <envs />
-      <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="HttpServerTest.scanFileSuccessfully" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="http" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.kevinkotowski.server.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <module name="http" />
+      <option name="MAIN_CLASS_NAME" value="com.kevinkotowski.server.http" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="3210" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.kevinkotowski.server" />
-      <option name="MAIN_CLASS_NAME" value="com.kevinkotowski.server.HttpServerTest" />
-      <option name="METHOD_NAME" value="scanFileSuccessfully" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
+      <module name="http" />
       <envs />
-      <patterns />
       <method />
     </configuration>
     <configuration default="false" name="HttpServerTest.plainEchoOfHttpInput" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
@@ -453,7 +559,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="HttpScannerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="httpTest.listenWithHttpOnNetwork" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.kevinkotowski.server.*" />
@@ -464,9 +570,9 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.kevinkotowski.server" />
-      <option name="MAIN_CLASS_NAME" value="com.kevinkotowski.server.HttpScannerTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="com.kevinkotowski.server.httpTest" />
+      <option name="METHOD_NAME" value="listenWithHttpOnNetwork" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -479,7 +585,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="HttpScannerTest.getMoreInputCommands" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="httpTest.listenWithHttpServerMockNetwork" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.kevinkotowski.server.*" />
@@ -490,8 +596,8 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.kevinkotowski.server" />
-      <option name="MAIN_CLASS_NAME" value="com.kevinkotowski.server.HttpScannerTest" />
-      <option name="METHOD_NAME" value="getMoreInputCommands" />
+      <option name="MAIN_CLASS_NAME" value="com.kevinkotowski.server.httpTest" />
+      <option name="METHOD_NAME" value="listenWithHttpServerMockNetwork" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -785,19 +891,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.HttpServerTest" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.HttpServerTest.scanFileSuccessfully" />
+      <item index="0" class="java.lang.String" itemvalue="Application.Echo" />
+      <item index="1" class="java.lang.String" itemvalue="Application.http" />
       <item index="2" class="java.lang.String" itemvalue="JUnit.HttpServerTest.plainEchoOfHttpInput" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.HttpScannerTest" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.HttpScannerTest.getMoreInputCommands" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.httpTest.listenWithHttpOnNetwork" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.httpTest.listenWithHttpServerMockNetwork" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.HttpServerTest.scanFileSuccessfully" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.HttpServerTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.HttpScannerTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.HttpScannerTest.getMoreInputCommands" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.HttpServerTest.plainEchoOfHttpInput" />
+        <item index="0" class="java.lang.String" itemvalue="Application.http" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.HttpServerTest.plainEchoOfHttpInput" />
+        <item index="2" class="java.lang.String" itemvalue="Application.Echo" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.httpTest.listenWithHttpServerMockNetwork" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.httpTest.listenWithHttpOnNetwork" />
       </list>
     </recent_temporary>
   </component>
@@ -823,66 +929,92 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="HttpScannerTest - 2016.05.05 at 18h 18m 40s.xml">
-      <configuration name="HttpScannerTest" configurationId="JUnit" />
+    <history-entry file="HttpServerTest_plainEchoOfHttpInput - 2016.05.06 at 16h 04m 07s.xml">
+      <configuration name="HttpServerTest.plainEchoOfHttpInput" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HttpScannerTest_getMoreInputCommands - 2016.05.05 at 18h 18m 34s.xml">
-      <configuration name="HttpScannerTest.getMoreInputCommands" configurationId="JUnit" />
+    <history-entry file="HttpServerTest_plainEchoOfHttpInput - 2016.05.06 at 16h 08m 15s.xml">
+      <configuration name="HttpServerTest.plainEchoOfHttpInput" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HttpServerTest - 2016.05.05 at 18h 20m 32s.xml">
-      <configuration name="HttpServerTest" configurationId="JUnit" />
+    <history-entry file="HttpServerTest_plainEchoOfHttpInput - 2016.05.06 at 16h 08m 19s.xml">
+      <configuration name="HttpServerTest.plainEchoOfHttpInput" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HttpServerTest - 2016.05.05 at 18h 21m 50s.xml">
-      <configuration name="HttpServerTest" configurationId="JUnit" />
+    <history-entry file="HttpServerTest_plainEchoOfHttpInput - 2016.05.06 at 16h 30m 54s.xml">
+      <configuration name="HttpServerTest.plainEchoOfHttpInput" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HttpServerTest_scanFileSuccessfully - 2016.05.05 at 18h 09m 44s.xml">
-      <configuration name="HttpServerTest.scanFileSuccessfully" configurationId="JUnit" />
+    <history-entry file="HttpServerTest_plainEchoOfHttpInput - 2016.05.09 at 17h 01m 51s.xml">
+      <configuration name="HttpServerTest.plainEchoOfHttpInput" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HttpServerTest_scanFileSuccessfully - 2016.05.05 at 18h 11m 57s.xml">
-      <configuration name="HttpServerTest.scanFileSuccessfully" configurationId="JUnit" />
+    <history-entry file="HttpServerTest_plainEchoOfHttpInput - 2016.05.09 at 17h 02m 20s.xml">
+      <configuration name="HttpServerTest.plainEchoOfHttpInput" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HttpServerTest_scanFileSuccessfully - 2016.05.05 at 18h 15m 29s.xml">
-      <configuration name="HttpServerTest.scanFileSuccessfully" configurationId="JUnit" />
+    <history-entry file="httpTest_listenWithHttpOnNetwork - 2016.05.06 at 16h 39m 48s.xml">
+      <configuration name="httpTest.listenWithHttpOnNetwork" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HttpServerTest_scanFileSuccessfully - 2016.05.05 at 18h 15m 45s.xml">
-      <configuration name="HttpServerTest.scanFileSuccessfully" configurationId="JUnit" />
+    <history-entry file="httpTest_listenWithHttpOnNetwork - 2016.05.06 at 16h 44m 11s.xml">
+      <configuration name="httpTest.listenWithHttpOnNetwork" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HttpServerTest_scanFileSuccessfully - 2016.05.05 at 18h 16m 11s.xml">
-      <configuration name="HttpServerTest.scanFileSuccessfully" configurationId="JUnit" />
+    <history-entry file="httpTest_listenWithHttpServerMockNetwork - 2016.05.06 at 16h 43m 33s.xml">
+      <configuration name="httpTest.listenWithHttpServerMockNetwork" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HttpServerTest_scanFileSuccessfully - 2016.05.05 at 18h 23m 09s.xml">
-      <configuration name="HttpServerTest.scanFileSuccessfully" configurationId="JUnit" />
+    <history-entry file="httpTest_listenWithHttpServerMockNetwork - 2016.05.06 at 16h 54m 09s.xml">
+      <configuration name="httpTest.listenWithHttpServerMockNetwork" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1676" height="1027" extended-state="6" />
+    <frame x="0" y="23" width="1676" height="1027" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23695198" sideWeight="0.32816228" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23695198" sideWeight="0.32458234" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2546973" sideWeight="0.38126493" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2546973" sideWeight="0.3872315" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2546973" sideWeight="0.6187351" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2546973" sideWeight="0.6127685" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21062052" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985386" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39979124" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27661794" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23695198" sideWeight="0.32458234" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2546973" sideWeight="0.3872315" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2546973" sideWeight="0.6127685" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21062052" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985386" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27661794" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -897,15 +1029,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpRequest.java</url>
-          <line>23</line>
-          <properties />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="2" />
+      <option name="time" value="19" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -971,14 +1095,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockSocket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1055,14 +1171,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/client/Echo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -1071,67 +1179,115 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/HttpScannerTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/StreamScanner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IOSocketFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre/lib/rt.jar!/javax/net/SocketFactory.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IOInStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IOOutStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="11" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IOHttp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/client/httpFeeder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <marker date="1462571668000" expanded="true" signature="48:233" placeholder="..." />
+            <marker date="1462571668000" expanded="true" signature="325:1989" placeholder="{...}" />
+            <marker date="1462571668000" expanded="true" signature="332:618" placeholder="//..." />
+            <marker date="1462571668000" expanded="true" signature="1014:1128" placeholder="//..." />
+            <marker date="1462571668000" expanded="true" signature="1405:1631" placeholder="//..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/client/Echo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="40" column="18" selection-start-line="40" selection-start-column="18" selection-end-line="40" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/httpTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/HttpServerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="491">
-          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/http.java">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
-          <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+          <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IOResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpScanner.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpResponse.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+        <state relative-caret-position="105">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#335#336#0" expanded="true" />
-            <element signature="e#380#381#0" expanded="true" />
+            <element signature="e#728#729#0" expanded="false" />
+            <element signature="e#770#771#0" expanded="false" />
+            <element signature="e#1156#1157#0" expanded="false" />
+            <element signature="e#1188#1189#0" expanded="false" />
+            <element signature="e#1219#1220#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpRequest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IOHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#824#825#0" expanded="true" />
-            <element signature="e#859#860#0" expanded="true" />
-            <element signature="e#893#894#0" expanded="true" />
-            <element signature="e#928#929#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="75">
+          <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1143,23 +1299,175 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/StreamScanner.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockSockets.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+        <state relative-caret-position="628">
+          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1046#1047#0" expanded="true" />
+            <element signature="e#1091#1092#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+          <folding>
+            <element signature="e#1165#1166#0" expanded="true" />
+            <element signature="e#1201#1202#0" expanded="true" />
+            <element signature="e#1234#1235#0" expanded="true" />
+            <element signature="e#1268#1269#0" expanded="true" />
+            <element signature="e#1892#1893#0" expanded="true" />
+            <element signature="e#1932#1933#0" expanded="true" />
+            <element signature="e#2069#2070#0" expanded="true" />
+            <element signature="e#2111#2112#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IORequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="76" column="49" selection-start-line="76" selection-start-column="49" selection-end-line="76" selection-end-column="49" />
+        <state relative-caret-position="420">
+          <caret line="30" column="47" selection-start-line="30" selection-start-column="47" selection-end-line="30" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/HttpScannerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/HttpServerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IONetwork.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IOSockets.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockNetwork.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding>
+            <element signature="e#190#191#0" expanded="true" />
+            <element signature="e#232#233#0" expanded="true" />
+            <element signature="e#260#261#0" expanded="true" />
+            <element signature="e#287#288#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IOSocket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpScanner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="32" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#336#337#0" expanded="true" />
+            <element signature="e#385#386#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpSockets.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpNetwork.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#458#459#0" expanded="true" />
+            <element signature="e#490#491#0" expanded="true" />
+            <element signature="e#522#523#0" expanded="true" />
+            <element signature="e#567#568#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpSocket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="39" column="19" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#577#578#0" expanded="true" />
+            <element signature="e#609#610#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/http.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="20" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>

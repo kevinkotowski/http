@@ -12,24 +12,29 @@ public class HttpScanner implements StreamScanner {
     public HttpScanner(InputStream in) {
         this.scanner = new Scanner(in, "UTF8");
     }
+
     public boolean hasNext() {
-        return this.scanner.hasNext();
+        return this.scanner.hasNextLine();
     }
 
     public HttpRequest next() throws RuntimeException {
-        String command = null;
-        String operand = null;
+        HttpRequest request = new HttpRequest();
+        String headerLine = new String();
 
-        if (this.scanner.hasNext()) {
-            command = this.scanner.next();
-        } else throw new RuntimeException("No command found.");
+        // TODO: get initial line
+        request.handleRequestLine( this.scanner.nextLine() );
 
-        if (this.scanner.hasNext()) {
-            operand = this.scanner.next();
-        } else {
-            throw new RuntimeException("Missing operand for " + operand);
+        // TODO: get header lines
+        while ( (headerLine = this.scanner.nextLine()).length() > 0 ) {
+            request.addHeader(headerLine);
         }
 
-        return new HttpRequest(command, operand);
+        // TODO: get optional content
+//        if ( this.scanner.hasNextLine() ) {
+//            response.handleOptionalContent( this.scanner.nextLine() );
+//        }
+        // if any additional data, give to response.handleOptionalData
+
+        return request;
     }
 }

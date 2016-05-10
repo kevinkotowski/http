@@ -1,54 +1,82 @@
 package com.kevinkotowski.server;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.OutputStream;
-
-import static java.nio.charset.StandardCharsets.UTF_8;
-
 /**
  * Created by kevinkotowski on 5/5/16.
  */
-public class HttpRequest {
-    private String command = null;
-    private String operand = null;
+public class HttpRequest implements IORequest{
+    private String method = null;
+    private String path = null;
+    private String[] headers = null;
+    private String responseCode = null;
+    private String responseReason = null;
 
-    public HttpRequest(String command, String operand) {
-        this.command = command;
-        this.operand = operand;
-    }
+    public void handleRequestLine(String requestLine) {
+        String[] tokens = new String[3];
 
-    public void execute(OutputStream out) throws IOException {
-        this.logOperation(out);
-//        if ( this.command == "GET" ) {
-            this.executeGET(out, this.operand);
-//        } else {
-//            throw new RuntimeException("HTPP command other than GET used.");
-//        }
-    }
-
-    public String getCommand() {
-        return this.command;
-    }
-
-    public String getOperand() {
-        return this.operand;
-    }
-
-    public void executeGET(OutputStream out, String filePath)
-            throws IOException {
-        FileInputStream fileIn = new FileInputStream(filePath);
-
-        while (fileIn.available() > 0) {
-            out.write(fileIn.read());
+        tokens = requestLine.split("\\s");
+        if (tokens.length != 3) {
+            this.responseCode = "400";
+            this.responseReason = "Should be 3 request tokens";
+            if (!tokens[2].equals("HTTP/1.1")) {
+                this.responseCode = "400";
+                this.responseReason = "Only HTTP/1.1 is supported, not: " +
+                        tokens[2];
+            }
+        } else {
+            this.responseCode = "200";
+            this.responseReason = "OK";
+            this.method = tokens[0];
+            this.setPath( tokens[1] );
         }
     }
 
-    private void logOperation(OutputStream out) throws IOException {
-        out.write(this.command.getBytes(UTF_8));
-        out.write(" ".getBytes(UTF_8));
-        out.write(this.operand.getBytes(UTF_8));
-        out.write("\n".getBytes(UTF_8));
+    public void handleOptionalContent(String content) {
+        // TODO: this needs to deal with text and binary data
+    }
+
+    public void setMethod(String method) {
+        this.method = method;
+    }
+
+    public String getMethod() {
+        return this.method;
+    }
+
+    public void setPath(String path) {
+        if ( path.substring(0, 1).equals("/") ) {
+            path = "." + path;
+        }
+        this.path = path;
+    }
+
+    public String getPath() {
+        return this.path;
+    }
+
+    public void addHeader(String header) {
+//        this.headers.a
+    }
+
+    public String[] getHeaders() {
+        return this.headers;
+    }
+
+    public void setResponseCode(String code) {
+        if (code.length() > 3) {
+            throw new RuntimeException("ERROR: Response code too long: " + code);
+        }
+        this.responseCode = code;
+    }
+
+    public String getResponseCode() {
+        return this.responseCode;
+    }
+
+    public void setResponseReason(String reason) {
+        this.responseReason = reason;
+    }
+
+    public String getResponseReason() {
+        return this.responseReason;
     }
 }

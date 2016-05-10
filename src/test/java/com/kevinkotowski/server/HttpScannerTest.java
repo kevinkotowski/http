@@ -28,6 +28,6 @@ public class HttpScannerTest {
         HttpScanner scanner = new HttpScanner(in);
         assertTrue( scanner.hasNext() );
         HttpRequest request = scanner.next();
-        assertEquals( "GET", request.getCommand() );
+        assertEquals( "GET", request.getMethod() );
     }
 }

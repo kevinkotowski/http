@@ -6,6 +6,8 @@ import java.io.IOException;
  * Created by kevinkotowski on 5/5/16.
  */
 public class http {
+    HttpServer server = null;
+
     public static void main(String[] args) throws IOException {
         if (args.length != 1) {
             System.err.println("Usage: java http <port number>");
@@ -18,7 +20,12 @@ public class http {
         httpServer.listen();
     }{}
 
-    http( HttpServer httpServer ) throws IOException {
-        httpServer.listen();
+    http( IONetwork network ) throws IOException {
+        this.server = new HttpServer(network);
+        server.listen();
+    }
+
+    public void stop() throws IOException {
+        server.close();
     }
 }
