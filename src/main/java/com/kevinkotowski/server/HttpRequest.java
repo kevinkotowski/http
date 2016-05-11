@@ -46,9 +46,9 @@ public class HttpRequest implements IORequest{
         // TODO: this needs to deal with text and binary data
     }
 
-    public void setMethod(String method) {
-        this.method = method;
-    }
+//    public void setMethod(String method) {
+//        this.method = method;
+//    }
 
     public String getMethod() {
         return this.method;

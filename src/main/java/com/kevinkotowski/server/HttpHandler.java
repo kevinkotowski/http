@@ -16,7 +16,10 @@ public class HttpHandler implements IOHandler {
             int ch;
             StringBuilder stringBuilder = new StringBuilder();
             try {
+                response.setResponseCode( request.getResponseCode() );
+                response.setResponseReason( request.getResponseReason() );
                 FileInputStream fileIn = new FileInputStream(request.getPath());
+
                 while((ch = fileIn.read()) != -1){
                     stringBuilder.append((char)ch);
                 }

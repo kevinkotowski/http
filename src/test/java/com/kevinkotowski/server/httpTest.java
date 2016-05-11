@@ -2,10 +2,6 @@ package com.kevinkotowski.server;
 
 import org.junit.Test;
 
-import java.io.*;
-import java.net.Socket;
-
-import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.junit.Assert.*;
 
 /**
