@@ -1,9 +1,13 @@
 package com.kevinkotowski.server;
 
+import java.io.IOException;
+import java.net.Socket;
+
 /**
  * Created by kevinkotowski on 5/5/16.
  */
 public class HttpRequest implements IORequest{
+    private Socket socket = null;
     private String method = null;
     private String path = null;
     private String[] headers = null;
@@ -16,18 +20,26 @@ public class HttpRequest implements IORequest{
         tokens = requestLine.split("\\s");
         if (tokens.length != 3) {
             this.responseCode = "400";
-            this.responseReason = "Should be 3 request tokens";
+            this.responseReason = "Should be 3 request tokens (kk)";
             if (!tokens[2].equals("HTTP/1.1")) {
                 this.responseCode = "400";
                 this.responseReason = "Only HTTP/1.1 is supported, not: " +
-                        tokens[2];
+                        tokens[2] + " (kk)";
             }
         } else {
             this.responseCode = "200";
-            this.responseReason = "OK";
+            this.responseReason = "OK (kk)";
             this.method = tokens[0];
             this.setPath( tokens[1] );
         }
+    }
+
+    public void setSocket(Socket socket) {
+        this.socket = socket;
+    }
+
+    public Socket getSocket() {
+        return this.socket;
     }
 
     public void handleOptionalContent(String content) {

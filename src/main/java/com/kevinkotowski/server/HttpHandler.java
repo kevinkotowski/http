@@ -1,6 +1,7 @@
 package com.kevinkotowski.server;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 /**
@@ -9,15 +10,24 @@ import java.io.IOException;
 public class HttpHandler implements IOHandler {
     public IOResponse handle(IORequest request) throws IOException {
         HttpResponse response = new HttpResponse();
+        response.setSocket( request.getSocket() );
+
         if ( request.getMethod().equals("GET") ) {
             int ch;
             StringBuilder stringBuilder = new StringBuilder();
-            FileInputStream fileIn = new FileInputStream(request.getPath());
-
-            while((ch = fileIn.read()) != -1){
-                stringBuilder.append((char)ch);
+            try {
+                FileInputStream fileIn = new FileInputStream(request.getPath());
+                while((ch = fileIn.read()) != -1){
+                    stringBuilder.append((char)ch);
+                }
+                response.setBody( stringBuilder.toString() );
+            } catch (FileNotFoundException e) {
+                response.setResponseCode("404");
+                response.setResponseReason("File not found (kk)");
             }
-            response.setBody( stringBuilder.toString() );
+        } else {
+            response.setResponseCode("405");
+            response.setResponseReason("Only GET supported at this time (kk)");
         }
         return response;
     }

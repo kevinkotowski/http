@@ -36,9 +36,10 @@ public class HttpServerTest {
 //        String operation = "GET " + this.filePath;
 //        InputStream in = ioInput(operation);
 //        MockSocket socket = new MockSocket(3210);
-        IONetwork network = new MockNetwork();
-        HttpServer httpServer = new HttpServer(network);
-        httpServer.listen();
+
+//        IOSockets sockets = new MockSockets();
+//        HttpServer httpServer = new HttpServer(sockets);
+//        httpServer.listen();
 //
 //        httpServer.echo();
 //        httpServer.close();

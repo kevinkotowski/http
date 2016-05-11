@@ -18,20 +18,20 @@ public class httpTest {
 //        String file = "GET src/test/java/com/kevinkotowski/server/test.htm";
 //        ByteArrayInputStream in = new ByteArrayInputStream( file.getBytes(UTF_8) );
 
-        HttpNetwork network = new HttpNetwork(port);
-        assertEquals( port, network.getPort() );
+        HttpSockets sockets = new HttpSockets(port);
+        assertEquals( port, sockets.getPort() );
 
         System.out.println("...before new http");
-        http http = new http(network);
+        http http = new http(sockets);
         System.out.println("...after new http");
     }
 
-    @Test
-    public void listenWithHttpServerMockNetwork() throws Exception {
-        MockNetwork network = new MockNetwork();
-
-        System.out.println("...before new http");
-        http http = new http(network);
-        System.out.println("...after new http");
-    }
+//    @Test
+//    public void listenWithHttpServerMockNetwork() throws Exception {
+//        MockNetwork mockNetwork = new MockNetwork();
+//
+//        System.out.println("...before new http");
+//        http http = new http(mockNetwork);
+//        System.out.println("...after new http");
+//    }
 }

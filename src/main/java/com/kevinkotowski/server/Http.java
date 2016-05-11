@@ -20,8 +20,8 @@ public class http {
         httpServer.listen();
     }{}
 
-    http( IONetwork network ) throws IOException {
-        this.server = new HttpServer(network);
+    http( IOSockets sockets ) throws IOException {
+        this.server = new HttpServer(sockets);
         server.listen();
     }
 

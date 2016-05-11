@@ -1,15 +1,31 @@
 package com.kevinkotowski.server;
 
+import java.io.IOException;
+import java.io.PrintStream;
 import java.io.UnsupportedEncodingException;
+import java.net.Socket;
 
 /**
  * Created by kevinkotowski on 5/6/16.
  */
 public class HttpResponse implements IOResponse {
+    private Socket socket;
     private String responseCode;
     private String responseReason;
     private String[] headers;
     private String body;
+    private PrintStream out;
+
+    public void setSocket(Socket socket) throws IOException {
+        this.socket = socket;
+        this.out = new PrintStream(socket.getOutputStream(), true);
+    }
+
+    public void closeSocket() throws IOException {
+        this.out.flush();
+        this.out.close();
+        this.socket.close();
+    }
 
     public void setResponseCode(String code) {
         if (code.length() > 3) {
@@ -30,18 +46,9 @@ public class HttpResponse implements IOResponse {
         return this.responseReason;
     }
 
-//    public String get() throws UnsupportedEncodingException {
-////        return (this.header + this.body).getBytes("UTF8");
-//        return this.header + "\n" + this.body;
-//    }
-
-//    public void setHeader(String header) {
-//        this.header = header;
-//    }
-//
-//    public String getHeader() {
-//        return this.header;
-//    }
+    public String getStatusLine() {
+        return "HTTP/1.1 " + this.responseCode + " " + this.responseReason;
+    }
 
     public void setBody(String body) {
         this.body = body;
@@ -49,5 +56,18 @@ public class HttpResponse implements IOResponse {
 
     public String getBody() {
         return this.body;
+    }
+
+    public void run() throws IOException {
+//        this.writeln( this.getStatusLine() );
+        this.writeln( this.getBody() );
+        this.closeSocket();
+    }
+
+    private void writeln(String string) throws IOException {
+        byte[] bytes = (string + "\n").getBytes("UTF8");
+        this.out.write(bytes);
+        this.out.flush();
+
     }
 }
