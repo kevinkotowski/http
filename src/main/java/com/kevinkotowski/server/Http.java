@@ -6,7 +6,7 @@ import java.io.IOException;
  * Created by kevinkotowski on 5/5/16.
  */
 public class http {
-    HttpServer server = null;
+    Server server;
 
     public static void main(String[] args) throws IOException {
         if (args.length != 1) {
@@ -16,12 +16,12 @@ public class http {
 
         int portNumber = Integer.parseInt(args[0]);
 
-        HttpServer httpServer = new HttpServer(portNumber);
+        Server httpServer = new HttpServer(portNumber);
         httpServer.listen();
     }{}
 
-    http( IOSockets sockets ) throws IOException {
-        this.server = new HttpServer(sockets);
+    http( Server server ) throws IOException {
+        this.server = server;
         server.listen();
     }
 

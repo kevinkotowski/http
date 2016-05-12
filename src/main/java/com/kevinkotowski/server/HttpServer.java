@@ -2,23 +2,21 @@ package com.kevinkotowski.server;
 
 import java.io.*;
 
-import static java.nio.charset.StandardCharsets.UTF_8;
-
 /**
  * Created by kevinkotowski on 5/3/16.
  */
 public class HttpServer implements Server{
     private int port = 0;
     private boolean isListening = false;
-    private IOSockets sockets;
+    private IONetwork network;
 
     HttpServer(int port) throws IOException {
         this.port = port;
-        this.sockets = new HttpSockets(port);
+        this.network = new HttpNetwork(port);
     }
 
-    HttpServer(IOSockets sockets) {
-        this.sockets = sockets;
+    HttpServer(IONetwork network) {
+        this.network = network;
     }
 
     public void listen() throws IOException {
@@ -26,7 +24,7 @@ public class HttpServer implements Server{
         System.out.println( this.status() );
 
         while ( isListening ) {
-            IORequest request = this.sockets.next();
+            IORequest request = this.network.next();
 
             System.out.println(request.getMethod() + " " +
                     request.getPath());
@@ -40,7 +38,7 @@ public class HttpServer implements Server{
 
     public void close() throws IOException {
         this.isListening = false;
-        this.sockets = null;
+        this.network = null;
     }
 
     public String status() {

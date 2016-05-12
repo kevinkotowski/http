@@ -1,13 +1,10 @@
 package com.kevinkotowski.server;
 
-import java.io.IOException;
-import java.net.Socket;
-
 /**
  * Created by kevinkotowski on 5/5/16.
  */
 public class HttpRequest implements IORequest{
-    private Socket socket = null;
+    private IOSocket socket = null;
     private String method = null;
     private String path = null;
     private String[] headers = null;
@@ -34,11 +31,11 @@ public class HttpRequest implements IORequest{
         }
     }
 
-    public void setSocket(Socket socket) {
+    public void setSocket(IOSocket socket) {
         this.socket = socket;
     }
 
-    public Socket getSocket() {
+    public IOSocket getSocket() {
         return this.socket;
     }
 
@@ -46,15 +43,11 @@ public class HttpRequest implements IORequest{
         // TODO: this needs to deal with text and binary data
     }
 
-//    public void setMethod(String method) {
-//        this.method = method;
-//    }
-
     public String getMethod() {
         return this.method;
     }
 
-    public void setPath(String path) {
+    private void setPath(String path) {
         if ( path.substring(0, 1).equals("/") ) {
             path = "." + path;
         }
@@ -69,24 +62,24 @@ public class HttpRequest implements IORequest{
 //        this.headers.a
     }
 
-    public String[] getHeaders() {
-        return this.headers;
-    }
-
-    public void setResponseCode(String code) {
-        if (code.length() > 3) {
-            throw new RuntimeException("ERROR: Response code too long: " + code);
-        }
-        this.responseCode = code;
-    }
+//    public String[] getHeaders() {
+//        return this.headers;
+//    }
+//
+//    public void setResponseCode(String code) {
+//        if (code.length() > 3) {
+//            throw new RuntimeException("ERROR: Response code too long: " + code);
+//        }
+//        this.responseCode = code;
+//    }
 
     public String getResponseCode() {
         return this.responseCode;
     }
 
-    public void setResponseReason(String reason) {
-        this.responseReason = reason;
-    }
+//    public void setResponseReason(String reason) {
+//        this.responseReason = reason;
+//    }
 
     public String getResponseReason() {
         return this.responseReason;

@@ -9,14 +9,14 @@ import java.net.Socket;
  * Created by kevinkotowski on 5/6/16.
  */
 public class HttpResponse implements IOResponse {
-    private Socket socket;
+    private IOSocket socket;
     private String responseCode;
     private String responseReason;
     private String[] headers;
     private String body;
     private PrintStream out;
 
-    public void setSocket(Socket socket) throws IOException {
+    public void setSocket(IOSocket socket) throws IOException {
         this.socket = socket;
         this.out = new PrintStream(socket.getOutputStream(), true);
     }

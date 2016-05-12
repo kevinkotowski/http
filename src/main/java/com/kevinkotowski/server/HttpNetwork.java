@@ -8,11 +8,11 @@ import java.util.Scanner;
 /**
  * Created by kevinkotowski on 5/5/16.
  */
-public class HttpSockets implements IOSockets {
+public class HttpNetwork implements IONetwork {
     private int port = -1;
     private ServerSocket serverSocket;
 
-    public HttpSockets(int port) {
+    public HttpNetwork(int port) {
         this.port = port;
 
         try {
@@ -26,10 +26,10 @@ public class HttpSockets implements IOSockets {
 
     public IORequest next() throws IOException {
         InputStream in;
-        Socket socket;
+        IOSocket socket;
         Scanner scanner;
 
-        socket = this.serverSocket.accept();
+        socket = new HttpSocket( this.serverSocket.accept() );
         in = socket.getInputStream();
 
         scanner = new Scanner(in, "UTF8");
