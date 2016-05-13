@@ -14,11 +14,15 @@ public class MockRequest implements IORequest{
     private String responseCode = null;
     private String responseReason = null;
 
-    public MockRequest(String method, String path) {
-        this.method = method;
-        this.path = path;
-    }
     public void handleRequestLine(String requestLine) {
+        String[] tokens = new String[3];
+
+        tokens = requestLine.split("\\s");
+        this.method = tokens[0];
+        this.setPath( tokens[1] );
+
+        this.responseCode = "200";
+        this.responseReason = "Mock OK";
     }
 
     public void setSocket(IOSocket socket) {

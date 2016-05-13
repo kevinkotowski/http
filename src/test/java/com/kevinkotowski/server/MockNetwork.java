@@ -17,6 +17,8 @@ public class MockNetwork implements IONetwork {
     }
 
     public IORequest next() {
-        return new MockRequest("GET", "/mock/test/path.html");
+        MockRequest mockRequest = new MockRequest();
+        mockRequest.handleRequestLine("GET /mock/next/file.html HTTP/1.1");
+        return mockRequest;
     }
 }

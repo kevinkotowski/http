@@ -7,7 +7,7 @@ import java.io.IOException;
 /**
  * Created by kevinkotowski on 5/6/16.
  */
-public class HttpHandler implements IOHandler {
+public class HttpHandler implements Handler {
     public IOResponse handle(IORequest request) throws IOException {
         HttpResponse response = new HttpResponse();
         response.setSocket( request.getSocket() );
