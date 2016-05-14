@@ -48,9 +48,6 @@ public class HttpRequest implements IORequest{
     }
 
     private void setPath(String path) {
-        if ( path.substring(0, 1).equals("/") ) {
-            path = "." + path;
-        }
         this.path = path;
     }
 

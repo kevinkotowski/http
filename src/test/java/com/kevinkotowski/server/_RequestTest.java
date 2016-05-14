@@ -14,7 +14,7 @@ public class _RequestTest {
         HttpRequest request = new HttpRequest();
         request.handleRequestLine(requestLine);
         assertEquals("GET", request.getMethod());
-        assertEquals("./test/mock/path", request.getPath());
+        assertEquals("/test/mock/path", request.getPath());
     }
 
     @Test

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_http" default="compile.module.http">
+  <dirname property="module.http.basedir" file="${ant.file.module_http}"/>
+  
+  <property name="module.jdk.home.http" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.http" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.http" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.http" value="-encoding UTF-8 -source 8 -target 1.8 ${compiler.args}"/>
+  
+  <property name="http.output.dir" value="${module.http.basedir}/target/classes"/>
+  <property name="http.testoutput.dir" value="${module.http.basedir}/target/test-classes"/>
+  
+  <path id="http.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="http.module.production.classpath">
+    <path refid="${module.jdk.classpath.http}"/>
+  </path>
+  
+  <path id="http.runtime.production.module.classpath">
+    <pathelement location="${http.output.dir}"/>
+  </path>
+  
+  <path id="http.module.classpath">
+    <path refid="${module.jdk.classpath.http}"/>
+    <pathelement location="${http.output.dir}"/>
+    <path refid="library.maven:_junit:junit:4.11.classpath"/>
+    <path refid="library.maven:_org.hamcrest:hamcrest-core:1.3.classpath"/>
+  </path>
+  
+  <path id="http.runtime.module.classpath">
+    <pathelement location="${http.testoutput.dir}"/>
+    <pathelement location="${http.output.dir}"/>
+    <path refid="library.maven:_junit:junit:4.11.classpath"/>
+    <path refid="library.maven:_org.hamcrest:hamcrest-core:1.3.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.http">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.http">
+    <patternset refid="excluded.from.module.http"/>
+  </patternset>
+  
+  <path id="http.module.sourcepath">
+    <dirset dir="${module.http.basedir}">
+      <include name="src/main/java"/>
+    </dirset>
+  </path>
+  
+  <path id="http.module.test.sourcepath">
+    <dirset dir="${module.http.basedir}">
+      <include name="src/test/java"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.http" depends="compile.module.http.production,compile.module.http.tests" description="Compile module http"/>
+  
+  <target name="compile.module.http.production" depends="register.custom.compilers" description="Compile module http; production classes">
+    <mkdir dir="${http.output.dir}"/>
+    <javac2 destdir="${http.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.http}/javac">
+      <compilerarg line="${compiler.args.http}"/>
+      <bootclasspath refid="http.module.bootclasspath"/>
+      <classpath refid="http.module.production.classpath"/>
+      <src refid="http.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.http"/>
+    </javac2>
+    
+    <copy todir="${http.output.dir}">
+      <fileset dir="${module.http.basedir}/src/main/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.http.tests" depends="register.custom.compilers,compile.module.http.production" description="compile module http; test classes" unless="skip.tests">
+    <mkdir dir="${http.testoutput.dir}"/>
+    <javac2 destdir="${http.testoutput.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.http}/javac">
+      <compilerarg line="${compiler.args.http}"/>
+      <bootclasspath refid="http.module.bootclasspath"/>
+      <classpath refid="http.module.classpath"/>
+      <src refid="http.module.test.sourcepath"/>
+      <patternset refid="excluded.from.compilation.http"/>
+    </javac2>
+    
+    <copy todir="${http.testoutput.dir}">
+      <fileset dir="${module.http.basedir}/src/test/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="clean.module.http" description="cleanup module">
+    <delete dir="${http.output.dir}"/>
+    <delete dir="${http.testoutput.dir}"/>
+  </target>
+</project>

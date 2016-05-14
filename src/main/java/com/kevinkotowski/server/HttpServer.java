@@ -7,15 +7,18 @@ import java.io.*;
  */
 public class HttpServer implements Server{
     private int port = 0;
+    private String docRoot = null;
     private boolean isListening = false;
     private IONetwork network;
 
-    HttpServer(int port) throws IOException {
+    HttpServer(int port, String docRoot) throws IOException {
         this.port = port;
+        this.docRoot = docRoot;
         this.network = new HttpNetwork(port);
     }
 
-    HttpServer(IONetwork network) {
+    HttpServer(IONetwork network, String docRoot) {
+        this.docRoot = docRoot;
         this.network = network;
     }
 
@@ -26,10 +29,7 @@ public class HttpServer implements Server{
         while ( isListening ) {
             IORequest request = this.network.next();
 
-            System.out.println(request.getMethod() + " " +
-                    request.getPath());
-
-            HttpHandler handler = new HttpHandler();
+            HttpHandler handler = new HttpHandler(docRoot);
             IOResponse response = handler.handle(request);
 
             response.run();
@@ -44,6 +44,7 @@ public class HttpServer implements Server{
     public String status() {
         String message = this.isListening ? "Listening" : "Waiting";
         message += " on port " + Integer.toString(this.port);
+        message += " for dir " + (this.docRoot);
         return message;
     }
 }

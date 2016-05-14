@@ -16,19 +16,19 @@ public class _HandlerTest {
     }
 
     @Test
-    public void handleTypicalGETError404() throws Exception {
-        Handler handler = new HttpHandler();
+    public void handleErrorGetNotFound404() throws Exception {
+        Handler handler = new HttpHandler("/mock/file/path");
         IORequest request = new MockRequest();
-        request.handleRequestLine("GET /mock/file/not/found.html HTTP/1.1");
+        request.handleRequestLine("GET file/not/found.html HTTP/1.1");
         IOResponse response = handler.handle(request);
         Assert.assertEquals("404", response.getResponseCode());
     }
 
     @Test
-    public void handleTypicalRequestError405() throws Exception {
-        Handler handler = new HttpHandler();
+    public void handleErrorBadMethod405() throws Exception {
+        Handler handler = new HttpHandler("/mock/file/path");
         IORequest request = new MockRequest();
-        request.handleRequestLine("BOO /mock/file/not/found.html HTTP/1.1");
+        request.handleRequestLine("BOO file/not/found.html HTTP/1.1");
         IOResponse response = handler.handle(request);
         Assert.assertEquals("405", response.getResponseCode());
     }
