@@ -1,5 +1,7 @@
 package com.kevinkotowski.server;
 
+import com.sun.xml.internal.fastinfoset.util.StringArray;
+
 import java.io.IOException;
 import java.io.PrintStream;
 import java.io.UnsupportedEncodingException;
@@ -12,8 +14,13 @@ public class HttpResponse implements IOResponse {
     private IOSocket socket;
     private String responseCode;
     private String responseReason;
+    private StringArray headers = new StringArray();
     private String body;
     private PrintStream out;
+
+    public HttpResponse() {
+        this.addHeader("Host: localhost:5000");
+    }
 
     public void setSocket(IOSocket socket) throws IOException {
         this.socket = socket;
@@ -49,8 +56,12 @@ public class HttpResponse implements IOResponse {
         return "HTTP/1.1 " + this.responseCode + " " + this.responseReason;
     }
 
-    public String getHeaders() {
-        return "Host: localhost:5000\n";
+    public void addHeader(String header) {
+        this.headers.add(header);
+    }
+
+    public StringArray getHeaders() {
+        return this.headers;
     }
 
     public void setBody(String body) {
@@ -63,8 +74,19 @@ public class HttpResponse implements IOResponse {
 
     public void run() throws IOException {
         this.writeln( this.getStatusLine() );
-        this.writeln( this.getHeaders() );
-        this.writeln( this.getBody() );
+
+        StringArray headers = this.getHeaders();
+        int length = headers.getSize();
+        for (int x = 0; x < length; x++) {
+            this.writeln( headers.get(x) );
+        }
+        this.writeln( "" );
+
+        String body = this.getBody();
+        if (body != null) {
+            this.writeln( this.getBody() );
+        }
+
         this.closeSocket();
     }
 

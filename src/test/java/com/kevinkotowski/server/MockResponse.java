@@ -1,11 +1,17 @@
 package com.kevinkotowski.server;
 
+import com.sun.xml.internal.fastinfoset.util.StringArray;
+
 import java.io.IOException;
 
 /**
  * Created by kevinkotowski on 5/12/16.
  */
 public class MockResponse implements IOResponse {
+    StringArray headers;
+    public void MockResponse() {
+        headers.add("Host: localhost");
+    }
     public void setSocket(IOSocket socket) throws IOException {}
     public void closeSocket() throws IOException {}
     public void setBody(String body) {}
@@ -23,8 +29,11 @@ public class MockResponse implements IOResponse {
     public String getStatusLine() {
         return "HTTP/1.1 200 Mock OK";
     }
-    public String getHeaders() {
-        return "Host: localhost";
+    public void addHeader(String header) {
+
+    }
+    public StringArray getHeaders() {
+        return headers;
     }
     public void run() throws IOException {}
 }

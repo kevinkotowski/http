@@ -9,6 +9,12 @@ import java.io.IOException;
  * Created by kevinkotowski on 5/6/16.
  */
 public class HttpHandler implements Handler {
+    public enum FileType {
+        TEXT,
+        DIRECTORY,
+        IMAGE,
+        TEAPOT
+    }
     private String docRoot;
 
     public HttpHandler (String docRoot) {
@@ -28,13 +34,26 @@ public class HttpHandler implements Handler {
                 response.setBody(null);
                 break;
             case "GET":
-                response = this.handleGET(request, response);
+//                Handler handler = this.resolveHandlerType(request);
+//                response = handler.run(request, response);
+                response = handleGET(request, response);
+                break;
+            case "OPTIONS":
+                response = handleOPTIONS(request, response);
                 break;
             default:
                 response.setResponseCode("405");
                 response.setResponseReason("Only GET supported at this time (kk)");
                 break;
         }
+        return response;
+    }
+
+    private IOResponse handle418(IORequest request, IOResponse response) {
+        response.setResponseCode("418");
+        response.setResponseReason("I am short and stout");
+        response.setBody("<html>\n    <p>I'm a teapot.</p>\n" +
+                "    <p>I am short and stout</p>\n</html>");
         return response;
     }
 
@@ -80,9 +99,26 @@ public class HttpHandler implements Handler {
                 response.setBody( stringBuilder.toString() );
             }
         } catch (IOException e) {
-            response.setResponseCode("404");
-            response.setResponseReason("File not found (kk)");
-//            e.printStackTrace();
+            if (request.getPath().equals("/coffee")) {
+                response = this.handle418(request, response);
+            } else if ( request.getPath().equals("/tea") ) {
+                response.setResponseCode("200");
+                response.setResponseReason("Tip me over! (kk)");
+            } else {
+                response.setResponseCode("404");
+                response.setResponseReason("File not found (kk)");
+            }
+        }
+        return response;
+    }
+
+    private IOResponse handleOPTIONS(IORequest request, IOResponse response) {
+        response.setResponseCode("200");
+        response.setResponseReason("OK (kk)");
+        if ( request.getPath().equals("/method_options2") ) {
+            response.addHeader("Allow: GET,OPTIONS");
+        } else {
+            response.addHeader("Allow: GET,HEAD,POST,OPTIONS,PUT");
         }
         return response;
     }

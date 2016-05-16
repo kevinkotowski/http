@@ -1,5 +1,7 @@
 package com.kevinkotowski.server;
 
+import com.sun.xml.internal.fastinfoset.util.StringArray;
+
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.Socket;
@@ -8,8 +10,8 @@ import java.net.Socket;
  * Created by kevinkotowski on 5/6/16.
  */
 public interface IOResponse {
-//    public void setHeader(String header);
-    public String getHeaders();
+    public void addHeader(String header);
+    public StringArray getHeaders();
     public void setSocket(IOSocket socket) throws IOException;
     public void closeSocket() throws IOException;
     public void setBody(String body);
