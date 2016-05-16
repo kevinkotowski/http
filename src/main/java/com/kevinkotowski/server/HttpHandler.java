@@ -59,17 +59,17 @@ public class HttpHandler implements Handler {
             String fileList = new String();
 
             if (file.isDirectory()) {
-                response.setBody( "This is a directory! (kk)" );
                 for (final File subFile : file.listFiles()) {
                     if (subFile.isDirectory()) {
                         response.setBody( "Another directory." );
 //                        listFilesForFolder(fileEntry);
                     } else {
-                        fileList += subFile.getName() + "\n";
+                        fileList += this.formatFileLink( subFile.getName() );
 //                        System.out.println(subFile.getName());
                     }
                 }
-                response.setBody(fileList);
+                response.setBody( htmlBodyWrapperBefore() + fileList +
+                        htmlBodyWrapperAfter() );
             } else {
                 FileInputStream fileStream = new FileInputStream(path);
 
@@ -85,5 +85,19 @@ public class HttpHandler implements Handler {
 //            e.printStackTrace();
         }
         return response;
+    }
+
+    private String formatFileLink(String fileName) {
+        return "\n<a href=\"/" + fileName + "\">" + fileName + "</a><br/>";
+    }
+
+    private String htmlBodyWrapperBefore() {
+        String html;
+        html = "<html>\n    <header></header>\n    <body>\n";
+        return html;
+    }
+
+    private String htmlBodyWrapperAfter() {
+        return "\n    </body>\n</html>";
     }
 }

@@ -1,12 +1,15 @@
 <component name="ArtifactManager">
-  <artifact build-on-make="true" name="http:jar">
+  <artifact type="jar" build-on-make="true" name="http:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/</output-path>
-    <root id="root">
+    <root id="archive" name="http_jar.jar">
       <element id="archive" name="http.jar">
         <element id="directory" name="META-INF">
           <element id="file-copy" path="$PROJECT_DIR$/out/artifacts/http_jar/META-INF/MANIFEST.MF" />
         </element>
         <element id="module-output" name="http" />
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/out/artifacts/META-INF/MANIFEST.MF" />
       </element>
     </root>
   </artifact>
