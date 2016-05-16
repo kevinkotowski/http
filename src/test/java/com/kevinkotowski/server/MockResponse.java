@@ -23,5 +23,8 @@ public class MockResponse implements IOResponse {
     public String getStatusLine() {
         return "HTTP/1.1 200 Mock OK";
     }
+    public String getHeaders() {
+        return "Host: localhost";
+    }
     public void run() throws IOException {}
 }

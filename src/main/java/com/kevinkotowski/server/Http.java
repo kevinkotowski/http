@@ -9,6 +9,7 @@ public class http {
     Server server;
 
 //    /Users/kevinkotowski/Development/_8th/http/src/test/java/com/kevinkotowski/server
+//    /Users/kevinkotowski/Development/_8th/cob_spec/public
 
     public static void main(String[] args) throws IOException {
         String[] parsedArgs = http.handleArguments(args);

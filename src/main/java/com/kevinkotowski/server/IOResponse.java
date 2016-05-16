@@ -9,7 +9,7 @@ import java.net.Socket;
  */
 public interface IOResponse {
 //    public void setHeader(String header);
-//    public String getHeader();
+    public String getHeaders();
     public void setSocket(IOSocket socket) throws IOException;
     public void closeSocket() throws IOException;
     public void setBody(String body);

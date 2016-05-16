@@ -12,7 +12,6 @@ public class HttpResponse implements IOResponse {
     private IOSocket socket;
     private String responseCode;
     private String responseReason;
-    private String[] headers;
     private String body;
     private PrintStream out;
 
@@ -50,6 +49,10 @@ public class HttpResponse implements IOResponse {
         return "HTTP/1.1 " + this.responseCode + " " + this.responseReason;
     }
 
+    public String getHeaders() {
+        return "Host: localhost:5000\n";
+    }
+
     public void setBody(String body) {
         this.body = body;
     }
@@ -59,7 +62,8 @@ public class HttpResponse implements IOResponse {
     }
 
     public void run() throws IOException {
-//        this.writeln( this.getStatusLine() );
+        this.writeln( this.getStatusLine() );
+        this.writeln( this.getHeaders() );
         this.writeln( this.getBody() );
         this.closeSocket();
     }
