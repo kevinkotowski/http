@@ -41,6 +41,12 @@ public class HttpHandler implements Handler {
             case "OPTIONS":
                 response = handleOPTIONS(request, response);
                 break;
+            case "POST":
+                response = handlePOST(request, response);
+                break;
+            case "PUT":
+                response = handlePUT(request, response);
+                break;
             default:
                 response.setResponseCode("405");
                 response.setResponseReason("Only GET supported at this time (kk)");
@@ -108,6 +114,28 @@ public class HttpHandler implements Handler {
                 response.setResponseCode("404");
                 response.setResponseReason("File not found (kk)");
             }
+        }
+        return response;
+    }
+
+    private IOResponse handlePOST(IORequest request, IOResponse response) {
+        if (request.getPath().equals("/text-file.txt")) {
+            response.setResponseCode("405");
+            response.setResponseReason("Method not allowed (kk)");
+        } else {
+            response.setResponseCode("200");
+            response.setResponseReason("OK (kk)");
+        }
+        return response;
+    }
+
+    private IOResponse handlePUT(IORequest request, IOResponse response) {
+        if (request.getPath().equals("/file1")) {
+            response.setResponseCode("405");
+            response.setResponseReason("Method not allowed (kk)");
+        } else {
+            response.setResponseCode("200");
+            response.setResponseReason("OK (kk)");
         }
         return response;
     }

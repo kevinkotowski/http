@@ -7,11 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4f96e1eb-65be-488a-a524-f2f879f891e9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpHandler.java" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpResponse.java" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpResponse.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IOResponse.java" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IOResponse.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockResponse.java" afterPath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockResponse.java" />
     </list>
     <ignored path="http.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,14 +35,14 @@
           <file leaf-file-name="HttpHandler.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpHandler.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="350">
-                  <caret line="117" column="39" selection-start-line="117" selection-start-column="39" selection-end-line="117" selection-end-column="39" />
+                <state relative-caret-position="360">
+                  <caret line="121" column="51" selection-start-line="121" selection-start-column="51" selection-end-line="121" selection-end-column="51" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="e#413#414#0" expanded="true" />
                     <element signature="e#451#452#0" expanded="true" />
-                    <element signature="e#4670#4671#0" expanded="true" />
-                    <element signature="e#4717#4718#0" expanded="true" />
+                    <element signature="e#5673#5674#0" expanded="true" />
+                    <element signature="e#5720#5721#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -345,8 +341,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/http.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IOResponse.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockResponse.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpResponse.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpHandler.java" />
       </list>
     </option>
   </component>
@@ -1459,20 +1455,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="117" column="39" selection-start-line="117" selection-start-column="39" selection-end-line="117" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#413#414#0" expanded="true" />
-            <element signature="e#451#452#0" expanded="true" />
-            <element signature="e#4670#4671#0" expanded="true" />
-            <element signature="e#4717#4718#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpResponse.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="335">
@@ -1485,6 +1467,20 @@
             <element signature="e#1584#1585#0" expanded="true" />
             <element signature="e#1623#1624#0" expanded="true" />
             <element signature="e#1658#1659#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="121" column="51" selection-start-line="121" selection-start-column="51" selection-end-line="121" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#413#414#0" expanded="true" />
+            <element signature="e#451#452#0" expanded="true" />
+            <element signature="e#5673#5674#0" expanded="true" />
+            <element signature="e#5720#5721#0" expanded="true" />
           </folding>
         </state>
       </provider>
