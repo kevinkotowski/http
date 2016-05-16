@@ -105,7 +105,11 @@ public class HttpHandler implements Handler {
                 response.setBody( stringBuilder.toString() );
             }
         } catch (IOException e) {
-            if (request.getPath().equals("/coffee")) {
+            if (request.getPath().equals("/redirect")) {
+                response.setResponseCode("302");
+                response.setResponseReason("Redirect (kk)");
+                response.addHeader("Location: http://localhost:5000/");
+            } else if (request.getPath().equals("/coffee")) {
                 response = this.handle418(request, response);
             } else if ( request.getPath().equals("/tea") ) {
                 response.setResponseCode("200");
