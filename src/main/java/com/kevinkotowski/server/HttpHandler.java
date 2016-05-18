@@ -1,9 +1,14 @@
 package com.kevinkotowski.server;
 
+import javax.activation.MimetypesFileTypeMap;
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 /**
  * Created by kevinkotowski on 5/6/16.
@@ -57,13 +62,13 @@ public class HttpHandler implements Handler {
 
     private IOResponse handle418(IORequest request, IOResponse response) {
         response.setResponseCode("418");
-        response.setResponseReason("I am short and stout");
+        response.setResponseReason("I'm a teapot");
         response.setBody("<html>\n    <p>I'm a teapot.</p>\n" +
                 "    <p>I am short and stout</p>\n</html>");
         return response;
     }
 
-    private IOResponse handleGET(IORequest request, IOResponse response) {
+    private IOResponse handleGET(IORequest request, IOResponse response) throws IOException {
         String path;
         int ch;
 
@@ -76,11 +81,11 @@ public class HttpHandler implements Handler {
 
         System.out.println(request.getMethod() + " " + path);
 
+        File file = new File(path);
         StringBuilder stringBuilder = new StringBuilder();
         try {
             response.setResponseCode( request.getResponseCode() );
             response.setResponseReason( request.getResponseReason() );
-            File file = new File(path);
             String fileList = new String();
 
             if (file.isDirectory()) {
@@ -90,25 +95,38 @@ public class HttpHandler implements Handler {
 //                        listFilesForFolder(fileEntry);
                     } else {
                         fileList += this.formatFileLink( subFile.getName() );
-//                        System.out.println(subFile.getName());
                     }
                 }
                 response.setBody( htmlBodyWrapperBefore() + fileList +
                         htmlBodyWrapperAfter() );
             } else {
-                FileInputStream fileStream = new FileInputStream(path);
+                String imageType = this.imageType(file);
+                if (imageType != null) {
+                    try {
+                        byte[] imageBytes = Files.readAllBytes(Paths.get(path));
+                        response.setImage(imageBytes, imageType);
+                    } catch (IOException e) {
+//                        System.out.println("...handler.handleGET " +
+//                                file.getName() + "File is pretending to be " +
+//                                "an image: " + file.getName() + "\n");
+                    }
+                } else {
+                    FileInputStream fileStream = new FileInputStream(path);
 
-                while((ch = fileStream.read()) != -1){
-                    stringBuilder.append((char)ch);
+                    while((ch = fileStream.read()) != -1){
+                        stringBuilder.append((char)ch);
+                    }
+                    response.setBody( stringBuilder.toString() );
                 }
-
-                response.setBody( stringBuilder.toString() );
             }
         } catch (IOException e) {
             if (request.getPath().equals("/redirect")) {
                 response.setResponseCode("302");
                 response.setResponseReason("Redirect (kk)");
                 response.addHeader("Location: http://localhost:5000/");
+            } else if ( request.getPath().equals("/form") ) {
+                response.setResponseCode("200");
+                response.setResponseReason("OK (kk)");
             } else if (request.getPath().equals("/coffee")) {
                 response = this.handle418(request, response);
             } else if ( request.getPath().equals("/tea") ) {
@@ -153,6 +171,22 @@ public class HttpHandler implements Handler {
             response.addHeader("Allow: GET,HEAD,POST,OPTIONS,PUT");
         }
         return response;
+    }
+
+    private String imageType(File file) {
+        String imageType;
+
+        String mimeType = new MimetypesFileTypeMap().getContentType(file);
+        String type = mimeType.split("/")[0].toLowerCase();
+        if ( mimeType.equals("application/octet-stream") &&
+                file.getName().matches(".+\\.png")) {
+            imageType = "png";
+        } else if ( type.equals("image") ) {
+            imageType = mimeType.split("/")[1].toLowerCase();
+        } else {
+            imageType = null;
+        }
+        return imageType;
     }
 
     private String formatFileLink(String fileName) {

@@ -2,6 +2,9 @@ package com.kevinkotowski.server;
 
 import com.sun.xml.internal.fastinfoset.util.StringArray;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.io.UnsupportedEncodingException;
@@ -16,6 +19,10 @@ public class HttpResponse implements IOResponse {
     private String responseReason;
     private StringArray headers = new StringArray();
     private String body;
+//    private BufferedImage image;
+    private byte[] image;
+    private String imageType;
+    private boolean isImage;
     private PrintStream out;
 
     public HttpResponse() {
@@ -84,16 +91,32 @@ public class HttpResponse implements IOResponse {
 
         String body = this.getBody();
         if (body != null) {
-            this.writeln( this.getBody() );
+            this.writeln( body );
+        } else {
+            if (this.isImage) {
+                this.writeImage();
+            }
         }
 
         this.closeSocket();
+    }
+
+//    public void setImage(BufferedImage buffImage, String imageType) {
+    public void setImage(byte[] imageBytes, String imageType) {
+        this.image = imageBytes;
+        this.imageType = imageType;
+//        this.addHeader("Content-Type: image/" + this.imageType);
+        this.isImage = true;
+    }
+
+    public void writeImage() throws IOException {
+        this.out.write(this.image);
+//        ImageIO.write(this.image, this.imageType, this.out);
     }
 
     private void writeln(String string) throws IOException {
         byte[] bytes = (string + "\n").getBytes("UTF8");
         this.out.write(bytes);
         this.out.flush();
-
     }
 }

@@ -2,6 +2,7 @@ package com.kevinkotowski.server;
 
 import com.sun.xml.internal.fastinfoset.util.StringArray;
 
+import java.awt.image.BufferedImage;
 import java.io.IOException;
 
 /**
@@ -18,6 +19,8 @@ public class MockResponse implements IOResponse {
     public String getBody() {
         return "<mock>body</mock>";
     }
+    public void setImage(byte[] imageBytes, String imageType) {};
+    public void writeImage() throws IOException {};
     public void setResponseCode(String code) {}
     public String getResponseCode() {
         return "200";
