@@ -3,7 +3,7 @@ package com.kevinkotowski.server;
 /**
  * Created by kevinkotowski on 5/5/16.
  */
-public class HttpRequest implements IORequest{
+public class HttpRequest implements IORequest {
     private IOSocket socket = null;
     private String method = null;
     private String path = null;

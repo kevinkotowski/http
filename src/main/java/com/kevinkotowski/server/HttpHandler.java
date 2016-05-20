@@ -79,7 +79,7 @@ public class HttpHandler implements Handler {
             path = docRoot + "/" + path;
         }
 
-        System.out.println(request.getMethod() + " " + path);
+//        System.out.println(request.getMethod() + " " + path);
 
         File file = new File(path);
         StringBuilder stringBuilder = new StringBuilder();
