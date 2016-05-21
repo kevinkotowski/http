@@ -35,14 +35,20 @@ public class HttpNetwork implements IONetwork {
         scanner = new Scanner(in, "UTF8");
         HttpRequest request = new HttpRequest();
         request.setSocket(socket);
+
         String headerLine = new String();
+        if (scanner.hasNextLine()) {
+            request.handleRequestLine( scanner.nextLine() );
+        } else {
+            System.out.println("...network.next no first line!");
+        }
 
-        // TODO: get initial line
-        request.handleRequestLine( scanner.nextLine() );
-
-        // TODO: get header lines
-        while ( (headerLine = scanner.nextLine()).length() > 0 ) {
-            request.addHeader(headerLine);
+        if (scanner.hasNextLine()) {
+            while ( (headerLine = scanner.nextLine()).length() > 0 ) {
+                request.addHeader(headerLine);
+            }
+        } else {
+            System.out.println("...network.next no header line!");
         }
 
         // TODO: get optional content

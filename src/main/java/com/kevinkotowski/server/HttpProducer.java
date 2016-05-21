@@ -20,7 +20,11 @@ public class HttpProducer implements Runnable {
             IORequest request = null;
             try {
                 request = this.network.next();
-                this.sharedQueue.put(request);
+                if (request != null) {
+                    this.sharedQueue.put(request);
+                } else {
+                    System.out.println("...producer no request!");
+                }
             } catch (IOException e) {
                 e.printStackTrace();
             } catch (InterruptedException e) {

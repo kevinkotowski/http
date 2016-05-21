@@ -101,17 +101,14 @@ public class HttpResponse implements IOResponse {
         this.closeSocket();
     }
 
-//    public void setImage(BufferedImage buffImage, String imageType) {
     public void setImage(byte[] imageBytes, String imageType) {
         this.image = imageBytes;
         this.imageType = imageType;
-//        this.addHeader("Content-Type: image/" + this.imageType);
         this.isImage = true;
     }
 
     public void writeImage() throws IOException {
         this.out.write(this.image);
-//        ImageIO.write(this.image, this.imageType, this.out);
     }
 
     private void writeln(String string) throws IOException {
