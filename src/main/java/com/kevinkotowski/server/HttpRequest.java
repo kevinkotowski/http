@@ -1,5 +1,8 @@
 package com.kevinkotowski.server;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
+
 /**
  * Created by kevinkotowski on 5/5/16.
  */
@@ -10,8 +13,10 @@ public class HttpRequest implements IORequest {
     private String[] headers = null;
     private String responseCode = null;
     private String responseReason = null;
+    private String[][] parms = null;
 
-    public void handleRequestLine(String requestLine) {
+    public void handleRequestLine(String requestLine)
+            throws UnsupportedEncodingException {
         String[] tokens = new String[3];
 
         tokens = requestLine.split("\\s");
@@ -28,6 +33,7 @@ public class HttpRequest implements IORequest {
             this.responseReason = "OK (kk)";
             this.method = tokens[0];
             this.setPath( tokens[1] );
+            this.setParms( tokens[1] );
         }
     }
 
@@ -55,28 +61,48 @@ public class HttpRequest implements IORequest {
         return this.path;
     }
 
-    public void addHeader(String header) {
-//        this.headers.a
+    public void setParms(String path) throws UnsupportedEncodingException {
+        String queryString = null;
+//        path = URLDecoder.decode(path);
+
+        int qsIndex = path.indexOf("?");
+        if (qsIndex > 0) {
+            queryString = path.substring(qsIndex + 1);
+        }
+
+        System.out.println("...request.handleRequestLine queryString: >" + queryString +"<");
+        if (queryString != null) {
+            String[] parmPairs = queryString.split("&");
+            String[] parm = null;
+            String[][] parms = new String[parmPairs.length][2];
+
+            for (int x = 0; x < parmPairs.length; x++) {
+                parm = new String[2];
+                String pair = parmPairs[x];
+                int index = pair.indexOf("=");
+                parm[0] = (index > 0) ? URLDecoder.decode(pair.substring(0, index),
+                        "UTF-8") : pair;
+                parm[1] = (pair.length() > index + 1) && (index > 0) ?
+                        URLDecoder.decode(pair.substring(index + 1), "UTF-8") :
+                        null;
+                parms[x] = parm;
+                System.out.println("...request.handleRequestLine key  : " + parms[x][0]);
+                System.out.println("...request.handleRequestLine value: " + parms[x][1]);
+            }
+            this.parms = parms;
+        }
     }
 
-//    public String[] getHeaders() {
-//        return this.headers;
-//    }
-//
-//    public void setResponseCode(String code) {
-//        if (code.length() > 3) {
-//            throw new RuntimeException("ERROR: Response code too long: " + code);
-//        }
-//        this.responseCode = code;
-//    }
+    public String[][] getParms() {
+        return this.parms;
+    }
+
+    public void addHeader(String header) {
+    }
 
     public String getResponseCode() {
         return this.responseCode;
     }
-
-//    public void setResponseReason(String reason) {
-//        this.responseReason = reason;
-//    }
 
     public String getResponseReason() {
         return this.responseReason;

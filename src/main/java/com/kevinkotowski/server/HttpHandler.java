@@ -79,8 +79,10 @@ public class HttpHandler implements Handler {
             path = docRoot + "/" + path;
         }
 
-//        System.out.println(request.getMethod() + " " + path);
+        System.out.println(request.getMethod() + " " + path);
 
+        int fileIndex = path.indexOf("?");
+        path = (fileIndex > 0) ? path.substring(0, fileIndex) : path;
         File file = new File(path);
         StringBuilder stringBuilder = new StringBuilder();
         try {
@@ -106,17 +108,23 @@ public class HttpHandler implements Handler {
                         byte[] imageBytes = Files.readAllBytes(Paths.get(path));
                         response.setImage(imageBytes, imageType);
                     } catch (IOException e) {
-//                        System.out.println("...handler.handleGET " +
-//                                file.getName() + "File is pretending to be " +
-//                                "an image: " + file.getName() + "\n");
+                        System.out.println("...handler.handleGET " +
+                                file.getName() + "File is pretending to be " +
+                                "an image: " + file.getName() + "\n");
                     }
                 } else {
-                    FileInputStream fileStream = new FileInputStream(path);
-
-                    while((ch = fileStream.read()) != -1){
-                        stringBuilder.append((char)ch);
+                    String body = "";
+                    if (path.contains("parameters")) {
+                        String[][] parms = request.getParms();
+                        body += this.formatParms(parms);
+                    } else {
+                        FileInputStream fileStream = new FileInputStream(path);
+                        while((ch = fileStream.read()) != -1){
+                            stringBuilder.append((char)ch);
+                        }
+                        body += stringBuilder.toString();
                     }
-                    response.setBody( stringBuilder.toString() );
+                    response.setBody( body );
                 }
             }
         } catch (IOException e) {
@@ -191,6 +199,19 @@ public class HttpHandler implements Handler {
 
     private String formatFileLink(String fileName) {
         return "\n<a href=\"/" + fileName + "\">" + fileName + "</a><br/>";
+    }
+
+    private String formatParms(String[][] parms) {
+        String response = "";
+        for (int x = 0; x < parms.length; x++) {
+            response += "\n<p>";
+            response += parms[x][0];
+            if (parms[x][1] != null)  {
+                response += " = " + parms[x][1];
+            }
+            response += "</p>";
+        }
+        return response;
     }
 
     private String htmlBodyWrapperBefore() {

@@ -1,13 +1,14 @@
 package com.kevinkotowski.server;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.net.Socket;
 
 /**
  * Created by kevinkotowski on 5/6/16.
  */
 public interface IORequest {
-    public void handleRequestLine(String requestLine);
+    public void handleRequestLine(String requestLine) throws UnsupportedEncodingException;
     public String getMethod();
     public String getPath();
     public void addHeader(String header);
@@ -16,4 +17,5 @@ public interface IORequest {
     public IOSocket getSocket();
     public String getResponseCode();
     public String getResponseReason();
+    public String[][] getParms();
 }

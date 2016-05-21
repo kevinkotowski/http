@@ -83,5 +83,7 @@ public class MockRequest implements IORequest{
     public String getResponseReason() {
         return this.responseReason;
     }
+
+    public String[][] getParms() { return null; };
 }
 
