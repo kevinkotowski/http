@@ -102,8 +102,8 @@ public class HttpRequest implements IORequest {
                         URLDecoder.decode(pair.substring(index + 1), "UTF-8") :
                         null;
                 parms[x] = parm;
-                System.out.println("...request.handleRequestLine key  : " + parms[x][0]);
-                System.out.println("...request.handleRequestLine value: " + parms[x][1]);
+//                System.out.println("...request.handleRequestLine key  : " + parms[x][0]);
+//                System.out.println("...request.handleRequestLine value: " + parms[x][1]);
             }
             this.parms = parms;
         }
@@ -136,16 +136,16 @@ public class HttpRequest implements IORequest {
 
     public String trimToRange(String body) {
         if (this.rangeLast != -1) {
-            System.out.println("...request.trimToRange before: " + body);
+//            System.out.println("...request.trimToRange before: " + body);
             body = body.substring( body.length() - (this.rangeLast) );
-            System.out.println("...request.trimToRange  after: " + body);
+//            System.out.println("...request.trimToRange  after: " + body);
         }
         return body;
     }
 
     private void handleRange(String header) {
         if (header.contains("Range")) {
-            System.out.println("...request.handleRange header: " + header);
+//            System.out.println("...request.handleRange header: " + header);
             String[] rangeHeader = header.split(":");
             String[] rangeValue = rangeHeader[1].split("=");
             String[] range = rangeValue[1].split("-");
@@ -155,9 +155,9 @@ public class HttpRequest implements IORequest {
                 this.rangeMin = range[0].length() == 0 ? -1 : Integer.parseInt(range[0]);
                 this.rangeMax = range.length != 2 ? -1 : Integer.parseInt(range[1]) + 1;
             }
-            System.out.println("...request.handleRange  last: " + this.rangeLast);
-            System.out.println("...request.handleRange start: " + this.rangeMin);
-            System.out.println("...request.handleRange  stop: " + this.rangeMax);
+//            System.out.println("...request.handleRange  last: " + this.rangeLast);
+//            System.out.println("...request.handleRange start: " + this.rangeMin);
+//            System.out.println("...request.handleRange  stop: " + this.rangeMax);
         }
         if (-1 != this.rangeMin  || -1 != this.rangeMax || -1 != this.rangeLast) {
             this.responseCode = "206";
