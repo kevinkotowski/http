@@ -12,10 +12,11 @@ public interface IORequest {
     public String getMethod();
     public String getPath();
     public void addHeader(String header);
-//    public String[] getHeaders();
     public void setSocket(IOSocket socket);
     public IOSocket getSocket();
     public String getResponseCode();
     public String getResponseReason();
     public String[][] getParms();
+    public boolean inRange(int rangeCounter);
+    public String trimToRange(String body);
 }

@@ -1,7 +1,11 @@
 package com.kevinkotowski.server;
 
+import org.omg.CORBA.portable.ApplicationException;
+
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by kevinkotowski on 5/5/16.
@@ -10,10 +14,13 @@ public class HttpRequest implements IORequest {
     private IOSocket socket = null;
     private String method = null;
     private String path = null;
-    private String[] headers = null;
+    private List<String> headers = new ArrayList(0);
     private String responseCode = null;
     private String responseReason = null;
     private String[][] parms = null;
+    private int rangeMin = -1;
+    private int rangeMax = -1;
+    private int rangeLast = -1;
 
     public void handleRequestLine(String requestLine)
             throws UnsupportedEncodingException {
@@ -34,6 +41,15 @@ public class HttpRequest implements IORequest {
             this.method = tokens[0];
             this.setPath( tokens[1] );
             this.setParms( tokens[1] );
+        }
+    }
+
+    public void handleHeaders() {
+        int headerSize = this.headers.size();
+
+        for (String header: this.headers) {
+//            System.out.println("...request.handleHeaders header: " + header);
+            this.handleRange(header);
         }
     }
 
@@ -70,7 +86,7 @@ public class HttpRequest implements IORequest {
             queryString = path.substring(qsIndex + 1);
         }
 
-        System.out.println("...request.handleRequestLine queryString: >" + queryString +"<");
+//        System.out.println("...request.handleRequestLine queryString: >" + queryString +"<");
         if (queryString != null) {
             String[] parmPairs = queryString.split("&");
             String[] parm = null;
@@ -98,6 +114,7 @@ public class HttpRequest implements IORequest {
     }
 
     public void addHeader(String header) {
+        this.headers.add(header);
     }
 
     public String getResponseCode() {
@@ -106,5 +123,44 @@ public class HttpRequest implements IORequest {
 
     public String getResponseReason() {
         return this.responseReason;
+    }
+
+    public boolean inRange(int rangeCounter) {
+        boolean inRange = true;
+        inRange = rangeCounter >= this.rangeMin;
+        if (inRange && this.rangeMax != -1) {
+            inRange = rangeCounter < this.rangeMax;
+        }
+        return inRange;
+    }
+
+    public String trimToRange(String body) {
+        if (this.rangeLast != -1) {
+            System.out.println("...request.trimToRange before: " + body);
+            body = body.substring( body.length() - (this.rangeLast) );
+            System.out.println("...request.trimToRange  after: " + body);
+        }
+        return body;
+    }
+
+    private void handleRange(String header) {
+        if (header.contains("Range")) {
+            System.out.println("...request.handleRange header: " + header);
+            String[] rangeHeader = header.split(":");
+            String[] rangeValue = rangeHeader[1].split("=");
+            String[] range = rangeValue[1].split("-");
+            if (range[0].length() == 0) {
+                this.rangeLast = Integer.parseInt(range[1]);
+            } else {
+                this.rangeMin = range[0].length() == 0 ? -1 : Integer.parseInt(range[0]);
+                this.rangeMax = range.length != 2 ? -1 : Integer.parseInt(range[1]) + 1;
+            }
+            System.out.println("...request.handleRange  last: " + this.rangeLast);
+            System.out.println("...request.handleRange start: " + this.rangeMin);
+            System.out.println("...request.handleRange  stop: " + this.rangeMax);
+        }
+        if (-1 != this.rangeMin  || -1 != this.rangeMax || -1 != this.rangeLast) {
+            this.responseCode = "206";
+        }
     }
 }

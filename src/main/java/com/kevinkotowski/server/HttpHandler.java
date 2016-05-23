@@ -119,10 +119,14 @@ public class HttpHandler implements Handler {
                         body += this.formatParms(parms);
                     } else {
                         FileInputStream fileStream = new FileInputStream(path);
+                        int rangeCounter = 0;
                         while((ch = fileStream.read()) != -1){
-                            stringBuilder.append((char)ch);
+                            if (request.inRange(rangeCounter)) {
+                                stringBuilder.append((char)ch);
+                            }
+                            rangeCounter += 1;
                         }
-                        body += stringBuilder.toString();
+                        body += request.trimToRange(stringBuilder.toString());
                     }
                     response.setBody( body );
                 }

@@ -47,10 +47,13 @@ public class HttpNetwork implements IONetwork {
         if (scanner.hasNextLine()) {
             while ( (headerLine = scanner.nextLine()).length() > 0 ) {
                 request.addHeader(headerLine);
+//                System.out.println("...network.next header found: " + headerLine);
             }
         } else {
             System.out.println("...network.next no header line!");
         }
+
+        request.handleHeaders();
 
         // TODO: get optional content
 //        if ( this.scanner.hasNextLine() ) {

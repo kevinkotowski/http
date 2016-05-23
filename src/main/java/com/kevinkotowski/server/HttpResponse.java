@@ -91,7 +91,7 @@ public class HttpResponse implements IOResponse {
 
         String body = this.getBody();
         if (body != null) {
-            this.writeln( body );
+            this.write( body );
         } else {
             if (this.isImage) {
                 this.writeImage();
@@ -113,6 +113,12 @@ public class HttpResponse implements IOResponse {
 
     private void writeln(String string) throws IOException {
         byte[] bytes = (string + "\n").getBytes("UTF8");
+        this.out.write(bytes);
+        this.out.flush();
+    }
+
+    private void write(String string) throws IOException {
+        byte[] bytes = (string).getBytes("UTF8");
         this.out.write(bytes);
         this.out.flush();
     }

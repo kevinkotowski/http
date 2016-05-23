@@ -85,5 +85,9 @@ public class MockRequest implements IORequest{
     }
 
     public String[][] getParms() { return null; };
+
+    public boolean inRange(int rangeCounter) { return true; };
+
+    public String trimToRange(String body) { return body; };
 }
 
