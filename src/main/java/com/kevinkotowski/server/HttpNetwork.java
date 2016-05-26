@@ -4,6 +4,8 @@ import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.URLDecoder;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -37,29 +39,38 @@ public class HttpNetwork implements IONetwork {
         HttpRequest request = new HttpRequest();
         request.setSocket(socket);
 
-        String headerLine = new String();
         if (scanner.hasNextLine()) {
             request.handleRequestLine( scanner.nextLine() );
         } else {
             System.out.println("...network.next no first line!");
         }
 
-        if (scanner.hasNextLine()) {
-            while ( (headerLine = scanner.nextLine()).length() > 0 ) {
+        String headerLine = new String();
+        boolean headersDone = false;
+        while ( !headersDone ) {
+            scanner.hasNextLine();
+            headerLine = scanner.nextLine();
+            if ( headerLine.length() > 0 ) {
                 request.addHeader(headerLine);
-//                System.out.println("...network.next header found: " + headerLine);
+            } else {
+                headersDone = true;
             }
-        } else {
-            System.out.println("...network.next no header line!");
+//            System.out.println("...network.next header found: " + headerLine);
         }
+
+//        System.out.println("...network.next after scanner");
 
         request.handleHeaders();
 
-        // TODO: get optional content
-//        if ( this.scanner.hasNextLine() ) {
-//            response.handleOptionalContent( this.scanner.nextLine() );
-//        }
-        // if any additional data, give to response.handleOptionalData
+        if (request.getContentLength() > 0) {
+            scanner.useDelimiter("");
+            String content = "";
+            for (int x = 0; x < request.getContentLength(); x++) {
+                content += scanner.next();
+            }
+            request.addContent(content);
+        }
+//        System.out.println(content);
 
         return request;
     }

@@ -1,15 +1,13 @@
 package com.kevinkotowski.server;
 
-import com.sun.xml.internal.fastinfoset.util.StringArray;
-
-import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * Created by kevinkotowski on 5/12/16.
  */
 public class MockResponse implements IOResponse {
-    StringArray headers;
+    List<String> headers;
     public void MockResponse() {
         headers.add("Host: localhost");
     }
@@ -35,7 +33,7 @@ public class MockResponse implements IOResponse {
     public void addHeader(String header) {
 
     }
-    public StringArray getHeaders() {
+    public List<String> getHeaders() {
         return headers;
     }
     public void run() throws IOException {}

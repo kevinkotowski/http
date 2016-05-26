@@ -1,14 +1,9 @@
 package com.kevinkotowski.server;
 
-import com.sun.xml.internal.fastinfoset.util.StringArray;
-
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
-import java.io.UnsupportedEncodingException;
-import java.net.Socket;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by kevinkotowski on 5/6/16.
@@ -17,7 +12,7 @@ public class HttpResponse implements IOResponse {
     private IOSocket socket;
     private String responseCode;
     private String responseReason;
-    private StringArray headers = new StringArray();
+    private List<String> headers = new ArrayList();
     private String body;
 //    private BufferedImage image;
     private byte[] image;
@@ -67,7 +62,7 @@ public class HttpResponse implements IOResponse {
         this.headers.add(header);
     }
 
-    public StringArray getHeaders() {
+    public List<String> getHeaders() {
         return this.headers;
     }
 
@@ -82,8 +77,8 @@ public class HttpResponse implements IOResponse {
     public void run() throws IOException {
         this.writeln( this.getStatusLine() );
 
-        StringArray headers = this.getHeaders();
-        int length = headers.getSize();
+        List<String> headers = this.getHeaders();
+        int length = headers.size();
         for (int x = 0; x < length; x++) {
             this.writeln( headers.get(x) );
         }
@@ -97,7 +92,6 @@ public class HttpResponse implements IOResponse {
                 this.writeImage();
             }
         }
-
         this.closeSocket();
     }
 

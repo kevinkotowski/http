@@ -18,7 +18,7 @@ public class http {
 
         Server httpServer = new HttpServer(portNumber, docRoot);
         httpServer.listen();
-    }{}
+    }
 
     public static String[] handleArguments(String[] args) {
         // returns [0] = port, [1] = working directory

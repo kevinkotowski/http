@@ -3,10 +3,7 @@ package com.kevinkotowski.server;
 import javax.activation.MimetypesFileTypeMap;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
@@ -33,6 +30,8 @@ public class HttpHandler implements Handler {
         response.setResponseCode( request.getResponseCode() );
         response.setResponseReason( request.getResponseReason() );
 
+        System.out.println(request.getMethod() + " " + request.getPath() + " HTTP/1.1");
+
         switch ( request.getMethod() ) {
             case "HEAD":
                 response = this.handleGET(request, response);
@@ -45,6 +44,9 @@ public class HttpHandler implements Handler {
                 break;
             case "OPTIONS":
                 response = handleOPTIONS(request, response);
+                break;
+            case "PATCH":
+                response = handlePATCH(request, response);
                 break;
             case "POST":
                 response = handlePOST(request, response);
@@ -72,18 +74,10 @@ public class HttpHandler implements Handler {
         String path;
         int ch;
 
-        path = request.getPath();
-        if ( path.substring(0, 1).equals("/") ) {
-            path = docRoot + path;
-        } else {
-            path = docRoot + "/" + path;
-        }
+        File file = this.getFile(request.getPath());
+        path = file.getAbsolutePath();
+//        System.out.println(request.getMethod() + " " + path);
 
-        System.out.println(request.getMethod() + " " + path);
-
-        int fileIndex = path.indexOf("?");
-        path = (fileIndex > 0) ? path.substring(0, fileIndex) : path;
-        File file = new File(path);
         StringBuilder stringBuilder = new StringBuilder();
         try {
             response.setResponseCode( request.getResponseCode() );
@@ -105,7 +99,7 @@ public class HttpHandler implements Handler {
                 String imageType = this.imageType(file);
                 if (imageType != null) {
                     try {
-                        byte[] imageBytes = Files.readAllBytes(Paths.get(path));
+                        byte[] imageBytes = Files.readAllBytes(Paths.get(path ));
                         response.setImage(imageBytes, imageType);
                     } catch (IOException e) {
                         System.out.println("...handler.handleGET " +
@@ -136,6 +130,19 @@ public class HttpHandler implements Handler {
                 response.setResponseCode("302");
                 response.setResponseReason("Redirect (kk)");
                 response.addHeader("Location: http://localhost:5000/");
+            } else if ( request.getPath().equals("/logs") ) {
+                if (request.isAuthorized()) {
+                    response.setResponseCode("200");
+                    response.setResponseReason("Authorized (kk)");
+                    response.setBody("GET /log HTTP/1.1\n" +
+                            "PUT /these HTTP/1.1\n" +
+                            "HEAD /requests HTTP/1.1\n"
+                    );
+                } else {
+                    response.setResponseCode("401");
+                    response.setResponseReason("Unauthorized (kk)");
+                    response.addHeader("WWW-Authenticate: Basic realm=\"WallyWorld\"");
+                }
             } else if ( request.getPath().equals("/form") ) {
                 response.setResponseCode("200");
                 response.setResponseReason("OK (kk)");
@@ -148,6 +155,23 @@ public class HttpHandler implements Handler {
                 response.setResponseCode("404");
                 response.setResponseReason("File not found (kk)");
             }
+        }
+        return response;
+    }
+
+    private IOResponse handlePATCH(IORequest request, IOResponse response) throws IOException {
+        String path = request.getPath();
+        if (path.equals("/patch-content.txt")) {
+            response.setResponseCode("204");
+            response.setResponseReason("No content (kk)");
+
+            if (request.hasContent()) {
+                File file = this.getFile(path);
+                this.persistFile(file, request.getContent());
+            }
+        } else {
+            response.setResponseCode("404");
+            response.setResponseReason("File not found (kk)");
         }
         return response;
     }
@@ -183,6 +207,30 @@ public class HttpHandler implements Handler {
             response.addHeader("Allow: GET,HEAD,POST,OPTIONS,PUT");
         }
         return response;
+    }
+
+    private File getFile(String path) {
+        if ( path.substring(0, 1).equals("/") ) {
+            path = docRoot + path;
+        } else {
+            path = docRoot + "/" + path;
+        }
+
+        int fileIndex = path.indexOf("?");
+        path = (fileIndex > 0) ? path.substring(0, fileIndex) : path;
+        return new File(path);
+    }
+
+    private void persistFile(File file, String content) throws IOException {
+        if (file.canWrite()) {
+            FileInputStream fileStream = new FileInputStream(file.getAbsoluteFile());
+            FileWriter fw = new FileWriter(file.getAbsoluteFile());
+            BufferedWriter bw = new BufferedWriter(fw);
+            bw.write(content);
+            bw.close();
+        } else {
+            System.out.println("...handler.persistFile can't write to file!");
+        }
     }
 
     private String imageType(File file) {

@@ -34,14 +34,6 @@ public class MockRequest implements IORequest{
         return socket;
     }
 
-    public void handleOptionalContent(String content) {
-        // TODO: this needs to deal with text and binary data
-    }
-
-//    public void setMethod(String method) {
-//        this.method = method;
-//    }
-
     public String getMethod() {
         return this.method;
     }
@@ -60,6 +52,16 @@ public class MockRequest implements IORequest{
     public void addHeader(String header) {
 //        this.headers.a
     }
+
+    public int getContentLength() {
+        return 10;
+    }
+
+    public void addContent(String content) { }
+
+    public boolean hasContent() { return true; }
+
+    public String getContent() { return "boo"; }
 
     public String[] getHeaders() {
         return this.headers;
@@ -85,6 +87,8 @@ public class MockRequest implements IORequest{
     }
 
     public String[][] getParms() { return null; };
+
+    public boolean isAuthorized() { return true; };
 
     public boolean inRange(int rangeCounter) { return true; };
 
