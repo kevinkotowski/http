@@ -69,7 +69,7 @@ public class HttpRequest implements IORequest {
 
     public void addHeader(String header) {
         this.headers.add(header);
-        System.out.println("...request.addHeader: " + header);
+//        System.out.println("...request.addHeader: " + header);
     }
 
     public String getMethod() {
@@ -191,7 +191,7 @@ public class HttpRequest implements IORequest {
         if (header.contains("If-Match")) {
             String[] ifMatchHeader = header.split(":");
             this.ifMatch = ifMatchHeader[1].trim();
-            System.out.println("...request.handleIfMatch: " + this.ifMatch);
+//            System.out.println("...request.handleIfMatch: " + this.ifMatch);
         }
     }
 

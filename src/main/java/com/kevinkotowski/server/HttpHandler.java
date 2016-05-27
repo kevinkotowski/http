@@ -33,6 +33,9 @@ public class HttpHandler implements Handler {
         System.out.println(request.getMethod() + " " + request.getPath() + " HTTP/1.1");
 
         switch ( request.getMethod() ) {
+            case "DELETE":
+                response = handleDELETE(request, response);
+                break;
             case "HEAD":
                 response = this.handleGET(request, response);
                 response.setBody(null);
@@ -67,6 +70,19 @@ public class HttpHandler implements Handler {
         response.setResponseReason("I'm a teapot");
         response.setBody("<html>\n    <p>I'm a teapot.</p>\n" +
                 "    <p>I am short and stout</p>\n</html>");
+        return response;
+    }
+
+    private IOResponse handleDELETE(IORequest request, IOResponse response) throws IOException {
+        String path = request.getPath();
+        if (path.equals("/form")) {
+            this.deleteFile(path);
+            response.setResponseCode("200");
+            response.setResponseReason("OK (kk)");
+        } else {
+            response.setResponseCode("404");
+            response.setResponseReason("File not found (kk)");
+        }
         return response;
     }
 
@@ -166,8 +182,7 @@ public class HttpHandler implements Handler {
             response.setResponseReason("No content (kk)");
 
             if (request.hasContent()) {
-                File file = this.getFile(path);
-                this.persistFile(file, request.getContent());
+                this.persistFile(path, request.getContent());
             }
         } else {
             response.setResponseCode("404");
@@ -176,24 +191,38 @@ public class HttpHandler implements Handler {
         return response;
     }
 
-    private IOResponse handlePOST(IORequest request, IOResponse response) {
-        if (request.getPath().equals("/text-file.txt")) {
+    private IOResponse handlePOST(IORequest request, IOResponse response) throws IOException {
+        String path = request.getPath();
+        if (path.equals("/text-file.txt")) {
             response.setResponseCode("405");
             response.setResponseReason("Method not allowed (kk)");
-        } else {
+        } else if (path.equals("/form")){
+            if (request.hasContent()) {
+                this.persistFile(path, request.getContent());
+            }
             response.setResponseCode("200");
             response.setResponseReason("OK (kk)");
+        } else {
+            response.setResponseCode("404");
+            response.setResponseReason("File not found (kk)");
         }
         return response;
     }
 
-    private IOResponse handlePUT(IORequest request, IOResponse response) {
-        if (request.getPath().equals("/file1")) {
+    private IOResponse handlePUT(IORequest request, IOResponse response) throws IOException {
+        String path = request.getPath();
+        if (path.equals("/file1")) {
             response.setResponseCode("405");
             response.setResponseReason("Method not allowed (kk)");
-        } else {
+        } else if (path.equals("/form")){
+            if (request.hasContent()) {
+                this.persistFile(path, request.getContent());
+            }
             response.setResponseCode("200");
             response.setResponseReason("OK (kk)");
+        } else {
+            response.setResponseCode("404");
+            response.setResponseReason("File not found (kk)");
         }
         return response;
     }
@@ -221,7 +250,23 @@ public class HttpHandler implements Handler {
         return new File(path);
     }
 
-    private void persistFile(File file, String content) throws IOException {
+    private void deleteFile(String path) throws IOException {
+        File file = this.getFile(path);
+
+        if (file.exists()) {
+            System.out.println("...handler.deleteFile deleting file: " + path);
+            file.delete();
+        }
+    }
+
+    private void persistFile(String path, String content) throws IOException {
+        File file = this.getFile(path);
+
+        if (!file.exists()) {
+            System.out.println("...handler.persistFile creating new file");
+            file.createNewFile();
+        }
+
         if (file.canWrite()) {
             FileInputStream fileStream = new FileInputStream(file.getAbsoluteFile());
             FileWriter fw = new FileWriter(file.getAbsoluteFile());
