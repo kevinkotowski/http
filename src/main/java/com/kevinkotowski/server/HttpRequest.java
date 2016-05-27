@@ -23,6 +23,7 @@ public class HttpRequest implements IORequest {
     private int rangeLast = -1;
     private boolean isAuthorized = false;
     private int contentLength = 0;
+    private String ifMatch = null;
 
     public void handleRequestLine(String requestLine)
             throws UnsupportedEncodingException {
@@ -54,6 +55,7 @@ public class HttpRequest implements IORequest {
             this.handleAuthorization(header);
             this.handleRange(header);
             this.handleContent(header);
+            this.handleIfMatch(header);
         }
     }
 
@@ -67,7 +69,7 @@ public class HttpRequest implements IORequest {
 
     public void addHeader(String header) {
         this.headers.add(header);
-//        System.out.println("...request.addHeader: " + header);
+        System.out.println("...request.addHeader: " + header);
     }
 
     public String getMethod() {
@@ -182,6 +184,14 @@ public class HttpRequest implements IORequest {
             System.out.println("...request.handleAuthorization decoded pass: " + auth[1]);
 
             this.isAuthorized = ( (auth[0].equals("admin")) && (auth[1].equals("hunter2")) );
+        }
+    }
+
+    private void handleIfMatch(String header) throws UnsupportedEncodingException {
+        if (header.contains("If-Match")) {
+            String[] ifMatchHeader = header.split(":");
+            this.ifMatch = ifMatchHeader[1].trim();
+            System.out.println("...request.handleIfMatch: " + this.ifMatch);
         }
     }
 
