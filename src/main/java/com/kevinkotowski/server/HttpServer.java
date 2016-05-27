@@ -39,9 +39,9 @@ public class HttpServer implements Server{
             producerPool.submit(new Thread(
                     new HttpProducer(network, sharedQueue)));
         }
-        ExecutorService taskPool = Executors.newFixedThreadPool(poolSize);
+        ExecutorService consumerPool = Executors.newFixedThreadPool(poolSize);
         for (int z = 0; z < poolSize; z++) {
-            taskPool.submit(new Thread(new HttpTask(docRoot, sharedQueue)));
+            consumerPool.submit(new Thread(new HttpConsumer(docRoot, sharedQueue)));
         }
     }
 

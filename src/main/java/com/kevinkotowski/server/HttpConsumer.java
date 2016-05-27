@@ -6,11 +6,11 @@ import java.util.concurrent.BlockingQueue;
 /**
  * Created by kevinkotowski on 5/19/16.
  */
-public class HttpTask implements Runnable {
+public class HttpConsumer implements Runnable {
     private final BlockingQueue sharedQueue;
     String docRoot;
 
-    public HttpTask(String docRoot, BlockingQueue sharedQueue) {
+    public HttpConsumer(String docRoot, BlockingQueue sharedQueue) {
         this.docRoot = docRoot;
         this.sharedQueue = sharedQueue;
     }
