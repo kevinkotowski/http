@@ -14,15 +14,12 @@ public class HttpResponse implements IOResponse {
     private String responseReason;
     private List<String> headers = new ArrayList();
     private String body;
-//    private BufferedImage image;
     private byte[] image;
     private String imageType;
     private boolean isImage;
     private PrintStream out;
 
-    public HttpResponse() {
-        this.addHeader("Host: localhost:5000");
-    }
+    public HttpResponse() { }
 
     public void setSocket(IOSocket socket) throws IOException {
         this.socket = socket;
