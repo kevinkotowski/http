@@ -14,6 +14,10 @@ public class MockRequest implements IORequest{
     private String responseCode = null;
     private String responseReason = null;
 
+    public MockRequest(IOSocket socket) {
+
+    }
+
     public void handleRequestLine(String requestLine) {
         String[] tokens = new String[3];
 

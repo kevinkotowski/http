@@ -1,10 +1,13 @@
 package com.kevinkotowski.server;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
+import java.util.Scanner;
 
 /**
  * Created by kevinkotowski on 5/5/16.
@@ -24,6 +27,52 @@ public class HttpRequest implements IORequest {
     private boolean isAuthorized = false;
     private int contentLength = 0;
     private String ifMatch = null;
+
+    public HttpRequest() {
+
+    }
+
+    public HttpRequest(IOSocket socket) throws IOException {
+        this.setSocket(socket);
+
+        Scanner scanner;
+        InputStream in;
+        in = socket.getInputStream();
+        scanner = new Scanner(in, "UTF8");
+
+        if (scanner.hasNextLine()) {
+            this.handleRequestLine( scanner.nextLine() );
+        } else {
+            System.out.println("...request.constructor no first line!");
+        }
+
+        String headerLine = new String();
+        boolean headersDone = false;
+        while ( !headersDone ) {
+            scanner.hasNextLine();
+            headerLine = scanner.nextLine();
+            if ( headerLine.length() > 0 ) {
+                this.addHeader(headerLine);
+            } else {
+                headersDone = true;
+            }
+//            System.out.println("...request.constructor header found: " + headerLine);
+        }
+
+//        System.out.println("...request.constructor after scanner");
+
+        this.handleHeaders();
+
+        if (this.getContentLength() > 0) {
+            scanner.useDelimiter("");
+            String content = "";
+            for (int x = 0; x < this.getContentLength(); x++) {
+                content += scanner.next();
+            }
+            this.addContent(content);
+        }
+//        System.out.println(content);
+    }
 
     public void handleRequestLine(String requestLine)
             throws UnsupportedEncodingException {

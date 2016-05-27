@@ -11,9 +11,9 @@ import static org.junit.Assert.*;
 public class _ResponseTest {
     @Test
     public void requestToResponseLifecycle() throws Exception {
+        IOSocket socket = new MockSocket();
         HttpRequest request = new HttpRequest();
         HttpResponse response = new HttpResponse();
-        IOSocket socket = new MockSocket();
 
         request.handleRequestLine("GET /mock/file/is/fake.html HTTP/1.1");
         response.setSocket(socket);

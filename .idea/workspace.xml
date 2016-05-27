@@ -7,9 +7,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4f96e1eb-65be-488a-a524-f2f879f891e9" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpTask.java" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpConsumer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/http_jar.jar" afterPath="$PROJECT_DIR$/out/artifacts/http_jar.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpServer.java" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpServer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpNetwork.java" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpNetwork.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpRequest.java" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpRequest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockNetwork.java" afterPath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockNetwork.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockRequest.java" afterPath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockRequest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockSocket.java" afterPath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockSocket.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_HandlerTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_HandlerTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ResponseTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ResponseTest.java" />
     </list>
     <ignored path="http.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,7 +43,7 @@
           <file leaf-file-name="HttpHandler.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpHandler.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="453">
+                <state relative-caret-position="3165">
                   <caret line="216" column="40" selection-start-line="216" selection-start-column="40" selection-end-line="216" selection-end-column="40" />
                   <folding>
                     <element signature="imports" expanded="true" />
@@ -50,18 +56,28 @@
           <file leaf-file-name="HttpNetwork.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpNetwork.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="173">
-                  <caret line="51" column="43" selection-start-line="51" selection-start-column="43" selection-end-line="51" selection-end-column="43" />
+                <state relative-caret-position="480">
+                  <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="HttpConsumer.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="IORequest.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IORequest.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="225">
+                  <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="HttpConsumer.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpConsumer.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="390">
-                  <caret line="27" column="62" selection-start-line="27" selection-start-column="62" selection-end-line="27" selection-end-column="62" />
+                <state relative-caret-position="345">
+                  <caret line="24" column="37" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
                   <folding />
                 </state>
               </provider>
@@ -77,6 +93,18 @@
               </provider>
             </entry>
           </file>
+          <file leaf-file-name="HttpRequest.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpRequest.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="330">
+                  <caret line="91" column="43" selection-start-line="91" selection-start-column="43" selection-end-line="91" selection-end-column="43" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
         </leaf>
       </split-first>
       <split-second>
@@ -84,11 +112,61 @@
           <file leaf-file-name="_HandlerTest.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_HandlerTest.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="450">
-                  <caret line="30" column="39" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
+                <state relative-caret-position="165">
+                  <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="MockNetwork.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockNetwork.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="270">
+                  <caret line="20" column="55" selection-start-line="20" selection-start-column="55" selection-end-line="20" selection-end-column="55" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="MockRequest.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockRequest.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="4">
+                  <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="HttpSocket.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpSocket.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="255">
+                  <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="MockSocket.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockSocket.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="210">
+                  <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="MockHandler.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockHandler.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="120">
+                  <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -96,8 +174,8 @@
           <file leaf-file-name="HttpProducer.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpProducer.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="75">
-                  <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
+                <state relative-caret-position="315">
+                  <caret line="21" column="45" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -105,78 +183,13 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="IOResponse.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IOResponse.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="300">
-                  <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="HttpResponse.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpResponse.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="246">
-                  <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#590#591#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="_ResponseTest.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="_ResponseTest.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ResponseTest.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="345">
-                  <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+                <state relative-caret-position="315">
+                  <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="HttpServer.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpServer.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="487">
-                  <caret line="43" column="19" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="_httpTest.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_httpTest.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="180">
-                  <caret line="15" column="41" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="HttpRequest.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpRequest.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="225">
-                  <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#3983#3984#0" expanded="true" />
-                    <element signature="e#4023#4024#0" expanded="true" />
-                    <element signature="e#7161#7162#0" expanded="true" />
-                    <element signature="e#7202#7203#0" expanded="true" />
-                    <element signature="e#7334#7335#0" expanded="true" />
-                    <element signature="e#7376#7377#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -185,11 +198,9 @@
           <file leaf-file-name="_RequestTest.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_RequestTest.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="210">
-                  <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
-                  <folding>
-                    <element signature="imports" expanded="false" />
-                  </folding>
+                <state relative-caret-position="405">
+                  <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -235,7 +246,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IOSockets.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpSocket.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IOSocket.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockSocket.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockServer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IONetwork.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/HttpSocketsTest.java" />
@@ -245,15 +255,11 @@
         <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/HttpNetworkTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IOHandler.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockHandler.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockNetwork.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ResponseTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_SocketTest.java" />
         <option value="$PROJECT_DIR$/out/artifacts/http_jar/META-INF/MANIFEST.MF" />
         <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/__httpTest.java" />
         <option value="$PROJECT_DIR$/.idea/artifacts/http_jar.xml" />
         <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_httpTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_HandlerTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_RequestTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpProducer.java" />
         <option value="$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11.jar!/org/junit/internal/runners/model/ReflectiveCallable.class" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/http.java" />
@@ -262,12 +268,17 @@
         <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockResponse.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IORequest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockRequest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpNetwork.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpRequest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpTask.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpServer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpNetwork.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockRequest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_HandlerTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockNetwork.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockSocket.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpRequest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_RequestTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ResponseTest.java" />
       </list>
     </option>
   </component>
@@ -474,53 +485,7 @@
       <recent name="com.kevinkotowski.server" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.http">
-    <configuration default="false" name="http" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.kevinkotowski.server.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="com.kevinkotowski.server.http" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="-p 5000 -d $PROJECT_DIR$/../cob_spec/public" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="http" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="false" name="_HandlerTest.handleErrorBadMethod405" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.kevinkotowski.server.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="http" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.kevinkotowski.server" />
-      <option name="MAIN_CLASS_NAME" value="com.kevinkotowski.server._HandlerTest" />
-      <option name="METHOD_NAME" value="handleErrorBadMethod405" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.com.kevinkotowski.server in http">
     <configuration default="false" name="com.kevinkotowski.server in http" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -547,16 +512,108 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="http.jar" type="JarApplication" factoryName="JAR Application" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/http.jar" />
+    <configuration default="false" name="_HandlerTest.interfaceHandleRequestReturnResponse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.kevinkotowski.server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="http" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.kevinkotowski.server" />
+      <option name="MAIN_CLASS_NAME" value="com.kevinkotowski.server._HandlerTest" />
+      <option name="METHOD_NAME" value="interfaceHandleRequestReturnResponse" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
       <envs />
+      <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="http_jar.jar" type="JarApplication" factoryName="JAR Application" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/http_jar.jar" />
+    <configuration default="false" name="_RequestTest.handleRequestLineAndGet" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.kevinkotowski.server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="http" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.kevinkotowski.server" />
+      <option name="MAIN_CLASS_NAME" value="com.kevinkotowski.server._RequestTest" />
+      <option name="METHOD_NAME" value="handleRequestLineAndGet" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
       <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="_RequestTest.setSocketAndGetIt" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.kevinkotowski.server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="http" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.kevinkotowski.server" />
+      <option name="MAIN_CLASS_NAME" value="com.kevinkotowski.server._RequestTest" />
+      <option name="METHOD_NAME" value="setSocketAndGetIt" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="_RequestTest.getResponseStatusDataFromRequestLine" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.kevinkotowski.server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="http" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.kevinkotowski.server" />
+      <option name="MAIN_CLASS_NAME" value="com.kevinkotowski.server._RequestTest" />
+      <option name="METHOD_NAME" value="getResponseStatusDataFromRequestLine" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
       <method />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -839,19 +896,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.http" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit._HandlerTest.handleErrorBadMethod405" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.com.kevinkotowski.server in http" />
-      <item index="3" class="java.lang.String" itemvalue="JAR Application.http.jar" />
-      <item index="4" class="java.lang.String" itemvalue="JAR Application.http_jar.jar" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.com.kevinkotowski.server in http" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit._HandlerTest.interfaceHandleRequestReturnResponse" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit._RequestTest.handleRequestLineAndGet" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit._RequestTest.setSocketAndGetIt" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit._RequestTest.getResponseStatusDataFromRequestLine" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.http" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.com.kevinkotowski.server in http" />
-        <item index="2" class="java.lang.String" itemvalue="JAR Application.http_jar.jar" />
-        <item index="3" class="java.lang.String" itemvalue="JAR Application.http.jar" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit._HandlerTest.handleErrorBadMethod405" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.com.kevinkotowski.server in http" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit._RequestTest.getResponseStatusDataFromRequestLine" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit._RequestTest.setSocketAndGetIt" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit._RequestTest.handleRequestLineAndGet" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit._HandlerTest.interfaceHandleRequestReturnResponse" />
       </list>
     </recent_temporary>
   </component>
@@ -877,34 +934,34 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="com_kevinkotowski_server_in_http - 2016.05.21 at 14h 27m 07s.xml">
+    <history-entry file="_RequestTest_getResponseStatusDataFromRequestLine - 2016.05.27 at 14h 01m 33s.xml">
+      <configuration name="_RequestTest.getResponseStatusDataFromRequestLine" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="_RequestTest_handleRequestLineAndGet - 2016.05.27 at 13h 39m 18s.xml">
+      <configuration name="_RequestTest.handleRequestLineAndGet" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="_RequestTest_handleRequestLineAndGet - 2016.05.27 at 13h 54m 14s.xml">
+      <configuration name="_RequestTest.handleRequestLineAndGet" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="_RequestTest_handleRequestLineAndGet - 2016.05.27 at 13h 58m 55s.xml">
+      <configuration name="_RequestTest.handleRequestLineAndGet" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="_RequestTest_handleRequestLineAndGet - 2016.05.27 at 13h 59m 06s.xml">
+      <configuration name="_RequestTest.handleRequestLineAndGet" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="_RequestTest_setSocketAndGetIt - 2016.05.27 at 13h 59m 36s.xml">
+      <configuration name="_RequestTest.setSocketAndGetIt" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="_RequestTest_setSocketAndGetIt - 2016.05.27 at 13h 59m 43s.xml">
+      <configuration name="_RequestTest.setSocketAndGetIt" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="_RequestTest_setSocketAndGetIt - 2016.05.27 at 14h 00m 57s.xml">
+      <configuration name="_RequestTest.setSocketAndGetIt" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="com_kevinkotowski_server_in_http - 2016.05.27 at 14h 02m 25s.xml">
       <configuration name="com.kevinkotowski.server in http" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="com_kevinkotowski_server_in_http - 2016.05.21 at 14h 29m 13s.xml">
-      <configuration name="com.kevinkotowski.server in http" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="com_kevinkotowski_server_in_http - 2016.05.21 at 14h 30m 06s.xml">
-      <configuration name="com.kevinkotowski.server in http" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="com_kevinkotowski_server_in_http - 2016.05.21 at 14h 30m 25s.xml">
-      <configuration name="com.kevinkotowski.server in http" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="com_kevinkotowski_server_in_http - 2016.05.23 at 10h 46m 09s.xml">
-      <configuration name="com.kevinkotowski.server in http" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="com_kevinkotowski_server_in_http - 2016.05.23 at 10h 46m 51s.xml">
-      <configuration name="com.kevinkotowski.server in http" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="com_kevinkotowski_server_in_http - 2016.05.23 at 17h 23m 46s.xml">
-      <configuration name="com.kevinkotowski.server in http" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="com_kevinkotowski_server_in_http - 2016.05.24 at 08h 49m 59s.xml">
-      <configuration name="com.kevinkotowski.server in http" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="com_kevinkotowski_server_in_http - 2016.05.24 at 11h 28m 33s.xml">
-      <configuration name="com.kevinkotowski.server in http" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="com_kevinkotowski_server_in_http - 2016.05.26 at 16h 32m 01s.xml">
+    <history-entry file="com_kevinkotowski_server_in_http - 2016.05.27 at 14h 02m 30s.xml">
       <configuration name="com.kevinkotowski.server in http" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -977,7 +1034,15 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="89" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_HandlerTest.java</url>
+          <line>11</line>
+          <properties />
+          <option name="timeStamp" value="89" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="92" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1057,37 +1122,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_NetworkTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockNetwork.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockSocket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1124,16 +1163,6 @@
         <state relative-caret-position="120">
           <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_RequestTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1175,16 +1204,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpSocket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -1198,16 +1217,6 @@
         <state relative-caret-position="-5">
           <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_HandlerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="39" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1242,27 +1251,7 @@
         <state relative-caret-position="300">
           <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
           <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ResponseTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpProducer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1272,8 +1261,46 @@
         <state relative-caret-position="246">
           <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding>
+            <element signature="e#590#591#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpProducer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="45" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
+          <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#590#591#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpConsumer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="24" column="37" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3165">
+          <caret line="216" column="40" selection-start-line="216" selection-start-column="40" selection-end-line="216" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1464362930000" expanded="true" signature="10340:10604" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1286,64 +1313,86 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockRequest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
-          <folding>
-            <element signature="e#1296#1297#0" expanded="false" />
-            <element signature="e#1321#1322#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="120">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockNetwork.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="20" column="55" selection-start-line="20" selection-start-column="55" selection-end-line="20" selection-end-column="55" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpNetwork.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="51" column="43" selection-start-line="51" selection-start-column="43" selection-end-line="51" selection-end-column="43" />
+        <state relative-caret-position="480">
+          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_HandlerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpSocket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockSocket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpRequest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+        <state relative-caret-position="330">
+          <caret line="91" column="43" selection-start-line="91" selection-start-column="43" selection-end-line="91" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3983#3984#0" expanded="true" />
-            <element signature="e#4023#4024#0" expanded="true" />
-            <element signature="e#7161#7162#0" expanded="true" />
-            <element signature="e#7202#7203#0" expanded="true" />
-            <element signature="e#7334#7335#0" expanded="true" />
-            <element signature="e#7376#7377#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_RequestTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="216" column="40" selection-start-line="216" selection-start-column="40" selection-end-line="216" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1464362930000" expanded="true" signature="10340:10604" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpConsumer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="27" column="62" selection-start-line="27" selection-start-column="62" selection-end-line="27" selection-end-column="62" />
+        <state relative-caret-position="405">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpServer.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ResponseTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
-          <caret line="43" column="19" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
+        <state relative-caret-position="315">
+          <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
