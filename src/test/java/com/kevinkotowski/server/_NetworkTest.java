@@ -20,6 +20,6 @@ public class _NetworkTest {
         int port = 3210;
         IONetwork mockNetwork = new MockNetwork(port);
         IORequest request = mockNetwork.next();
-        assertEquals( "GET", request.getMethod() );
+        assertEquals( HttpMethod.GET, request.getMethod() );
     }
 }

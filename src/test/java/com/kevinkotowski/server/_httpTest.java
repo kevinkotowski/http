@@ -37,7 +37,7 @@ public class _httpTest {
 
     @Test
     public void createServerAndListen() throws Exception {
-        Server server = new MockServer();
+        IHServer server = new MockServer();
         http http = new http(server);
         assertTrue( server.status().contains("listening") );
     }

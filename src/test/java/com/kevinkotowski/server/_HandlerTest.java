@@ -9,7 +9,7 @@ import org.junit.Test;
 public class _HandlerTest {
     @Test
     public void interfaceHandleRequestReturnResponse() throws Exception {
-        Handler handler = new MockHandler();
+        IHHandler handler = new MockHandler();
         MockSocket socket = new MockSocket();
 
         IORequest request = new MockRequest(socket);
@@ -19,7 +19,8 @@ public class _HandlerTest {
 
     @Test
     public void handleErrorGetNotFound404() throws Exception {
-        Handler handler = new HttpHandler("/mock/file/path");
+        IHRouter router = new HttpRouter("/mock/file/path");
+        IHHandler handler = new HttpHandler(router);
         MockSocket socket = new MockSocket();
         IORequest request = new MockRequest(socket);
         request.handleRequestLine("GET file/not/found.html HTTP/1.1");
@@ -27,13 +28,4 @@ public class _HandlerTest {
         Assert.assertEquals("404", response.getResponseCode());
     }
 
-    @Test
-    public void handleErrorBadMethod405() throws Exception {
-        Handler handler = new HttpHandler("/mock/file/path");
-        MockSocket socket = new MockSocket();
-        IORequest request = new MockRequest(socket);
-        request.handleRequestLine("BOO file/not/found.html HTTP/1.1");
-        IOResponse response = handler.handle(request);
-        Assert.assertEquals("405", response.getResponseCode());
-    }
 }

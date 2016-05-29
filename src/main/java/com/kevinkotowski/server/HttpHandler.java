@@ -1,8 +1,6 @@
 package com.kevinkotowski.server;
 
 import javax.activation.MimetypesFileTypeMap;
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -10,17 +8,19 @@ import java.nio.file.Paths;
 /**
  * Created by kevinkotowski on 5/6/16.
  */
-public class HttpHandler implements Handler {
+public class HttpHandler implements IHHandler {
     public enum FileType {
         TEXT,
         DIRECTORY,
         IMAGE,
         TEAPOT
     }
+    private IHRouter router;
     private String docRoot;
 
-    public HttpHandler (String docRoot) {
-        this.docRoot = docRoot;
+    public HttpHandler (IHRouter router) {
+        this.router = router;
+        this.docRoot = router.getDocRoot();
     }
 
     public IOResponse handle(IORequest request) throws IOException {
@@ -30,37 +30,40 @@ public class HttpHandler implements Handler {
         response.setResponseCode( request.getResponseCode() );
         response.setResponseReason( request.getResponseReason() );
 
-        System.out.println(request.getMethod() + " " + request.getPath() + " HTTP/1.1");
+        HttpMethod method = request.getMethod();
+        System.out.println( method + " " + request.getPath() + " HTTP/1.1");
 
-        switch ( request.getMethod() ) {
-            case "DELETE":
-                response = handleDELETE(request, response);
-                break;
-            case "HEAD":
-                response = this.handleGET(request, response);
-                response.setBody(null);
-                break;
-            case "GET":
+        if (method != null) {
+            switch ( method ) {
+                case DELETE:
+                    response = handleDELETE(request, response);
+                    break;
+                case HEAD:
+                    response = this.handleGET(request, response);
+                    response.setBody(null);
+                    break;
+                case GET:
 //                Handler handler = this.resolveHandlerType(request);
 //                response = handler.run(request, response);
-                response = handleGET(request, response);
-                break;
-            case "OPTIONS":
-                response = handleOPTIONS(request, response);
-                break;
-            case "PATCH":
-                response = handlePATCH(request, response);
-                break;
-            case "POST":
-                response = handlePOST(request, response);
-                break;
-            case "PUT":
-                response = handlePUT(request, response);
-                break;
-            default:
-                response.setResponseCode("405");
-                response.setResponseReason("Only GET supported at this time (kk)");
-                break;
+                    response = handleGET(request, response);
+                    break;
+                case OPTIONS:
+                    response = handleOPTIONS(request, response);
+                    break;
+                case PATCH:
+                    response = handlePATCH(request, response);
+                    break;
+                case POST:
+                    response = handlePOST(request, response);
+                    break;
+                case PUT:
+                    response = handlePUT(request, response);
+                    break;
+                default:
+                    response.setResponseCode("405");
+                    response.setResponseReason("Invalid Method (kk)");
+                    break;
+            }
         }
         return response;
     }

@@ -9,7 +9,7 @@ import java.net.Socket;
  */
 public interface IORequest {
     public void handleRequestLine(String requestLine) throws UnsupportedEncodingException;
-    public String getMethod();
+    public HttpMethod getMethod();
     public String getPath();
     public void addHeader(String header);
     public void addContent(String content);

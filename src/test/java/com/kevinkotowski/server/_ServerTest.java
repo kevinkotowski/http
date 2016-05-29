@@ -11,14 +11,14 @@ public class _ServerTest {
 
     @Test
     public void createAndListenToServer() throws Exception {
-        Server server = new MockServer();
+        IHServer server = new MockServer();
         server.listen();
         assertTrue( server.status().contains("listening") );
     }
 
     @Test
     public void createAndCloseServer() throws Exception {
-        Server server = new MockServer();
+        IHServer server = new MockServer();
         server.close();
         assertTrue( server.status().contains("closed") );
     }

@@ -4,25 +4,35 @@ Application class responsibilities:
 -----------------------------------
 
 * Server
-    * connects Network via port
+    * initializes Network by connecting to port
+    * initializes Router
     * runs listener
         * creates shared queue
         * runs fixed pool of Producer threads
         * runs fixed pool of Consumer threads
 
 * Producer
-    * gets Requests from Network and puts into shared queue
+    * runnable class gets Requests from Network and puts into shared queue
+
+* Request
+    * implements HTTP protocol reading data stream for Request from socket and organizaing data for Response
 
 * Consumer
-    * polls for Requests from shared queue
-    * Handler converts Requests into Responses, which are run
+    * runnable class polls for Requests from shared queue
+    * routes Requests into Controller, which converts into Responses
+    * runs Responses
+    
+* Response
+    * implements HTTP protocol sending to socket a properly formed data stream
 
 * Handler
-    * Router maps Requests to Controllers
+    * initializes Router
+    * uses Router to route Requests to Controllers
 
 * Router
     * routes are defined and associated to Controllers
     * accepts Controller registrations
+    * returns Options list for a given path
 
 * Controller
     * accepts Resolver registrations

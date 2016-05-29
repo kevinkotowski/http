@@ -8,7 +8,7 @@ import java.net.Socket;
  */
 public class MockRequest implements IORequest{
     private IOSocket socket = null;
-    private String method = null;
+    private HttpMethod method = null;
     private String path = null;
     private String[] headers = null;
     private String responseCode = null;
@@ -22,11 +22,18 @@ public class MockRequest implements IORequest{
         String[] tokens = new String[3];
 
         tokens = requestLine.split("\\s");
-        this.method = tokens[0];
         this.setPath( tokens[1] );
 
-        this.responseCode = "200";
-        this.responseReason = "Mock OK";
+        try {
+            this.method = HttpMethod.valueOf( tokens[0] );
+            this.responseCode = "200";
+            this.responseReason = "Mock OK (kk)";
+        } catch(IllegalArgumentException e) {
+            System.out.println("Illegal method: " + tokens[0]);
+            this.responseCode = "405";
+            this.responseReason = "Mock Invalid Method (kk)";
+        }
+
     }
 
     public void setSocket(IOSocket socket) {
@@ -38,14 +45,11 @@ public class MockRequest implements IORequest{
         return socket;
     }
 
-    public String getMethod() {
+    public HttpMethod getMethod() {
         return this.method;
     }
 
     public void setPath(String path) {
-        if ( path.substring(0, 1).equals("/") ) {
-            path = "." + path;
-        }
         this.path = path;
     }
 

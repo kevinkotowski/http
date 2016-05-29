@@ -6,7 +6,7 @@ import java.io.IOException;
  * Created by kevinkotowski on 5/5/16.
  */
 public class http {
-    Server server;
+    IHServer server;
 
 //    /Users/kevinkotowski/Development/_8th/http/src/test/java/com/kevinkotowski/server
 //    /Users/kevinkotowski/Development/_8th/cob_spec/public
@@ -16,7 +16,7 @@ public class http {
         int portNumber = Integer.parseInt(parsedArgs[0]);
         String docRoot = parsedArgs[1];
 
-        Server httpServer = new HttpServer(portNumber, docRoot);
+        IHServer httpServer = new HttpServer(portNumber, docRoot);
         httpServer.listen();
     }
 
@@ -58,7 +58,7 @@ public class http {
         return response;
     }
 
-    http( Server server ) throws IOException {
+    http( IHServer server ) throws IOException {
         this.server = server;
         server.listen();
     }

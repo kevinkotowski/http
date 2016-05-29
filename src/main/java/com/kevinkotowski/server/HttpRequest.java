@@ -14,7 +14,7 @@ import java.util.Scanner;
  */
 public class HttpRequest implements IORequest {
     private IOSocket socket = null;
-    private String method = null;
+    private HttpMethod method = null;
     private String path = null;
     private List<String> headers = new ArrayList(0);
     private List<String> content = new ArrayList(0);
@@ -28,9 +28,7 @@ public class HttpRequest implements IORequest {
     private int contentLength = 0;
     private String ifMatch = null;
 
-    public HttpRequest() {
-
-    }
+    public HttpRequest() { }
 
     public HttpRequest(IOSocket socket) throws IOException {
         this.setSocket(socket);
@@ -88,11 +86,17 @@ public class HttpRequest implements IORequest {
                         tokens[2] + " (kk)";
             }
         } else {
-            this.responseCode = "200";
-            this.responseReason = "OK (kk)";
-            this.method = tokens[0];
             this.setPath( tokens[1] );
             this.setParms( tokens[1] );
+            try {
+                this.method = HttpMethod.valueOf( tokens[0] );
+                this.responseCode = "200";
+                this.responseReason = "OK (kk)";
+            } catch(IllegalArgumentException e) {
+                System.out.println("Illegal method: " + tokens[0]);
+                this.responseCode = "405";
+                this.responseReason = "Invalid Method (kk)";
+            }
         }
     }
 
@@ -121,7 +125,7 @@ public class HttpRequest implements IORequest {
 //        System.out.println("...request.addHeader: " + header);
     }
 
-    public String getMethod() {
+    public HttpMethod getMethod() {
         return this.method;
     }
 

@@ -9,16 +9,18 @@ import java.util.concurrent.LinkedBlockingQueue;
 /**
  * Created by kevinkotowski on 5/3/16.
  */
-public class HttpServer implements Server{
+public class HttpServer implements IHServer{
     private int port = 0;
     private String docRoot = null;
     private boolean isListening = false;
     private IONetwork network;
+    private IHRouter router;
 
     HttpServer(int port, String docRoot) throws IOException {
         this.port = port;
         this.docRoot = docRoot;
         this.network = new HttpNetwork(port);
+        this.router = new HttpRouter(this.docRoot);
     }
 
     HttpServer(IONetwork network, String docRoot) {
@@ -41,7 +43,7 @@ public class HttpServer implements Server{
         }
         ExecutorService consumerPool = Executors.newFixedThreadPool(poolSize);
         for (int z = 0; z < poolSize; z++) {
-            consumerPool.submit(new Thread(new HttpConsumer(docRoot, sharedQueue)));
+            consumerPool.submit(new Thread(new HttpConsumer(this.router, sharedQueue)));
         }
     }
 

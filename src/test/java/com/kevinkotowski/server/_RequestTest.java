@@ -13,7 +13,7 @@ public class _RequestTest {
         String requestLine = "GET /test/mock/path HTTP/1.1";
         HttpRequest request = new HttpRequest();
         request.handleRequestLine(requestLine);
-        assertEquals("GET", request.getMethod());
+        assertEquals(HttpMethod.GET, request.getMethod());
         assertEquals("/test/mock/path", request.getPath());
     }
 
@@ -32,5 +32,14 @@ public class _RequestTest {
         request.handleRequestLine(requestLine);
         assertEquals("200", request.getResponseCode());
         assertTrue( request.getResponseReason().contains("OK") );
+    }
+
+    @Test
+    public void handleErrorBadMethod405() throws Exception {
+        IHRouter router = new HttpRouter("/mock/file/path");
+        IHHandler handler = new HttpHandler(router);
+        IORequest request = new HttpRequest();
+        request.handleRequestLine("BOO file/not/found.html HTTP/1.1");
+        assertEquals("405", request.getResponseCode());
     }
 }

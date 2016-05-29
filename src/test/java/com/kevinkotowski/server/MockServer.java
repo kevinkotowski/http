@@ -3,7 +3,7 @@ package com.kevinkotowski.server;
 /**
  * Created by kevinkotowski on 5/12/16.
  */
-public class MockServer implements Server {
+public class MockServer implements IHServer {
     String status;
 
     public MockServer() {
