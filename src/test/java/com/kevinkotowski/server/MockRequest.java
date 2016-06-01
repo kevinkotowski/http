@@ -66,6 +66,10 @@ public class MockRequest implements IORequest{
         return this.path;
     }
 
+    public String getFullPath() {
+        return this.docRoot + "/" + this.path;
+    }
+
     public void addHeader(String header) {
 //        this.headers.a
     }

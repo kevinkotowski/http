@@ -31,35 +31,15 @@ public class HttpRouter implements IHRouter {
     }
 
     public IOResponse route(IORequest request) throws IOException {
-        HttpMethod method = request.getMethod();
         request.setDocRoot(this.docRoot);
 
-        IHController controller = null;
-        int index = 0;
-        int routesLength = this.routes.size();
+        IHController controller = resolveController(request);
+        IOResponse response = controller.execute(request);
 
-        this.logAccess(method, request.getPath());
+        // this is an appropriate header for all errors and methods
+        response.addHeader("Allow: " +
+                this.getOptions( request.getPath() ));
 
-        while (controller == null && index < routesLength) {
-            controller = this.routes.get(index).getController(
-                    request.getPath(), method);
-            index++;
-        }
-
-        IOResponse response = null;
-        if (controller != null) {
-            response = controller.execute(request);
-        } else {
-            HttpHandler handler = new HttpHandler(this);
-            response = handler.handle(request);
-        }
-
-        if (method == HttpMethod.OPTIONS) {
-            response = HttpResponseFactory.create(request);
-            response.setBody( "OK" );
-            response.addHeader("Allow: " +
-                    this.getOptions( request.getPath() ));
-        }
         return response;
     }
 
@@ -67,11 +47,15 @@ public class HttpRouter implements IHRouter {
         String options = "OPTIONS";
 
         for (IHRoute route : this.routes) {
+            HttpMethod method = route.getMethod();
             if (route.getPath().equals(path)) {
-                options += "," + route.getMethod().name();
+                options += "," + method.name();
+                if (method == HttpMethod.GET) {
+                    options += ",HEAD";
+                }
             }
         }
-        System.out.println("...router.getOptions options: " + options);
+//        System.out.println("...router.getOptions options: " + options);
         return options;
     }
 
@@ -87,20 +71,65 @@ public class HttpRouter implements IHRouter {
         return response;
     }
 
-    private void logAccess(HttpMethod method, String path)
-            throws IOException {
-        String log = method + " " + path + " HTTP/1.1 (kk)";
-        File logs = new File(this.docRoot + "/logs");
-        if (!logs.exists()) {
-//            System.out.println("...handler.persistFile creating new file");
-            logs.createNewFile();
+    private IHController resolveController(IORequest request) {
+        HttpMethod method = request.getMethod();
+        IHController controller = null;
+        int index = 0;
+        int routesLength = this.routes.size();
+
+        this.logAccess(method, request.getPath());
+
+        if (method == null) {
+            // handle invalid method names
+            controller = new HttpController405();
+        } else {
+            // handle methods that aren't explicitly routed
+            switch (method) {
+                case OPTIONS:
+                    controller = new HttpControllerOPTIONS();
+                    break;
+                case HEAD:
+                    controller = new HttpControllerHEAD();
+                    break;
+            }
         }
 
-        if (logs.canWrite()) {
-            FileWriter fw = new FileWriter(logs.getAbsoluteFile());
-            BufferedWriter bw = new BufferedWriter(fw);
-            bw.write(log);
-            bw.close();
+        // handle methods with explicit routing defined
+        while (controller == null && index < routesLength) {
+            controller = this.routes.get(index).getController(
+                    request.getPath(), method);
+            index++;
+        }
+
+        // handle GET requests that don't match explicit routes to ensure 404
+        if (controller == null && method == HttpMethod.GET) {
+            controller = new HttpControllerGET();
+        }
+
+        // all remaining cases are invalid methods
+        if (controller == null) {
+            controller = new HttpController405();
+        }
+
+        return controller;
+    }
+
+    private void logAccess(HttpMethod method, String path) {
+        String log = method + " " + path + " HTTP/1.1 (kk)\n";
+        try {
+            File logs = new File(this.docRoot + "/logs");
+            if (!logs.exists()) {
+                logs.createNewFile();
+            }
+
+            if (logs.canWrite()) {
+                FileWriter fw = new FileWriter(logs.getAbsoluteFile(), true);
+                BufferedWriter bw = new BufferedWriter(fw);
+                bw.write(log);
+                bw.close();
+            }
+        } catch (IOException e) {
+            System.out.println("Error writing to log access file.");
         }
     }
 }

@@ -33,13 +33,4 @@ public class _RequestTest {
         assertEquals("200", request.getResponseCode());
         assertTrue( request.getResponseReason().contains("OK") );
     }
-
-    @Test
-    public void handleErrorBadMethod405() throws Exception {
-        IHRouter router = new HttpRouter("/mock/file/path");
-        IHHandler handler = new HttpHandler(router);
-        IORequest request = new HttpRequest();
-        request.handleRequestLine("BOO file/not/found.html HTTP/1.1");
-        assertEquals("405", request.getResponseCode());
-    }
 }

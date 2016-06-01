@@ -13,6 +13,7 @@ public interface IORequest {
     public void setDocRoot(String docRoot);
     public String getDocRoot();
     public String getPath();
+    public String getFullPath();
     public void addHeader(String header);
     public void addContent(String content);
     public int getContentLength();

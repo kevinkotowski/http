@@ -146,6 +146,21 @@ public class HttpRequest implements IORequest {
         return this.path;
     }
 
+    public String getFullPath() {
+        String fullPath;
+        if ( this.path.substring(0, 1).equals("/") ) {
+            fullPath = docRoot + path;
+        } else {
+            fullPath = docRoot + "/" + path;
+        }
+
+        int fileIndex = fullPath.indexOf("?");
+        fullPath = (fileIndex > 0) ?
+                fullPath.substring(0, fileIndex) : fullPath;
+
+        return fullPath;
+    }
+
     public void setParms(String path) throws UnsupportedEncodingException {
         String queryString = null;
 //        path = URLDecoder.decode(path);
@@ -242,8 +257,8 @@ public class HttpRequest implements IORequest {
             String decoded = new String(decodedBytes, "UTF-8");
             String[] auth = decoded.split(":");
 
-            System.out.println("...request.handleAuthorization decoded user: " + auth[0]);
-            System.out.println("...request.handleAuthorization decoded pass: " + auth[1]);
+//            System.out.println("...request.handleAuthorization decoded user: " + auth[0]);
+//            System.out.println("...request.handleAuthorization decoded pass: " + auth[1]);
 
             this.isAuthorized = ( (auth[0].equals("admin")) && (auth[1].equals("hunter2")) );
         }

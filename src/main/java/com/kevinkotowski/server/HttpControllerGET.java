@@ -17,9 +17,8 @@ public class HttpControllerGET implements IHController {
         String path;
         int ch;
 
-        File file = this.getFile(request.getDocRoot(), request.getPath());
-        path = file.getAbsolutePath();
-//        System.out.println(request.getMethod() + " " + path);
+        path = request.getFullPath();
+        File file = new File(path);
 
         StringBuilder stringBuilder = new StringBuilder();
         try {
@@ -31,7 +30,8 @@ public class HttpControllerGET implements IHController {
                 for (final File subFile : file.listFiles()) {
                     if (subFile.isDirectory()) {
                         response.setBody("Another directory.");
-//                        listFilesForFolder(fileEntry);
+                        // TODO? no req for subdirectory support
+//                        this.listFilesForFolder(fileEntry);
                     } else {
                         fileList += this.formatFileLink(subFile.getName());
                     }
@@ -45,11 +45,12 @@ public class HttpControllerGET implements IHController {
                         byte[] imageBytes = Files.readAllBytes(Paths.get(path));
                         response.setImage(imageBytes, imageType);
                     } catch (IOException e) {
-                        System.out.println("...handler.handleGET " +
+                        System.out.println("...HttpControllerGET " +
                                 file.getName() + "File is pretending to be " +
                                 "an image: " + file.getName() + "\n");
                     }
                 } else {
+                    // TODO: This is cob_spec specific
                     String body = "";
                     if (path.contains("parameters")) {
                         String[][] parms = request.getParms();
@@ -69,35 +70,8 @@ public class HttpControllerGET implements IHController {
                 }
             }
         } catch (IOException e) {
-            if (request.getPath().equals("/redirect")) {
-                response.setResponseCode("302");
-                response.setResponseReason("Redirect (kk)");
-                response.addHeader("Location: http://localhost:5000/");
-            } else if (request.getPath().equals("/logs")) {
-                if (request.isAuthorized()) {
-                    response.setResponseCode("200");
-                    response.setResponseReason("Authorized (kk)");
-                    response.setBody("GET /log HTTP/1.1\n" +
-                            "PUT /these HTTP/1.1\n" +
-                            "HEAD /requests HTTP/1.1\n"
-                    );
-                } else {
-                    response.setResponseCode("401");
-                    response.setResponseReason("Unauthorized (kk)");
-                    response.addHeader("WWW-Authenticate: Basic realm=\"WallyWorld\"");
-                }
-            } else if (request.getPath().equals("/form")) {
-                response.setResponseCode("200");
-                response.setResponseReason("OK (kk)");
-//            } else if (request.getPath().equals("/coffee")) {
-//                response = this.handle418(request, response);
-            } else if (request.getPath().equals("/tea")) {
-                response.setResponseCode("200");
-                response.setResponseReason("Tip me over! (kk)");
-            } else {
-                response.setResponseCode("404");
-                response.setResponseReason("File not found (kk)");
-            }
+            response.setResponseCode("404");
+            response.setResponseReason("File not found (kk)");
         }
         return response;
     }
@@ -116,18 +90,6 @@ public class HttpControllerGET implements IHController {
             imageType = null;
         }
         return imageType;
-    }
-
-    private File getFile(String docRoot, String path) {
-        if (path.substring(0, 1).equals("/")) {
-            path = docRoot + path;
-        } else {
-            path = docRoot + "/" + path;
-        }
-
-        int fileIndex = path.indexOf("?");
-        path = (fileIndex > 0) ? path.substring(0, fileIndex) : path;
-        return new File(path);
     }
 
     private String formatParms(String[][] parms) {

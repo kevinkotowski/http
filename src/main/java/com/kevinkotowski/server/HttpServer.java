@@ -63,6 +63,34 @@ public class HttpServer implements IHServer{
 
     public void setRoutes() {
         this.router.registerRoute(new HttpRoute(
+                "/",
+                HttpMethod.GET, new HttpControllerGET() ) );
+
+        this.router.registerRoute(new HttpRoute(
+                "/coffee",
+                HttpMethod.GET, new HttpController418() ) );
+
+        this.router.registerRoute(new HttpRoute(
+                "/file1",
+                HttpMethod.GET, new HttpControllerGET() ) );
+
+        this.router.registerRoute(new HttpRoute(
+                "/form",
+                HttpMethod.POST, new HttpControllerPOST() ) );
+
+        this.router.registerRoute(new HttpRoute(
+                "/form",
+                HttpMethod.PUT, new HttpControllerPUT() ) );
+
+        this.router.registerRoute(new HttpRoute(
+                "/form",
+                HttpMethod.DELETE, new HttpControllerDELETE() ) );
+
+        this.router.registerRoute(new HttpRoute(
+                "/logs",
+                HttpMethod.GET, new HttpControllerAUTH() ) );
+
+        this.router.registerRoute(new HttpRoute(
                 "/method_options",
                 HttpMethod.GET, new HttpControllerGET() ) );
         this.router.registerRoute(new HttpRoute(
@@ -71,16 +99,25 @@ public class HttpServer implements IHServer{
         this.router.registerRoute(new HttpRoute(
                 "/method_options",
                 HttpMethod.POST, new HttpControllerPOST() ) );
-        this.router.registerRoute(new HttpRoute(
-                "/method_options",
-                HttpMethod.HEAD, new HttpControllerHEAD() ) );
 
         this.router.registerRoute(new HttpRoute(
                 "/method_options2",
                 HttpMethod.GET, new HttpControllerGET() ) );
 
         this.router.registerRoute(new HttpRoute(
-                "/coffee",
+                "/patch-content.txt",
+                HttpMethod.PATCH, new HttpControllerPATCH() ) );
+
+        this.router.registerRoute(new HttpRoute(
+                "/redirect",
+                HttpMethod.GET, new HttpControllerREDIRECT() ) );
+
+        this.router.registerRoute(new HttpRoute(
+                "/tea",
                 HttpMethod.GET, new HttpController418() ) );
+
+        this.router.registerRoute(new HttpRoute(
+                "/text-file.txt",
+                HttpMethod.GET, new HttpControllerGET() ) );
     }
 }

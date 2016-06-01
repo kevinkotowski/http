@@ -30,16 +30,7 @@ public class HttpConsumer implements Runnable {
                 e.printStackTrace();
             }
             try {
-//                if (
-//                        (request.getMethod() == HttpMethod.OPTIONS) ||
-//                        (request.getMethod() == HttpMethod.OPTIONS)
-//                ) {
-                    response = router.route(request);
-//                } else {
-//                    HttpHandler handler = new HttpHandler(this.router);
-//                    response = handler.handle(request);
-//                }
-
+                response = router.route(request);
                 response.run();
             } catch (IOException e) {
                 e.printStackTrace();
