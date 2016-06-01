@@ -68,13 +68,13 @@ public class HttpHandler implements IHHandler {
         return response;
     }
 
-    private IOResponse handle418(IORequest request, IOResponse response) {
-        response.setResponseCode("418");
-        response.setResponseReason("I'm a teapot");
-        response.setBody("<html>\n    <p>I'm a teapot.</p>\n" +
-                "    <p>I am short and stout</p>\n</html>");
-        return response;
-    }
+//    private IOResponse handle418(IORequest request, IOResponse response) {
+//        response.setResponseCode("418");
+//        response.setResponseReason("I'm a teapot");
+//        response.setBody("<html>\n    <p>I'm a teapot.</p>\n" +
+//                "    <p>I am short and stout</p>\n</html>");
+//        return response;
+//    }
 
     private IOResponse handleDELETE(IORequest request, IOResponse response) throws IOException {
         String path = request.getPath();
@@ -90,91 +90,91 @@ public class HttpHandler implements IHHandler {
     }
 
     private IOResponse handleGET(IORequest request, IOResponse response) throws IOException {
-        String path;
-        int ch;
-
-        File file = this.getFile(request.getPath());
-        path = file.getAbsolutePath();
-//        System.out.println(request.getMethod() + " " + path);
-
-        StringBuilder stringBuilder = new StringBuilder();
-        try {
-            response.setResponseCode( request.getResponseCode() );
-            response.setResponseReason( request.getResponseReason() );
-            String fileList = new String();
-
-            if (file.isDirectory()) {
-                for (final File subFile : file.listFiles()) {
-                    if (subFile.isDirectory()) {
-                        response.setBody( "Another directory." );
-//                        listFilesForFolder(fileEntry);
-                    } else {
-                        fileList += this.formatFileLink( subFile.getName() );
-                    }
-                }
-                response.setBody( htmlBodyWrapperBefore() + fileList +
-                        htmlBodyWrapperAfter() );
-            } else {
-                String imageType = this.imageType(file);
-                if (imageType != null) {
-                    try {
-                        byte[] imageBytes = Files.readAllBytes(Paths.get(path ));
-                        response.setImage(imageBytes, imageType);
-                    } catch (IOException e) {
-                        System.out.println("...handler.handleGET " +
-                                file.getName() + "File is pretending to be " +
-                                "an image: " + file.getName() + "\n");
-                    }
-                } else {
-                    String body = "";
-                    if (path.contains("parameters")) {
-                        String[][] parms = request.getParms();
-                        body += this.formatParms(parms);
-                    } else {
-                        FileInputStream fileStream = new FileInputStream(path);
-                        int rangeCounter = 0;
-                        while((ch = fileStream.read()) != -1){
-                            if (request.inRange(rangeCounter)) {
-                                stringBuilder.append((char)ch);
-                            }
-                            rangeCounter += 1;
-                        }
-                        body += request.trimToRange(stringBuilder.toString());
-                    }
-                    response.setBody( body );
-                }
-            }
-        } catch (IOException e) {
-            if (request.getPath().equals("/redirect")) {
-                response.setResponseCode("302");
-                response.setResponseReason("Redirect (kk)");
-                response.addHeader("Location: http://localhost:5000/");
-            } else if ( request.getPath().equals("/logs") ) {
-                if (request.isAuthorized()) {
-                    response.setResponseCode("200");
-                    response.setResponseReason("Authorized (kk)");
-                    response.setBody("GET /log HTTP/1.1\n" +
-                            "PUT /these HTTP/1.1\n" +
-                            "HEAD /requests HTTP/1.1\n"
-                    );
-                } else {
-                    response.setResponseCode("401");
-                    response.setResponseReason("Unauthorized (kk)");
-                    response.addHeader("WWW-Authenticate: Basic realm=\"WallyWorld\"");
-                }
-            } else if ( request.getPath().equals("/form") ) {
-                response.setResponseCode("200");
-                response.setResponseReason("OK (kk)");
-            } else if (request.getPath().equals("/coffee")) {
-                response = this.handle418(request, response);
-            } else if ( request.getPath().equals("/tea") ) {
-                response.setResponseCode("200");
-                response.setResponseReason("Tip me over! (kk)");
-            } else {
-                response.setResponseCode("404");
-                response.setResponseReason("File not found (kk)");
-            }
-        }
+//        String path;
+//        int ch;
+//
+//        File file = this.getFile(request.getPath());
+//        path = file.getAbsolutePath();
+////        System.out.println(request.getMethod() + " " + path);
+//
+//        StringBuilder stringBuilder = new StringBuilder();
+//        try {
+//            response.setResponseCode( request.getResponseCode() );
+//            response.setResponseReason( request.getResponseReason() );
+//            String fileList = new String();
+//
+//            if (file.isDirectory()) {
+//                for (final File subFile : file.listFiles()) {
+//                    if (subFile.isDirectory()) {
+//                        response.setBody( "Another directory." );
+////                        listFilesForFolder(fileEntry);
+//                    } else {
+//                        fileList += this.formatFileLink( subFile.getName() );
+//                    }
+//                }
+//                response.setBody( htmlBodyWrapperBefore() + fileList +
+//                        htmlBodyWrapperAfter() );
+//            } else {
+//                String imageType = this.imageType(file);
+//                if (imageType != null) {
+//                    try {
+//                        byte[] imageBytes = Files.readAllBytes(Paths.get(path ));
+//                        response.setImage(imageBytes, imageType);
+//                    } catch (IOException e) {
+//                        System.out.println("...handler.handleGET " +
+//                                file.getName() + "File is pretending to be " +
+//                                "an image: " + file.getName() + "\n");
+//                    }
+//                } else {
+//                    String body = "";
+//                    if (path.contains("parameters")) {
+//                        String[][] parms = request.getParms();
+//                        body += this.formatParms(parms);
+//                    } else {
+//                        FileInputStream fileStream = new FileInputStream(path);
+//                        int rangeCounter = 0;
+//                        while((ch = fileStream.read()) != -1){
+//                            if (request.inRange(rangeCounter)) {
+//                                stringBuilder.append((char)ch);
+//                            }
+//                            rangeCounter += 1;
+//                        }
+//                        body += request.trimToRange(stringBuilder.toString());
+//                    }
+//                    response.setBody( body );
+//                }
+//            }
+//        } catch (IOException e) {
+//            if (request.getPath().equals("/redirect")) {
+//                response.setResponseCode("302");
+//                response.setResponseReason("Redirect (kk)");
+//                response.addHeader("Location: http://localhost:5000/");
+//            } else if ( request.getPath().equals("/logs") ) {
+//                if (request.isAuthorized()) {
+//                    response.setResponseCode("200");
+//                    response.setResponseReason("Authorized (kk)");
+//                    response.setBody("GET /log HTTP/1.1\n" +
+//                            "PUT /these HTTP/1.1\n" +
+//                            "HEAD /requests HTTP/1.1\n"
+//                    );
+//                } else {
+//                    response.setResponseCode("401");
+//                    response.setResponseReason("Unauthorized (kk)");
+//                    response.addHeader("WWW-Authenticate: Basic realm=\"WallyWorld\"");
+//                }
+//            } else if ( request.getPath().equals("/form") ) {
+//                response.setResponseCode("200");
+//                response.setResponseReason("OK (kk)");
+//            } else if (request.getPath().equals("/coffee")) {
+//                response = this.handle418(request, response);
+//            } else if ( request.getPath().equals("/tea") ) {
+//                response.setResponseCode("200");
+//                response.setResponseReason("Tip me over! (kk)");
+//            } else {
+//                response.setResponseCode("404");
+//                response.setResponseReason("File not found (kk)");
+//            }
+//        }
         return response;
     }
 
@@ -257,7 +257,7 @@ public class HttpHandler implements IHHandler {
         File file = this.getFile(path);
 
         if (file.exists()) {
-            System.out.println("...handler.deleteFile deleting file: " + path);
+//            System.out.println("...handler.deleteFile deleting file: " + path);
             file.delete();
         }
     }
@@ -266,7 +266,7 @@ public class HttpHandler implements IHHandler {
         File file = this.getFile(path);
 
         if (!file.exists()) {
-            System.out.println("...handler.persistFile creating new file");
+//            System.out.println("...handler.persistFile creating new file");
             file.createNewFile();
         }
 
@@ -277,50 +277,50 @@ public class HttpHandler implements IHHandler {
             bw.write(content);
             bw.close();
         } else {
-            System.out.println("...handler.persistFile can't write to file!");
+//            System.out.println("...handler.persistFile can't write to file!");
         }
     }
 
-    private String imageType(File file) {
-        String imageType;
+//    private String imageType(File file) {
+//        String imageType;
+//
+//        String mimeType = new MimetypesFileTypeMap().getContentType(file);
+//        String type = mimeType.split("/")[0].toLowerCase();
+//        if ( mimeType.equals("application/octet-stream") &&
+//                file.getName().matches(".+\\.png")) {
+//            imageType = "png";
+//        } else if ( type.equals("image") ) {
+//            imageType = mimeType.split("/")[1].toLowerCase();
+//        } else {
+//            imageType = null;
+//        }
+//        return imageType;
+//    }
 
-        String mimeType = new MimetypesFileTypeMap().getContentType(file);
-        String type = mimeType.split("/")[0].toLowerCase();
-        if ( mimeType.equals("application/octet-stream") &&
-                file.getName().matches(".+\\.png")) {
-            imageType = "png";
-        } else if ( type.equals("image") ) {
-            imageType = mimeType.split("/")[1].toLowerCase();
-        } else {
-            imageType = null;
-        }
-        return imageType;
-    }
+//    private String formatFileLink(String fileName) {
+//        return "\n<a href=\"/" + fileName + "\">" + fileName + "</a><br/>";
+//    }
 
-    private String formatFileLink(String fileName) {
-        return "\n<a href=\"/" + fileName + "\">" + fileName + "</a><br/>";
-    }
+//    private String formatParms(String[][] parms) {
+//        String response = "";
+//        for (int x = 0; x < parms.length; x++) {
+//            response += "\n<p>";
+//            response += parms[x][0];
+//            if (parms[x][1] != null)  {
+//                response += " = " + parms[x][1];
+//            }
+//            response += "</p>";
+//        }
+//        return response;
+//    }
 
-    private String formatParms(String[][] parms) {
-        String response = "";
-        for (int x = 0; x < parms.length; x++) {
-            response += "\n<p>";
-            response += parms[x][0];
-            if (parms[x][1] != null)  {
-                response += " = " + parms[x][1];
-            }
-            response += "</p>";
-        }
-        return response;
-    }
-
-    private String htmlBodyWrapperBefore() {
-        String html;
-        html = "<html>\n    <header></header>\n    <body>\n";
-        return html;
-    }
-
-    private String htmlBodyWrapperAfter() {
-        return "\n    </body>\n</html>";
-    }
+//    private String htmlBodyWrapperBefore() {
+//        String html;
+//        html = "<html>\n    <header></header>\n    <body>\n";
+//        return html;
+//    }
+//
+//    private String htmlBodyWrapperAfter() {
+//        return "\n    </body>\n</html>";
+//    }
 }

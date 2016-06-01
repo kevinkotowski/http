@@ -21,6 +21,7 @@ public class HttpConsumer implements Runnable {
     public void run() {
 //        System.out.println("...listen new HttpTask");
         IORequest request = null;
+        IOResponse response = null;
 
         while(true) {
             try {
@@ -28,9 +29,17 @@ public class HttpConsumer implements Runnable {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            HttpHandler handler = new HttpHandler(this.router);
             try {
-                IOResponse response = handler.handle(request);
+//                if (
+//                        (request.getMethod() == HttpMethod.OPTIONS) ||
+//                        (request.getMethod() == HttpMethod.OPTIONS)
+//                ) {
+                    response = router.route(request);
+//                } else {
+//                    HttpHandler handler = new HttpHandler(this.router);
+//                    response = handler.handle(request);
+//                }
+
                 response.run();
             } catch (IOException e) {
                 e.printStackTrace();

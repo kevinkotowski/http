@@ -3,18 +3,19 @@ package com.kevinkotowski.server;
 import java.io.IOException;
 
 /**
- * Created by kevinkotowski on 5/28/16.
+ * Created by kevinkotowski on 5/31/16.
  */
-public interface IHController {
-    public IOResponse execute(IORequest request) throws IOException;
-
-    default IOResponse setupResponse(IORequest request) throws IOException {
+public class HttpResponseFactory {
+    static IOResponse create(IORequest request) {
         IOResponse response = new HttpResponse();
-        response.setSocket( request.getSocket() );
+        try {
+            response.setSocket( request.getSocket() );
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         response.setResponseCode( request.getResponseCode() );
         response.setResponseReason( request.getResponseReason() );
-
         return response;
     }
 }

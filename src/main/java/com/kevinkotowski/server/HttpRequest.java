@@ -16,6 +16,7 @@ public class HttpRequest implements IORequest {
     private IOSocket socket = null;
     private HttpMethod method = null;
     private String path = null;
+    private String docRoot = null;
     private List<String> headers = new ArrayList(0);
     private List<String> content = new ArrayList(0);
     private String responseCode = null;
@@ -93,7 +94,7 @@ public class HttpRequest implements IORequest {
                 this.responseCode = "200";
                 this.responseReason = "OK (kk)";
             } catch(IllegalArgumentException e) {
-                System.out.println("Illegal method: " + tokens[0]);
+                System.out.println(tokens[0] + " Invalid Method 405");
                 this.responseCode = "405";
                 this.responseReason = "Invalid Method (kk)";
             }
@@ -127,6 +128,14 @@ public class HttpRequest implements IORequest {
 
     public HttpMethod getMethod() {
         return this.method;
+    }
+
+    public void setDocRoot(String docRoot) {
+        this.docRoot = docRoot;
+    }
+
+    public String getDocRoot() {
+        return this.docRoot;
     }
 
     private void setPath(String path) {

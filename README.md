@@ -30,21 +30,21 @@ Application class responsibilities:
     * uses Router to route Requests to Controllers
 
 * Router
-    * routes are defined and associated to Controllers
-    * accepts Controller registrations
+    * all Routes are defined and associated to Controllers
+    * accepts Route registrations by path
     * returns Options list for a given path
 
 * Controller
-    * accepts Resolver registrations
+    <!--* accepts Resolver registrations-->
     * executes Model operations as per Resolver
     * executes View operations as per Resolver
 
-* Resolver
-    * interrogates Request to determine Model and View operations needed
-    * examples:
-        * if PUT and etag match and content, then persist to file Model
-        * if GET and file type is image, read from image Model
-        * if GET and file type is directory, format directory list View
+<!--* Resolver-->
+    <!--* interrogates Request to determine Model and View operations needed-->
+    <!--* examples:-->
+        <!--* if PUT and etag match and content, then persist to file Model-->
+        <!--* if GET and file type is image, read from image Model-->
+        <!--* if GET and file type is directory, format directory list View-->
 
 * Model
     * each class will execute a specific IO operation

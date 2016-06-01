@@ -4,6 +4,7 @@ package com.kevinkotowski.server;
  * Created by kevinkotowski on 5/28/16.
  */
 public class HttpRoute implements IHRoute {
+    String docRoot;
     String path;
     HttpMethod method;
     IHController controller;

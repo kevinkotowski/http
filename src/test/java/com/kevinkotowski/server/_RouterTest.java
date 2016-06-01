@@ -9,6 +9,13 @@ import static org.junit.Assert.*;
  */
 public class _RouterTest {
     @Test
+    public void routerInit() throws Exception {
+        String docRoot = "/home/mock";
+        IHRouter router = new HttpRouter(docRoot);
+        assertEquals(router.getDocRoot(), docRoot);
+    }
+
+    @Test
     public void routerLifecycle() throws Exception {
         String docRoot = "/home/mock";
         String path = "/mock/path";
@@ -35,9 +42,24 @@ public class _RouterTest {
         IORequest requestBAD = new MockRequest(socket);
         requestBAD.handleRequestLine("DELETE /mock/path HTTP/1.1");
 
-        assertEquals(controllerGET, router.route(requestGET) );
-        assertEquals(controllerPOST, router.route(requestPOST) );
-        assertNotEquals(controllerBAD, router.route(requestBAD) );
+
+        assertNotNull( null, router.route(requestGET) );
+        assertNotNull( null, router.route(requestPOST) );
+        assertNull( null, router.route(requestBAD) );
+    }
+
+    @Test(expected = IllegalStateException.class)
+    public void duplicateRoute() throws Exception {
+        String docRoot = "/home/mock";
+        String path = "/mock/path";
+
+        IHController controllerGET = new MockController();
+        IHRouter router = new HttpRouter(docRoot);
+        IHRoute routeGET = new HttpRoute(path, HttpMethod.GET,
+                controllerGET);
+        router.registerRoute(routeGET);
+        // registering the same route 2x not valid state, so this throws error
+        router.registerRoute(routeGET);
     }
 
     @Test
@@ -60,5 +82,4 @@ public class _RouterTest {
 
         assertEquals("GET, POST", router.getOptions(path));
     }
-
 }

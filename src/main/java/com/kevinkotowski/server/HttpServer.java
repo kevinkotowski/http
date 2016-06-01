@@ -21,12 +21,13 @@ public class HttpServer implements IHServer{
         this.docRoot = docRoot;
         this.network = new HttpNetwork(port);
         this.router = new HttpRouter(this.docRoot);
+        this.setRoutes();
     }
 
-    HttpServer(IONetwork network, String docRoot) {
-        this.docRoot = docRoot;
-        this.network = network;
-    }
+//    HttpServer(IONetwork network, String docRoot) {
+//        this.docRoot = docRoot;
+//        this.network = network;
+//    }
 
     public void listen() throws IOException {
         int poolSize = 4;
@@ -43,7 +44,8 @@ public class HttpServer implements IHServer{
         }
         ExecutorService consumerPool = Executors.newFixedThreadPool(poolSize);
         for (int z = 0; z < poolSize; z++) {
-            consumerPool.submit(new Thread(new HttpConsumer(this.router, sharedQueue)));
+            consumerPool.submit(new Thread(new HttpConsumer(this.router,
+                    sharedQueue)));
         }
     }
 
@@ -57,5 +59,28 @@ public class HttpServer implements IHServer{
         message += " on port " + Integer.toString(this.port);
         message += " for dir " + (this.docRoot);
         return message;
+    }
+
+    public void setRoutes() {
+        this.router.registerRoute(new HttpRoute(
+                "/method_options",
+                HttpMethod.GET, new HttpControllerGET() ) );
+        this.router.registerRoute(new HttpRoute(
+                "/method_options",
+                HttpMethod.PUT, new HttpControllerPUT() ) );
+        this.router.registerRoute(new HttpRoute(
+                "/method_options",
+                HttpMethod.POST, new HttpControllerPOST() ) );
+        this.router.registerRoute(new HttpRoute(
+                "/method_options",
+                HttpMethod.HEAD, new HttpControllerHEAD() ) );
+
+        this.router.registerRoute(new HttpRoute(
+                "/method_options2",
+                HttpMethod.GET, new HttpControllerGET() ) );
+
+        this.router.registerRoute(new HttpRoute(
+                "/coffee",
+                HttpMethod.GET, new HttpController418() ) );
     }
 }

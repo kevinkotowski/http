@@ -10,6 +10,8 @@ import java.net.Socket;
 public interface IORequest {
     public void handleRequestLine(String requestLine) throws UnsupportedEncodingException;
     public HttpMethod getMethod();
+    public void setDocRoot(String docRoot);
+    public String getDocRoot();
     public String getPath();
     public void addHeader(String header);
     public void addContent(String content);

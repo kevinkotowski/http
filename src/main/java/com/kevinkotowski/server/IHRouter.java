@@ -1,5 +1,6 @@
 package com.kevinkotowski.server;
 
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -9,5 +10,5 @@ public interface IHRouter {
     public String getDocRoot();
     public void registerRoute(IHRoute route);
     public String getOptions(String path);
-    public IHController route(IORequest request);
+    public IOResponse route(IORequest request) throws IOException;
 }

@@ -10,6 +10,7 @@ public class MockRequest implements IORequest{
     private IOSocket socket = null;
     private HttpMethod method = null;
     private String path = null;
+    private String docRoot = null;
     private String[] headers = null;
     private String responseCode = null;
     private String responseReason = null;
@@ -47,6 +48,14 @@ public class MockRequest implements IORequest{
 
     public HttpMethod getMethod() {
         return this.method;
+    }
+
+    public void setDocRoot(String docRoot) {
+        this.docRoot = docRoot;
+    }
+
+    public String getDocRoot() {
+        return this.docRoot;
     }
 
     public void setPath(String path) {
