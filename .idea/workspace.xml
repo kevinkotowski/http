@@ -7,29 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4f96e1eb-65be-488a-a524-f2f879f891e9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpController404.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpController405.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpControllerAUTH.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpControllerDELETE.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpControllerOPTIONS.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpControllerPATCH.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpControllerREDIRECT.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpHandler.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_HandlerTest.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/http_jar.jar" afterPath="$PROJECT_DIR$/out/artifacts/http_jar.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpConsumer.java" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpConsumer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpController418.java" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpController418.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpControllerGET.java" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpControllerGET.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpControllerHEAD.java" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpControllerHEAD.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpControllerPOST.java" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpControllerPOST.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpControllerPUT.java" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpControllerPUT.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpRequest.java" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpRequest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpRouter.java" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpRouter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpServer.java" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpServer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IORequest.java" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IORequest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockRequest.java" afterPath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockRequest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_RequestTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_RequestTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_RouterTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_RouterTest.java" />
     </list>
     <ignored path="http.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -177,7 +155,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="HttpRequest.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="HttpRequest.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpRequest.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="270">
@@ -200,11 +178,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="_RouterTest.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="_RouterTest.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_RouterTest.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="427">
-                  <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+                <state relative-caret-position="540">
+                  <caret line="46" column="25" selection-start-line="46" selection-start-column="25" selection-end-line="46" selection-end-column="25" />
                   <folding />
                 </state>
               </provider>
@@ -261,7 +239,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IHController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpResponseFactory.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockController.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_RouterTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IHRoute.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpRoute.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpControllerHEAD.java" />
@@ -285,6 +262,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpServer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpControllerREDIRECT.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpControllerGET.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_RouterTest.java" />
       </list>
     </option>
   </component>
@@ -490,7 +468,7 @@
       <recent name="com.kevinkotowski.server" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.http">
+  <component name="RunManager" selected="JUnit.com.kevinkotowski.server in http">
     <configuration default="false" name="http" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -916,8 +894,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.http" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.com.kevinkotowski.server in http" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.com.kevinkotowski.server in http" />
+        <item index="1" class="java.lang.String" itemvalue="Application.http" />
         <item index="2" class="java.lang.String" itemvalue="JUnit._RouterTest" />
         <item index="3" class="java.lang.String" itemvalue="JUnit._RouterTest.routerInit" />
         <item index="4" class="java.lang.String" itemvalue="JUnit._RouterTest.duplicateRoute" />
@@ -946,27 +924,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="_RouterTest - 2016.05.31 at 10h 31m 22s.xml">
-      <configuration name="_RouterTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="_RouterTest_routerInit - 2016.05.31 at 10h 31m 16s.xml">
-      <configuration name="_RouterTest.routerInit" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="com_kevinkotowski_server_in_http - 2016.05.31 at 13h 34m 43s.xml">
-      <configuration name="com.kevinkotowski.server in http" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="com_kevinkotowski_server_in_http - 2016.05.31 at 13h 39m 09s.xml">
-      <configuration name="com.kevinkotowski.server in http" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="com_kevinkotowski_server_in_http - 2016.05.31 at 13h 40m 37s.xml">
-      <configuration name="com.kevinkotowski.server in http" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="com_kevinkotowski_server_in_http - 2016.05.31 at 13h 41m 31s.xml">
-      <configuration name="com.kevinkotowski.server in http" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="com_kevinkotowski_server_in_http - 2016.05.31 at 13h 43m 10s.xml">
-      <configuration name="com.kevinkotowski.server in http" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="com_kevinkotowski_server_in_http - 2016.05.31 at 14h 22m 08s.xml">
       <configuration name="com.kevinkotowski.server in http" configurationId="JUnit" />
     </history-entry>
@@ -976,10 +933,31 @@
     <history-entry file="com_kevinkotowski_server_in_http - 2016.05.31 at 14h 24m 11s.xml">
       <configuration name="com.kevinkotowski.server in http" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="com_kevinkotowski_server_in_http - 2016.06.01 at 18h 49m 09s.xml">
+      <configuration name="com.kevinkotowski.server in http" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="com_kevinkotowski_server_in_http - 2016.06.01 at 18h 50m 02s.xml">
+      <configuration name="com.kevinkotowski.server in http" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="com_kevinkotowski_server_in_http - 2016.06.01 at 18h 50m 25s.xml">
+      <configuration name="com.kevinkotowski.server in http" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="com_kevinkotowski_server_in_http - 2016.06.01 at 18h 50m 48s.xml">
+      <configuration name="com.kevinkotowski.server in http" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="com_kevinkotowski_server_in_http - 2016.06.01 at 18h 51m 42s.xml">
+      <configuration name="com.kevinkotowski.server in http" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="com_kevinkotowski_server_in_http - 2016.06.01 at 18h 54m 05s.xml">
+      <configuration name="com.kevinkotowski.server in http" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="com_kevinkotowski_server_in_http - 2016.06.01 at 18h 54m 41s.xml">
+      <configuration name="com.kevinkotowski.server in http" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1676" height="1027" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -989,7 +967,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25347593" sideWeight="0.44124848" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985386" sideWeight="0.49761337" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25347593" sideWeight="0.5587515" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25347593" sideWeight="0.5587515" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27165776" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -999,7 +977,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27593583" sideWeight="0.46181384" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27593583" sideWeight="0.46181384" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1262,14 +1240,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_RouterTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IHController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -1507,6 +1477,14 @@
             <element signature="e#4398#4399#0" expanded="true" />
             <element signature="e#4430#4431#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_RouterTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="46" column="25" selection-start-line="46" selection-start-column="25" selection-end-line="46" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -22,7 +22,6 @@ public class _RouterTest {
 
         IHController controllerGET = new MockController();
         IHController controllerPOST = new MockController();
-        IHController controllerBAD = new MockController();
         IHRoute routeGET = new HttpRoute(path, HttpMethod.GET,
                 controllerGET);
         IHRoute routePOST = new HttpRoute(path, HttpMethod.POST,
@@ -40,12 +39,12 @@ public class _RouterTest {
         requestPOST.handleRequestLine("POST /mock/path HTTP/1.1");
 
         IORequest requestBAD = new MockRequest(socket);
-        requestBAD.handleRequestLine("DELETE /mock/path HTTP/1.1");
+        requestBAD.handleRequestLine("BOOGY /mock/path HTTP/1.1");
 
 
         assertNotNull( null, router.route(requestGET) );
         assertNotNull( null, router.route(requestPOST) );
-        assertNull( null, router.route(requestBAD) );
+        assertEquals( "405", router.route(requestBAD).getResponseCode() );
     }
 
     @Test(expected = IllegalStateException.class)
@@ -74,12 +73,12 @@ public class _RouterTest {
                 controller);
         router.registerRoute(routeGET);
 
-        assertEquals("GET", router.getOptions(path));
+        assertEquals("OPTIONS,GET,HEAD", router.getOptions(path));
 
         IHRoute routePOST = new HttpRoute(path, HttpMethod.POST,
                 controller);
         router.registerRoute(routePOST);
 
-        assertEquals("GET, POST", router.getOptions(path));
+        assertEquals("OPTIONS,GET,HEAD,POST", router.getOptions(path));
     }
 }
