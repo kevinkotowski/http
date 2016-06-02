@@ -75,14 +75,14 @@ public class MockRequest implements IORequest{
     }
 
     public int getContentLength() {
-        return 10;
+        return 0;
     }
 
     public void addContent(String content) { }
 
-    public boolean hasContent() { return true; }
+    public boolean hasContent() { return false; }
 
-    public String getContent() { return "boo"; }
+    public String getContent() { return null; }
 
     public String[] getHeaders() {
         return this.headers;
