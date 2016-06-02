@@ -13,6 +13,7 @@ public class HttpControllerAUTH extends HttpControllerGET {
         } else {
             response.setResponseCode("401");
             response.setResponseReason("Unauthorized (kk)");
+            // TODO: this is cob_spec specific
             response.addHeader("WWW-Authenticate: Basic realm=\"WallyWorld\"");
         }
         return response;

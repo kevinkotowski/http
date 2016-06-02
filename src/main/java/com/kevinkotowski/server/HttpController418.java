@@ -8,6 +8,7 @@ public class HttpController418 implements IHController {
         IOResponse response = HttpResponseFactory.create(request);
 
         switch (request.getPath()) {
+            // TODO this is cob_spec specific
             case "/tea":
                 response.setResponseCode("200");
                 response.setResponseReason("Tip me over! (kk)");

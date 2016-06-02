@@ -8,6 +8,7 @@ public class HttpControllerREDIRECT implements IHController {
         IOResponse response = HttpResponseFactory.create(request);
         response.setResponseCode("302");
         response.setResponseReason("Redirect (kk)");
+        // TODO: this is cob_spec specific
         response.addHeader("Location: http://localhost:5000/");
 
         return response;

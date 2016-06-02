@@ -260,6 +260,7 @@ public class HttpRequest implements IORequest {
 //            System.out.println("...request.handleAuthorization decoded user: " + auth[0]);
 //            System.out.println("...request.handleAuthorization decoded pass: " + auth[1]);
 
+            // TODO: this is cob_spec specific
             this.isAuthorized = ( (auth[0].equals("admin")) && (auth[1].equals("hunter2")) );
         }
     }

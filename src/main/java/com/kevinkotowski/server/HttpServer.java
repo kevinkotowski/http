@@ -61,6 +61,7 @@ public class HttpServer implements IHServer{
         return message;
     }
 
+    // TODO: these routes are specific to cob_spec
     public void setRoutes() {
         this.router.registerRoute(new HttpRoute(
                 "/",
