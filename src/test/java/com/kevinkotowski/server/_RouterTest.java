@@ -32,18 +32,20 @@ public class _RouterTest {
         router.registerRoute(routePOST);
 
         IOSocket socket = new MockSocket();
-        IORequest requestGET = new MockRequest(socket);
-        requestGET.handleRequestLine("GET /mock/path HTTP/1.1");
+        IORequest requestGET = new HttpRequest(socket);
+        requestGET.setMethod("GET");
+        requestGET.setPath("/mock/path/file.html");
 
-        IORequest requestPOST = new MockRequest(socket);
-        requestPOST.handleRequestLine("POST /mock/path HTTP/1.1");
+        IORequest requestPOST = new HttpRequest(socket);
+        requestPOST.setMethod("GET");
+        requestPOST.setPath("/mock/path/file.html");
 
-        IORequest requestBAD = new MockRequest(socket);
-        requestBAD.handleRequestLine("BOOGY /mock/path HTTP/1.1");
+        IORequest requestBAD = new HttpRequest(socket);
+        requestBAD.setMethod("PUT");
+        requestBAD.setPath("/mock/path/file.html");
 
-
-        assertNotNull( null, router.route(requestGET) );
-        assertNotNull( null, router.route(requestPOST) );
+        assertNotNull( router.route(requestGET) instanceof IHController);
+        assertNotNull( router.route(requestPOST) instanceof IHController);
         assertEquals( "405", router.route(requestBAD).getResponseCode() );
     }
 

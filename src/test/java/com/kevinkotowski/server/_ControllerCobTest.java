@@ -9,13 +9,14 @@ import static org.junit.Assert.assertTrue;
  * Created by kevinkotowski on 6/2/16.
  */
 public class _ControllerCobTest {
-    MockSocket socket = new MockSocket();
-    MockRequest request;
+    IOSocket socket = new MockSocket();
+    IORequest request;
 
     @Before
     public void setupNewRequest() throws Exception {
-        this.request = new MockRequest(this.socket);
-        this.request.handleRequestLine("GET /mock HTTP/1.1");
+        this.request = new HttpRequest(this.socket);
+        this.request.setMethod("GET");
+        this.request.setPath("/mock");
     }
 
     @Test
@@ -26,6 +27,7 @@ public class _ControllerCobTest {
 
     @Test
     public void executeAUTH() throws Exception {
+        this.request.addHeader("Authorization: Basic YWRtaW46aHVudGVyMg==");
         IHController controller = new HttpControllerAUTH();
         assertTrue(controller.execute(this.request) instanceof IOResponse);
     }

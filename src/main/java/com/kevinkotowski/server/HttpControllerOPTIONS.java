@@ -7,7 +7,7 @@ import java.io.IOException;
  */
 public class HttpControllerOPTIONS implements IHController {
     public IOResponse execute(IORequest request) throws IOException {
-        IOResponse response = HttpResponseFactory.create(request);
+        IOResponse response = new HttpResponse(request.getSocket());
         response.setBody("OK");
         return response;
     }

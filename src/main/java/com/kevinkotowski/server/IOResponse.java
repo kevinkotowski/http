@@ -9,7 +9,7 @@ import java.util.List;
 public interface IOResponse {
     public void addHeader(String header);
     public List<String> getHeaders();
-    public void setSocket(IOSocket socket) throws IOException;
+//    public void setSocket(IOSocket socket) throws IOException;
     public void closeSocket() throws IOException;
     public void setBody(String body);
     public String getBody();

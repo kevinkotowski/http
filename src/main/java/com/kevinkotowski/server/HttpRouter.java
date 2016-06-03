@@ -129,7 +129,7 @@ public class HttpRouter implements IHRouter {
                 bw.close();
             }
         } catch (IOException e) {
-            System.out.println("Error writing to log access file.");
+            System.out.println("Error writing log access file: " + path);
         }
     }
 }

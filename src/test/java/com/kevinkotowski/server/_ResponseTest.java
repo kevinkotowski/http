@@ -12,14 +12,13 @@ public class _ResponseTest {
     @Test
     public void requestToResponseLifecycle() throws Exception {
         IOSocket socket = new MockSocket();
-        HttpRequest request = new HttpRequest();
-        HttpResponse response = new HttpResponse();
+        HttpRequest request = new HttpRequest(socket);
+        HttpResponse response = new HttpResponse(socket);
 
-        request.handleRequestLine("GET /mock/file/is/fake.html HTTP/1.1");
-        response.setSocket(socket);
+//        request.handleRequestLine("GET /mock/file/is/fake.html HTTP/1.1");
 
-        response.setResponseCode( request.getResponseCode() );
-        response.setResponseReason( request.getResponseReason() );
+//        response.setResponseCode( request.getResponseCode() );
+//        response.setResponseReason( request.getResponseReason() );
         response.setBody("<html><p>Fake file content</p></html>");
         assertTrue( response.getBody().contains("Fake") );
     }

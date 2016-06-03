@@ -10,27 +10,22 @@ import static org.junit.Assert.*;
 public class _RequestTest {
     @Test
     public void handleRequestLineAndGet() throws Exception {
-        String requestLine = "GET /test/mock/path HTTP/1.1";
-        HttpRequest request = new HttpRequest();
-        request.handleRequestLine(requestLine);
-        assertEquals(HttpMethod.GET, request.getMethod());
-        assertEquals("/test/mock/path", request.getPath());
+        String method = "GET";
+        String path = "/test/mock/path";
+        IOSocket socket = new MockSocket();
+        HttpRequest request = new HttpRequest(socket);
+
+        request.setMethod(method);
+        request.setPath(path);
+        assertEquals(HttpMethod.valueOf(method), request.getMethod());
+        assertEquals(path, request.getPath());
     }
 
     @Test
     public void setSocketAndGetIt() throws Exception {
         IOSocket socket = new MockSocket();
-        HttpRequest request = new HttpRequest();
+        HttpRequest request = new HttpRequest(socket);
         request.setSocket(socket);
         assertEquals( socket, request.getSocket() );
-    }
-
-    @Test
-    public void getResponseStatusDataFromRequestLine() throws Exception {
-        String requestLine = "GET /test/mock/path HTTP/1.1";
-        HttpRequest request = new HttpRequest();
-        request.handleRequestLine(requestLine);
-        assertEquals("200", request.getResponseCode());
-        assertTrue( request.getResponseReason().contains("OK") );
     }
 }

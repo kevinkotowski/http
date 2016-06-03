@@ -19,12 +19,17 @@ public class HttpResponse implements IOResponse {
     private boolean isImage;
     private PrintStream out;
 
-    public HttpResponse() { }
-
-    public void setSocket(IOSocket socket) throws IOException {
+    public HttpResponse(IOSocket socket) throws IOException {
         this.socket = socket;
         this.out = new PrintStream(socket.getOutputStream(), true);
+        this.setResponseCode("200");
+        this.setResponseReason("OK (kk)");
     }
+
+//    public void setSocket(IOSocket socket) throws IOException {
+//        this.socket = socket;
+//        this.out = new PrintStream(socket.getOutputStream(), true);
+//    }
 
     public void closeSocket() throws IOException {
         this.out.flush();

@@ -9,13 +9,14 @@ import static org.junit.Assert.*;
  * Created by kevinkotowski on 6/2/16.
  */
 public class _ControllerHttpTest {
-    MockSocket socket = new MockSocket();
-    MockRequest request;
+    IOSocket socket = new MockSocket();
+    HttpRequest request;
 
     @Before
     public void setupNewRequest() throws Exception {
-        this.request = new MockRequest(this.socket);
-        this.request.handleRequestLine("GET /mock HTTP/1.1");
+        this.request = new HttpRequest(this.socket);
+        this.request.setMethod("GET");
+        this.request.setPath("/mock");
     }
 
     @Test

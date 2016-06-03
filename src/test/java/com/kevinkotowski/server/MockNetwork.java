@@ -16,10 +16,11 @@ public class MockNetwork implements IONetwork {
         return this.port;
     }
 
-    public IORequest next() {
+    public IORequest next() throws IOException {
         MockSocket socket = new MockSocket();
-        MockRequest mockRequest = new MockRequest(socket);
-        mockRequest.handleRequestLine("GET /mock/next/file.html HTTP/1.1");
-        return mockRequest;
+        IORequest request = new HttpRequest(socket);
+        request.setMethod("GET");
+        request.setPath("/mock/next/file.html");
+        return request;
     }
 }

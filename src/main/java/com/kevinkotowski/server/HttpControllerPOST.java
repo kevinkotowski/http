@@ -7,7 +7,7 @@ import java.io.*;
  */
 public class HttpControllerPOST implements IHController {
     public IOResponse execute(IORequest request) throws IOException {
-        IOResponse response = HttpResponseFactory.create(request);
+        IOResponse response = new HttpResponse(request.getSocket());
         if (request.hasContent()) {
             this.persistFile(request.getFullPath(), request.getContent());
         }
