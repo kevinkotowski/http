@@ -24,11 +24,6 @@ public class HttpServer implements IHServer{
         this.setRoutes();
     }
 
-//    HttpServer(IONetwork network, String docRoot) {
-//        this.docRoot = docRoot;
-//        this.network = network;
-//    }
-
     public void listen() throws IOException {
         int poolSize = 4;
         this.isListening = true;
