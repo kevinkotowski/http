@@ -10,5 +10,5 @@ public interface IHRouter {
     public String getDocRoot();
     public void registerRoute(IHRoute route);
     public String getOptions(String path);
-    public IOResponse route(IORequest request) throws IOException;
+    public IOResponse route(IORequest request) throws Exception;
 }

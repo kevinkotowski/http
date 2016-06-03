@@ -32,7 +32,7 @@ public class HttpConsumer implements Runnable {
             try {
                 response = router.route(request);
                 response.run();
-            } catch (IOException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }

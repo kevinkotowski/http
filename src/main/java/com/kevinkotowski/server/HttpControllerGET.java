@@ -23,8 +23,8 @@ public class HttpControllerGET implements IHController {
 
         path = request.getFullPath();
         File file = new File(path);
-
         StringBuilder stringBuilder = new StringBuilder();
+
         try {
             String fileList = new String();
 

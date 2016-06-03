@@ -23,15 +23,6 @@ public class HttpRequest implements IORequest {
         this.setSocket(socket);
     }
 
-    public void addHeader(String header) {
-        this.headers.add(header);
-//        System.out.println("...request.addHeader: " + header);
-    }
-
-    public List<String> getHeaders() {
-        return this.headers;
-    }
-
     public void setSocket(IOSocket socket) {
         this.socket = socket;
     }
@@ -56,8 +47,13 @@ public class HttpRequest implements IORequest {
         this.docRoot = docRoot;
     }
 
-    public String getDocRoot() {
-        return this.docRoot;
+    public void addHeader(String header) {
+        this.headers.add(header);
+//        System.out.println("...request.addHeader: " + header);
+    }
+
+    public List<String> getHeaders() {
+        return this.headers;
     }
 
     public void setPath(String path) {
@@ -89,10 +85,6 @@ public class HttpRequest implements IORequest {
 
     public String[][] getParms() {
         return this.parms;
-    }
-
-    public boolean isAuthorized() {
-        return this.isAuthorized;
     }
 
     public void addContent(String content) {

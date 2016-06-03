@@ -30,7 +30,7 @@ public class HttpRouter implements IHRouter {
         }
     }
 
-    public IOResponse route(IORequest request) throws IOException {
+    public IOResponse route(IORequest request) throws Exception {
         request.setDocRoot(this.docRoot);
 
         IHController controller = resolveController(request);
