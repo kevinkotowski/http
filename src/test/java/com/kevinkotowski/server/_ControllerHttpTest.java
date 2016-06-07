@@ -20,24 +20,6 @@ public class _ControllerHttpTest {
     }
 
     @Test
-    public void execute404() throws Exception {
-        IHController controller = new HttpController404();
-        assertTrue(controller.execute(this.request) instanceof IOResponse);
-    }
-
-    @Test
-    public void execute405() throws Exception {
-        IHController controller = new HttpController405();
-        assertTrue(controller.execute(this.request) instanceof IOResponse);
-    }
-
-    @Test
-    public void execute418() throws Exception {
-        IHController controller = new HttpController418();
-        assertTrue(controller.execute(this.request) instanceof IOResponse);
-    }
-
-    @Test
     public void executeDELETE() throws Exception {
         IHController controller = new HttpControllerDELETE();
         assertTrue(controller.execute(this.request) instanceof IOResponse);
@@ -45,13 +27,19 @@ public class _ControllerHttpTest {
 
     @Test
     public void executeGET() throws Exception {
-        IHController controller = new HttpControllerGET();
+        IHController controller = new HttpControllerFILE();
         assertTrue(controller.execute(this.request) instanceof IOResponse);
     }
 
     @Test
     public void executeHEAD() throws Exception {
         IHController controller = new HttpControllerHEAD();
+        assertTrue(controller.execute(this.request) instanceof IOResponse);
+    }
+
+    @Test
+    public void executeINVALID() throws Exception {
+        IHController controller = new HttpControllerINVALID();
         assertTrue(controller.execute(this.request) instanceof IOResponse);
     }
 
@@ -69,13 +57,19 @@ public class _ControllerHttpTest {
 
     @Test
     public void executePOST() throws Exception {
-        IHController controller = new HttpControllerPOST();
+        IHController controller = new HttpControllerUPDATE();
         assertTrue(controller.execute(this.request) instanceof IOResponse);
     }
 
     @Test
     public void executePUT() throws Exception {
-        IHController controller = new HttpControllerPUT();
+        IHController controller = new HttpControllerUPDATE();
+        assertTrue(controller.execute(this.request) instanceof IOResponse);
+    }
+
+    @Test
+    public void executeTEACUP() throws Exception {
+        IHController controller = new HttpControllerTEACUP();
         assertTrue(controller.execute(this.request) instanceof IOResponse);
     }
 }

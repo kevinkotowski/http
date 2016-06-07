@@ -10,7 +10,7 @@ import java.nio.file.Paths;
 /**
  * Created by kevinkotowski on 5/28/16.
  */
-public class HttpControllerGET implements IHController {
+public class HttpControllerFILE implements IHController {
     private int rangeMin = -1;
     private int rangeMax = -1;
     private int rangeLast = -1;
@@ -47,7 +47,7 @@ public class HttpControllerGET implements IHController {
                         byte[] imageBytes = Files.readAllBytes(Paths.get(path));
                         response.setImage(imageBytes, imageType);
                     } catch (IOException e) {
-                        System.out.println("...HttpControllerGET " +
+                        System.out.println("...HttpControllerFILE " +
                                 file.getName() + "File is pretending to be " +
                                 "an image: " + file.getName() + "\n");
                     }

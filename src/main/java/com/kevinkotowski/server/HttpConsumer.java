@@ -12,14 +12,11 @@ public class HttpConsumer implements Runnable {
     String docRoot;
 
     public HttpConsumer(IHRouter router, BlockingQueue sharedQueue) {
-//        public HttpConsumer(String docRoot, BlockingQueue sharedQueue) {
         this.router = router;
-//        this.docRoot = docRoot;
         this.sharedQueue = sharedQueue;
     }
 
     public void run() {
-//        System.out.println("...listen new HttpTask");
         IORequest request = null;
         IOResponse response = null;
 

@@ -63,6 +63,6 @@ public class HttpServer implements IHServer{
 
     public void setRoutes() {
         this.registerRoute( "/",
-                HttpMethod.GET, new HttpControllerGET() );
+                HttpMethod.GET, new HttpControllerFILE() );
     }
 }

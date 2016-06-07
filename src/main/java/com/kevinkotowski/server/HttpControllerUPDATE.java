@@ -5,7 +5,7 @@ import java.io.*;
 /**
  * Created by kevinkotowski on 5/31/16.
  */
-public class HttpControllerPOST implements IHController {
+public class HttpControllerUPDATE implements IHController {
     public IOResponse execute(IORequest request) throws Exception {
         IOResponse response = new HttpResponse(request.getSocket());
         if (request.hasContent()) {

@@ -81,7 +81,7 @@ public class HttpRouter implements IHRouter {
 
         if (method == null) {
             // handle invalid method names
-            controller = new HttpController405();
+            controller = new HttpControllerINVALID();
         } else {
             // handle methods that aren't explicitly routed
             switch (method) {
@@ -103,12 +103,12 @@ public class HttpRouter implements IHRouter {
 
         // handle GET requests that don't match explicit routes to ensure 404
         if (controller == null && method == HttpMethod.GET) {
-            controller = new HttpControllerGET();
+            controller = new HttpControllerFILE();
         }
 
         // all remaining cases are invalid methods
         if (controller == null) {
-            controller = new HttpController405();
+            controller = new HttpControllerINVALID();
         }
 
         return controller;

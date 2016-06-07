@@ -10,15 +10,12 @@ import static org.junit.Assert.*;
  */
 public class _ResponseTest {
     @Test
-    public void requestToResponseLifecycle() throws Exception {
+    public void responseLifecycle() throws Exception {
         IOSocket socket = new MockSocket();
-        HttpRequest request = new HttpRequest(socket);
         HttpResponse response = new HttpResponse(socket);
 
-//        request.handleRequestLine("GET /mock/file/is/fake.html HTTP/1.1");
+        //TODO: This is an inadequate test
 
-//        response.setResponseCode( request.getResponseCode() );
-//        response.setResponseReason( request.getResponseReason() );
         response.setBody("<html><p>Fake file content</p></html>");
         assertTrue( response.getBody().contains("Fake") );
     }

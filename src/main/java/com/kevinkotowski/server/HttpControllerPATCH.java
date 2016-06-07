@@ -7,7 +7,7 @@ import java.security.NoSuchAlgorithmException;
 /**
  * Created by kevinkotowski on 6/1/16.
  */
-public class HttpControllerPATCH extends HttpControllerPOST {
+public class HttpControllerPATCH extends HttpControllerUPDATE {
     public IOResponse execute(IORequest request) throws Exception {
         IOResponse response = new HttpResponse(request.getSocket());
         boolean isEtagOkay = false;

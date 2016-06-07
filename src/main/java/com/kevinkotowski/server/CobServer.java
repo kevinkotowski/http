@@ -12,19 +12,19 @@ public class CobServer extends HttpServer {
 
     public void setRoutes() {
         this.registerRoute( "/",
-                HttpMethod.GET, new HttpControllerGET() );
+                HttpMethod.GET, new HttpControllerFILE() );
 
         this.registerRoute( "/coffee",
-                HttpMethod.GET, new HttpController418() );
+                HttpMethod.GET, new HttpControllerTEACUP() );
 
         this.registerRoute( "/file1",
-                HttpMethod.GET, new HttpControllerGET() );
+                HttpMethod.GET, new HttpControllerFILE() );
 
         this.registerRoute( "/form",
-                HttpMethod.POST, new HttpControllerPOST() );
+                HttpMethod.POST, new HttpControllerUPDATE() );
 
         this.registerRoute( "/form",
-                HttpMethod.PUT, new HttpControllerPUT() );
+                HttpMethod.PUT, new HttpControllerUPDATE() );
 
         this.registerRoute( "/form",
                 HttpMethod.DELETE, new HttpControllerDELETE() );
@@ -33,16 +33,16 @@ public class CobServer extends HttpServer {
                 HttpMethod.GET, new CobControllerAUTH() );
 
         this.registerRoute( "/method_options",
-                HttpMethod.GET, new HttpControllerGET() );
+                HttpMethod.GET, new HttpControllerFILE() );
 
         this.registerRoute( "/method_options",
-                HttpMethod.PUT, new HttpControllerPUT() );
+                HttpMethod.PUT, new HttpControllerUPDATE() );
 
         this.registerRoute( "/method_options",
-                HttpMethod.POST, new HttpControllerPOST() );
+                HttpMethod.POST, new HttpControllerUPDATE() );
 
         this.registerRoute( "/method_options2",
-                HttpMethod.GET, new HttpControllerGET() );
+                HttpMethod.GET, new HttpControllerFILE() );
 
         this.registerRoute( "/parameters",
                 HttpMethod.GET, new CobControllerPARMS() );
@@ -54,10 +54,10 @@ public class CobServer extends HttpServer {
                 HttpMethod.GET, new CobControllerREDIRECT() );
 
         this.registerRoute( "/tea",
-                HttpMethod.GET, new HttpController418() );
+                HttpMethod.GET, new HttpControllerTEACUP() );
 
         this.registerRoute( "/text-file.txt",
-                HttpMethod.GET, new HttpControllerGET() );
+                HttpMethod.GET, new HttpControllerFILE() );
     }
 
 }
