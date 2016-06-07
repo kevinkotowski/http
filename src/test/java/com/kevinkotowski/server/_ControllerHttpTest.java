@@ -32,6 +32,12 @@ public class _ControllerHttpTest {
     }
 
     @Test
+    public void execute418() throws Exception {
+        IHController controller = new HttpController418();
+        assertTrue(controller.execute(this.request) instanceof IOResponse);
+    }
+
+    @Test
     public void executeDELETE() throws Exception {
         IHController controller = new HttpControllerDELETE();
         assertTrue(controller.execute(this.request) instanceof IOResponse);

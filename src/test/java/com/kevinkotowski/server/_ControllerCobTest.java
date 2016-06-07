@@ -20,21 +20,15 @@ public class _ControllerCobTest {
     }
 
     @Test
-    public void execute418() throws Exception {
-        IHController controller = new HttpController418();
-        assertTrue(controller.execute(this.request) instanceof IOResponse);
-    }
-
-    @Test
     public void executeAUTH() throws Exception {
         this.request.addHeader("Authorization: Basic YWRtaW46aHVudGVyMg==");
-        IHController controller = new HttpControllerAUTH();
+        IHController controller = new CobControllerAUTH();
         assertTrue(controller.execute(this.request) instanceof IOResponse);
     }
 
     @Test
     public void executeREDIRECT() throws Exception {
-        IHController controller = new HttpControllerREDIRECT();
+        IHController controller = new CobControllerREDIRECT();
         assertTrue(controller.execute(this.request) instanceof IOResponse);
     }
 }

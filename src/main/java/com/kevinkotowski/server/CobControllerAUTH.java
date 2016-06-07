@@ -7,7 +7,7 @@ import java.util.Base64;
 /**
  * Created by kevinkotowski on 5/31/16.
  */
-public class HttpControllerAUTH extends HttpControllerGET {
+public class CobControllerAUTH extends HttpControllerGET {
     public IOResponse execute(IORequest request) throws IOException {
         IOResponse response = new HttpResponse(request.getSocket());
         if (this.isAuthorized(request)) {
@@ -15,7 +15,6 @@ public class HttpControllerAUTH extends HttpControllerGET {
         } else {
             response.setResponseCode("401");
             response.setResponseReason("Unauthorized (kk)");
-            // TODO: this is cob_spec specific
             response.addHeader("WWW-Authenticate: Basic realm=\"WallyWorld\"");
         }
         return response;
@@ -36,7 +35,6 @@ public class HttpControllerAUTH extends HttpControllerGET {
 //            System.out.println("...request.handleAuthorization decoded user: " + auth[0]);
 //            System.out.println("...request.handleAuthorization decoded pass: " + auth[1]);
 
-                // TODO: this is cob_spec specific
                 result = ( (auth[0].equals("admin")) && (auth[1].equals("hunter2")) );
             }
         }

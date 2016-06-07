@@ -52,26 +52,22 @@ public class HttpControllerGET implements IHController {
                                 "an image: " + file.getName() + "\n");
                     }
                 } else {
-                    // TODO: This is cob_spec specific
                     String body = "";
-                    if (path.contains("parameters")) {
-                        String[][] parms = request.getParms();
-                        body += this.formatParms(parms);
-                    } else {
-                        this.setRange(request);
-                        FileInputStream fileStream = new FileInputStream(path);
-                        int rangeCounter = 0;
-                        while ((ch = fileStream.read()) != -1) {
-                            if (this.inRange(rangeCounter)) {
-                                stringBuilder.append((char) ch);
-                            }
-                            rangeCounter += 1;
+                    this.setRange(request);
+                    FileInputStream fileStream = new FileInputStream(path);
+                    int rangeCounter = 0;
+
+                    while ((ch = fileStream.read()) != -1) {
+                        if (this.inRange(rangeCounter)) {
+                            stringBuilder.append((char) ch);
                         }
-                        body += this.trimToRange(stringBuilder.toString());
-                        if (-1 != this.rangeMin  || -1 != this.rangeMax || -1 != this.rangeLast) {
-                            response.setResponseCode("206");
-                        }
+                        rangeCounter += 1;
                     }
+                    body += this.trimToRange(stringBuilder.toString());
+                    if (-1 != this.rangeMin  || -1 != this.rangeMax || -1 != this.rangeLast) {
+                        response.setResponseCode("206");
+                    }
+
                     response.setBody(body);
                 }
             }
@@ -134,19 +130,6 @@ public class HttpControllerGET implements IHController {
 //            System.out.println("...request.trimToRange  after: " + body);
         }
         return body;
-    }
-
-    private String formatParms(String[][] parms) {
-        String response = "";
-        for (int x = 0; x < parms.length; x++) {
-            response += "\n<p>";
-            response += parms[x][0];
-            if (parms[x][1] != null) {
-                response += " = " + parms[x][1];
-            }
-            response += "</p>";
-        }
-        return response;
     }
 
     private String formatFileLink(String fileName) {
