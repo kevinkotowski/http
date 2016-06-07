@@ -48,7 +48,7 @@ public class CobServer extends HttpServer {
                 HttpMethod.GET, new CobControllerPARMS() );
 
         this.registerRoute( "/patch-content.txt",
-                HttpMethod.PATCH, new HttpControllerPATCH() );
+                HttpMethod.PATCH, new HttpControllerETAG() );
 
         this.registerRoute( "/redirect",
                 HttpMethod.GET, new CobControllerREDIRECT() );

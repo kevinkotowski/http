@@ -51,7 +51,7 @@ public class _ControllerHttpTest {
 
     @Test
     public void executePATCH() throws Exception {
-        IHController controller = new HttpControllerPATCH();
+        IHController controller = new HttpControllerETAG();
         assertTrue(controller.execute(this.request) instanceof IOResponse);
     }
 
