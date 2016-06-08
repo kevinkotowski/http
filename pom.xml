@@ -3,8 +3,8 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.kevinkotowski.server</groupId>
-  <artifactId>server</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <artifactId>http</artifactId>
+  <version>1.0</version>
   <packaging>jar</packaging>
 
   <name>server</name>

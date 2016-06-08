@@ -26,50 +26,20 @@ public class _ControllerHttpTest {
     }
 
     @Test
-    public void executeGET() throws Exception {
+    public void executeFILE() throws Exception {
         IHController controller = new HttpControllerFILE();
         assertTrue(controller.execute(this.request) instanceof IOResponse);
     }
 
     @Test
-    public void executeHEAD() throws Exception {
-        IHController controller = new HttpControllerHEAD();
+    public void executeETAG() throws Exception {
+        IHController controller = new HttpControllerIFMATCH();
         assertTrue(controller.execute(this.request) instanceof IOResponse);
     }
 
     @Test
-    public void executeINVALID() throws Exception {
-        IHController controller = new HttpControllerINVALID();
-        assertTrue(controller.execute(this.request) instanceof IOResponse);
-    }
-
-    @Test
-    public void executeOPTIONS() throws Exception {
-        IHController controller = new HttpControllerOPTIONS();
-        assertTrue(controller.execute(this.request) instanceof IOResponse);
-    }
-
-    @Test
-    public void executePATCH() throws Exception {
-        IHController controller = new HttpControllerETAG();
-        assertTrue(controller.execute(this.request) instanceof IOResponse);
-    }
-
-    @Test
-    public void executePOST() throws Exception {
+    public void executeUPDATE() throws Exception {
         IHController controller = new HttpControllerUPDATE();
-        assertTrue(controller.execute(this.request) instanceof IOResponse);
-    }
-
-    @Test
-    public void executePUT() throws Exception {
-        IHController controller = new HttpControllerUPDATE();
-        assertTrue(controller.execute(this.request) instanceof IOResponse);
-    }
-
-    @Test
-    public void executeTEACUP() throws Exception {
-        IHController controller = new HttpControllerTEACUP();
         assertTrue(controller.execute(this.request) instanceof IOResponse);
     }
 }

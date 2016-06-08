@@ -9,9 +9,6 @@ import java.util.List;
  * Created by kevinkotowski on 5/6/16.
  */
 public interface IORequest {
-//    public void handleRequestLine(String requestLine)
-//            throws UnsupportedEncodingException;
-
     public IOSocket getSocket();
     public void setPath(String path);
     public String getPath();
@@ -29,11 +26,4 @@ public interface IORequest {
     public void setDocRoot(String docRoot);
 //    public String getDocRoot();
     public String getFullPath();
-
-//    public void setSocket(IOSocket socket);
-//    public String getResponseCode();
-//    public String getResponseReason();
-//    public boolean isAuthorized();
-//    public boolean inRange(int rangeCounter);
-//    public String trimToRange(String body);
 }

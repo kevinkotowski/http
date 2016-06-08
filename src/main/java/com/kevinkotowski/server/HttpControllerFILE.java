@@ -21,6 +21,28 @@ public class HttpControllerFILE implements IHController {
         String path;
         int ch;
 
+        // IOFileSystem
+        // is path in static directory?
+            // resolve file type
+            //      case DIR
+            //          String = HttpFileConverterDIR.convert(IHDirectory)
+            //      case TXT
+            //          String = HttpFileConverterTXT.convert(IHFile)
+            //      case IMG
+            //          resolveImageType
+            //              byte[] = HttpImageConverterGIF.convert(IHImage)
+            //              byte[] = HttpImagendlerJPG.convert(IHImage)
+            //              byte[] = HttpImageHandlerPNG.convert(IHImage)
+            // else 404
+        // else
+
+//      FileSystem(String path)
+//        boolean isDirectory()
+//        boolean isImage()
+//        boolean isTextFile()
+//        byte[] getBytes
+
+
         path = request.getFullPath();
         File file = new File(path);
         StringBuilder stringBuilder = new StringBuilder();
