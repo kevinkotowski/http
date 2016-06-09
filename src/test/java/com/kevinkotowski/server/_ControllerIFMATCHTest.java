@@ -21,7 +21,7 @@ public class _ControllerIFMATCHTest {
         HttpRoute route = new HttpRoute(path, HttpMethod.GET, controller);
 
         router.registerRoute(route);
-        IOResponse response = router.route(request);
+        IHResponse response = router.route(request);
 
         assertEquals("412", response.getResponseCode());
         assertTrue(response.getResponseReason().contains("Failed"));

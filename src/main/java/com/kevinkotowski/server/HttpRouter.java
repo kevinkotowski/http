@@ -30,11 +30,11 @@ public class HttpRouter implements IHRouter {
         }
     }
 
-    public IOResponse route(IORequest request) throws Exception {
+    public IHResponse route(IHRequest request) throws Exception {
         request.setDocRoot(this.docRoot);
 
         IHController controller = resolveController(request);
-        IOResponse response = controller.execute(request);
+        IHResponse response = controller.execute(request);
 
         // this is an appropriate header for all errors and methods
         response.addHeader("Allow: " +
@@ -70,7 +70,7 @@ public class HttpRouter implements IHRouter {
         return response;
     }
 
-    private IHController resolveController(IORequest request) {
+    private IHController resolveController(IHRequest request) {
         HttpMethod method = request.getMethod();
         IHController controller = null;
         int index = 0;

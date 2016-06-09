@@ -23,7 +23,7 @@ public class _ControllerOPTIONSTest {
         HttpRoute route = new HttpRoute(path, HttpMethod.POST, controller);
 
         router.registerRoute(route);
-        IOResponse response = router.route(request);
+        IHResponse response = router.route(request);
         List<String> headers = response.getHeaders();
 
         assertEquals("200", response.getResponseCode());

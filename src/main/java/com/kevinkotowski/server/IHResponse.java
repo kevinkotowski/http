@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by kevinkotowski on 5/6/16.
  */
-public interface IOResponse {
+public interface IHResponse {
     public void addHeader(String header);
     public List<String> getHeaders();
 //    public void setSocket(IOSocket socket) throws IOException;

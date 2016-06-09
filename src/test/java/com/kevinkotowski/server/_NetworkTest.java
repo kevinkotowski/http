@@ -11,15 +11,15 @@ public class _NetworkTest {
     @Test
     public void startListeningToPort() throws Exception {
         int port = 3210;
-        IONetwork mockNetwork = new MockNetwork(port);
+        IHNetwork mockNetwork = new MockNetwork(port);
         assertEquals( port, mockNetwork.getPort() );
     }
 
     @Test
     public void getNextRequestFromPort() throws Exception {
         int port = 3210;
-        IONetwork mockNetwork = new MockNetwork(port);
-        IORequest request = mockNetwork.next();
+        IHNetwork mockNetwork = new MockNetwork(port);
+        IHRequest request = mockNetwork.next();
         assertEquals( HttpMethod.GET, request.getMethod() );
     }
 }

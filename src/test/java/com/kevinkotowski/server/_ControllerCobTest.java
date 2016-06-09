@@ -10,7 +10,7 @@ import static org.junit.Assert.assertTrue;
  */
 public class _ControllerCobTest {
     IOSocket socket = new MockSocket();
-    IORequest request;
+    IHRequest request;
 
     @Before
     public void setupNewRequest() throws Exception {
@@ -23,12 +23,12 @@ public class _ControllerCobTest {
     public void executeAUTH() throws Exception {
         this.request.addHeader("Authorization: Basic YWRtaW46aHVudGVyMg==");
         IHController controller = new CobControllerAUTH();
-        assertTrue(controller.execute(this.request) instanceof IOResponse);
+        assertTrue(controller.execute(this.request) instanceof IHResponse);
     }
 
     @Test
     public void executeREDIRECT() throws Exception {
         IHController controller = new CobControllerREDIRECT();
-        assertTrue(controller.execute(this.request) instanceof IOResponse);
+        assertTrue(controller.execute(this.request) instanceof IHResponse);
     }
 }

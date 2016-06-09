@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Created by kevinkotowski on 5/6/16.
  */
-public interface IORequest {
+public interface IHRequest {
     public IOSocket getSocket();
     public void setPath(String path);
     public String getPath();

@@ -2,16 +2,11 @@ package com.kevinkotowski.server;
 
 import java.io.*;
 import java.net.ServerSocket;
-import java.net.Socket;
-import java.net.URLDecoder;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
 
 /**
  * Created by kevinkotowski on 5/5/16.
  */
-public class HttpNetwork implements IONetwork {
+public class HttpNetwork implements IHNetwork {
     private int port = -1;
     private ServerSocket serverSocket;
     private IHRequestParser parser;
@@ -29,9 +24,9 @@ public class HttpNetwork implements IONetwork {
         }
     }
 
-    public IORequest next() throws IOException {
+    public IHRequest next() throws IOException {
         IOSocket socket = new HttpSocket( this.serverSocket.accept() );
-        IORequest request = this.parser.parse(socket);
+        IHRequest request = this.parser.parse(socket);
         return request;
     }
 

@@ -5,7 +5,7 @@ import java.io.*;
 /**
  * Created by kevinkotowski on 5/5/16.
  */
-public class MockNetwork implements IONetwork {
+public class MockNetwork implements IHNetwork {
     private int port = -1;
 
     public MockNetwork(int port) throws IOException {
@@ -16,9 +16,9 @@ public class MockNetwork implements IONetwork {
         return this.port;
     }
 
-    public IORequest next() throws IOException {
+    public IHRequest next() throws IOException {
         MockSocket socket = new MockSocket();
-        IORequest request = new HttpRequest(socket);
+        IHRequest request = new HttpRequest(socket);
         request.setMethod("GET");
         request.setPath("/mock/next/file.html");
         return request;

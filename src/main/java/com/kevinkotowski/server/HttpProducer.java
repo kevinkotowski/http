@@ -8,28 +8,32 @@ import java.util.concurrent.BlockingQueue;
  */
 public class HttpProducer implements Runnable {
     private final BlockingQueue sharedQueue;
-    IONetwork network;
+    IHNetwork network;
 
-    public HttpProducer(IONetwork network, BlockingQueue sharedQueue) {
+    public HttpProducer(IHNetwork network, BlockingQueue sharedQueue) {
         this.network = network;
         this.sharedQueue = sharedQueue;
     }
 
     public void run() {
         while (true) {
-            IORequest request = null;
-            try {
-                request = this.network.next();
-                if (request != null) {
-                    this.sharedQueue.put(request);
-                } else {
-                    System.out.println("...producer no request!");
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+            this.produce();
+        }
+    }
+
+    public void produce() {
+        IHRequest request = null;
+        try {
+            request = this.network.next();
+            if (request != null) {
+                this.sharedQueue.put(request);
+            } else {
+                System.out.println("...producer no request!");
             }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
     }
 }

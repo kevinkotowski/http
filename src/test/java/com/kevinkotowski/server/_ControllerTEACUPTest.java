@@ -2,8 +2,6 @@ package com.kevinkotowski.server;
 
 import org.junit.Test;
 
-import java.util.List;
-
 import static org.junit.Assert.*;
 
 /**
@@ -23,7 +21,7 @@ public class _ControllerTEACUPTest {
         HttpRoute route = new HttpRoute(path, HttpMethod.GET, controller);
 
         router.registerRoute(route);
-        IOResponse response = router.route(request);
+        IHResponse response = router.route(request);
 
         assertEquals("200", response.getResponseCode());
         assertTrue(response.getResponseReason().contains("Tip"));
@@ -42,7 +40,7 @@ public class _ControllerTEACUPTest {
         HttpRoute route = new HttpRoute(path, HttpMethod.GET, controller);
 
         router.registerRoute(route);
-        IOResponse response = router.route(request);
+        IHResponse response = router.route(request);
 
         assertEquals("418", response.getResponseCode());
         assertTrue(response.getResponseReason().contains("teapot"));

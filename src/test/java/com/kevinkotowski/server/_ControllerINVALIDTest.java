@@ -21,7 +21,7 @@ public class _ControllerINVALIDTest {
         HttpRoute route = new HttpRoute(path, HttpMethod.PUT, controller);
 
         router.registerRoute(route);
-        IOResponse response = router.route(request);
+        IHResponse response = router.route(request);
 
         assertEquals("405", response.getResponseCode());
     }

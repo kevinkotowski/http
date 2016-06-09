@@ -21,7 +21,7 @@ public class _ControllerHEADTest {
         HttpRoute route = new HttpRoute(path, HttpMethod.HEAD, controller);
 
         router.registerRoute(route);
-        IOResponse response = router.route(request);
+        IHResponse response = router.route(request);
         assertEquals("200", response.getResponseCode());
     }
 }

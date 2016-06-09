@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by kevinkotowski on 5/5/16.
  */
-public class HttpRequest implements IORequest {
+public class HttpRequest implements IHRequest {
     private HttpMethod method = null;
     private String path = null;
     private List<String> headers = new ArrayList(0);

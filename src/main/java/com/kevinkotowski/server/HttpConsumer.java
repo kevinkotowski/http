@@ -1,6 +1,5 @@
 package com.kevinkotowski.server;
 
-import java.io.IOException;
 import java.util.concurrent.BlockingQueue;
 
 /**
@@ -9,7 +8,6 @@ import java.util.concurrent.BlockingQueue;
 public class HttpConsumer implements Runnable {
     private IHRouter router;
     private final BlockingQueue sharedQueue;
-    String docRoot;
 
     public HttpConsumer(IHRouter router, BlockingQueue sharedQueue) {
         this.router = router;
@@ -17,21 +15,25 @@ public class HttpConsumer implements Runnable {
     }
 
     public void run() {
-        IORequest request = null;
-        IOResponse response = null;
-
         while(true) {
-            try {
-                request = (IORequest) sharedQueue.take();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            try {
-                response = router.route(request);
-                response.run();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+            this.consume();
+        }
+    }
+
+    public void consume() {
+        IHRequest request = null;
+        IHResponse response = null;
+
+        try {
+            request = (IHRequest) sharedQueue.take();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        try {
+            response = router.route(request);
+            response.run();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

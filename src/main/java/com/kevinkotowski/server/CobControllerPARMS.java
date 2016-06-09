@@ -6,8 +6,8 @@ import java.io.IOException;
  * Created by kevinkotowski on 6/7/16.
  */
 public class CobControllerPARMS implements IHController {
-    public IOResponse execute(IORequest request) throws IOException {
-        IOResponse response = new HttpResponse(request.getSocket());
+    public IHResponse execute(IHRequest request) throws IOException {
+        IHResponse response = new HttpResponse(request.getSocket());
         String[][] parms = request.getParms();
         String body = "";
 

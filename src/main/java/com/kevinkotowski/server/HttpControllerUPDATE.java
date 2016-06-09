@@ -6,8 +6,8 @@ import java.io.*;
  * Created by kevinkotowski on 5/31/16.
  */
 public class HttpControllerUPDATE implements IHController {
-    public IOResponse execute(IORequest request) throws Exception {
-        IOResponse response = new HttpResponse(request.getSocket());
+    public IHResponse execute(IHRequest request) throws Exception {
+        IHResponse response = new HttpResponse(request.getSocket());
         if (request.hasContent()) {
             this.persistFile(request.getFullPath(), request.getContent());
         }

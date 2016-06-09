@@ -7,8 +7,8 @@ import java.io.IOException;
  * Created by kevinkotowski on 6/1/16.
  */
 public class HttpControllerDELETE implements IHController {
-    public IOResponse execute(IORequest request) throws IOException {
-        IOResponse response = new HttpResponse(request.getSocket());
+    public IHResponse execute(IHRequest request) throws IOException {
+        IHResponse response = new HttpResponse(request.getSocket());
         File file = new File( request.getFullPath() );
 
         if (file.exists()) {

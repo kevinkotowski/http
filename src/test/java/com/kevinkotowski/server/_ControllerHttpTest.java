@@ -22,24 +22,24 @@ public class _ControllerHttpTest {
     @Test
     public void executeDELETE() throws Exception {
         IHController controller = new HttpControllerDELETE();
-        assertTrue(controller.execute(this.request) instanceof IOResponse);
+        assertTrue(controller.execute(this.request) instanceof IHResponse);
     }
 
     @Test
     public void executeFILE() throws Exception {
         IHController controller = new HttpControllerSTATIC();
-        assertTrue(controller.execute(this.request) instanceof IOResponse);
+        assertTrue(controller.execute(this.request) instanceof IHResponse);
     }
 
     @Test
     public void executeETAG() throws Exception {
         IHController controller = new HttpControllerIFMATCH();
-        assertTrue(controller.execute(this.request) instanceof IOResponse);
+        assertTrue(controller.execute(this.request) instanceof IHResponse);
     }
 
     @Test
     public void executeUPDATE() throws Exception {
         IHController controller = new HttpControllerUPDATE();
-        assertTrue(controller.execute(this.request) instanceof IOResponse);
+        assertTrue(controller.execute(this.request) instanceof IHResponse);
     }
 }

@@ -15,8 +15,8 @@ public class HttpControllerSTATIC implements IHController {
     private int rangeMax = -1;
     private int rangeLast = -1;
 
-    public IOResponse execute(IORequest request) throws IOException {
-        IOResponse response = new HttpResponse(request.getSocket());
+    public IHResponse execute(IHRequest request) throws IOException {
+        IHResponse response = new HttpResponse(request.getSocket());
 
         String path;
         int ch;
@@ -100,7 +100,7 @@ public class HttpControllerSTATIC implements IHController {
         return imageType;
     }
 
-    private void setRange(IORequest request) {
+    private void setRange(IHRequest request) {
         for (String header : request.getHeaders()) {
             if (header.contains("Range")) {
                 String[] rangeHeader = header.split(":");

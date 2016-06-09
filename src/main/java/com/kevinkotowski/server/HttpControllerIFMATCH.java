@@ -8,8 +8,8 @@ import java.security.NoSuchAlgorithmException;
  * Created by kevinkotowski on 6/1/16.
  */
 public class HttpControllerIFMATCH extends HttpControllerUPDATE {
-    public IOResponse execute(IORequest request) throws Exception {
-        IOResponse response = new HttpResponse(request.getSocket());
+    public IHResponse execute(IHRequest request) throws Exception {
+        IHResponse response = new HttpResponse(request.getSocket());
         boolean isEtagOkay = false;
 
         for (String header : request.getHeaders()) {

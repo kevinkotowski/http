@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Created by kevinkotowski on 5/6/16.
  */
-public class HttpResponse implements IOResponse {
+public class HttpResponse implements IHResponse {
     private IOSocket socket;
     private String responseCode;
     private String responseReason;

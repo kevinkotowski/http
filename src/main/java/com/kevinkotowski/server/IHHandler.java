@@ -6,5 +6,5 @@ import java.io.IOException;
  * Created by kevinkotowski on 5/6/16.
  */
 public interface IHHandler {
-    public IOResponse handle(IORequest request) throws IOException;
+    public IHResponse handle(IHRequest request) throws IOException;
 }

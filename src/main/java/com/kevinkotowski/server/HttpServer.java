@@ -13,7 +13,7 @@ public class HttpServer implements IHServer{
     private int port = 0;
     private String docRoot = null;
     private boolean isListening = false;
-    private IONetwork network;
+    private IHNetwork network;
     private IHRouter router;
 
     HttpServer(int port, IHRouter router) throws IOException {

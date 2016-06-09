@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by kevinkotowski on 5/12/16.
  */
-public class MockResponse implements IOResponse {
+public class MockResponse implements IHResponse {
     List<String> headers;
     public void MockResponse() {
         headers.add("Host: localhost");

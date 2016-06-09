@@ -12,9 +12,9 @@ import java.util.Scanner;
 public class HttpRequestParser implements IHRequestParser {
 //    private List<IHRequestHeaderParser> headerParsers = new ArrayList(0);
 
-    public IORequest parse(IOSocket socket) throws IOException {
+    public IHRequest parse(IOSocket socket) throws IOException {
         Scanner scanner;
-        IORequest request = new HttpRequest(socket);
+        IHRequest request = new HttpRequest(socket);
         InputStream in;
         in = socket.getInputStream();
         scanner = new Scanner(in, "UTF8");
@@ -26,7 +26,7 @@ public class HttpRequestParser implements IHRequestParser {
         return request;
     }
 
-    private IORequest parseRequestLine(IORequest request, Scanner scanner)
+    private IHRequest parseRequestLine(IHRequest request, Scanner scanner)
             throws UnsupportedEncodingException {
         String requestLine = scanner.nextLine();
         String[] tokens = new String[3];
@@ -83,7 +83,7 @@ public class HttpRequestParser implements IHRequestParser {
         return queryParms;
     }
 
-    private IORequest parseHeaders(IORequest request, Scanner scanner) {
+    private IHRequest parseHeaders(IHRequest request, Scanner scanner) {
         String headerLine;
         boolean headersDone = false;
         while ( !headersDone ) {
@@ -98,7 +98,7 @@ public class HttpRequestParser implements IHRequestParser {
         return request;
     }
 
-    private IORequest parseContent(IORequest request, Scanner scanner) {
+    private IHRequest parseContent(IHRequest request, Scanner scanner) {
         int contentLength = request.getContentLength();
         if (contentLength > 0) {
             scanner.useDelimiter("");

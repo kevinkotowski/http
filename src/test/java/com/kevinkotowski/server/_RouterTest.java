@@ -32,15 +32,15 @@ public class _RouterTest {
         router.registerRoute(routePOST);
 
         IOSocket socket = new MockSocket();
-        IORequest requestGET = new HttpRequest(socket);
+        IHRequest requestGET = new HttpRequest(socket);
         requestGET.setMethod("GET");
         requestGET.setPath("/mock/path/file.html");
 
-        IORequest requestPOST = new HttpRequest(socket);
+        IHRequest requestPOST = new HttpRequest(socket);
         requestPOST.setMethod("GET");
         requestPOST.setPath("/mock/path/file.html");
 
-        IORequest requestBAD = new HttpRequest(socket);
+        IHRequest requestBAD = new HttpRequest(socket);
         requestBAD.setMethod("PUT");
         requestBAD.setPath("/mock/path/file.html");
 

@@ -8,8 +8,8 @@ import java.util.Base64;
  * Created by kevinkotowski on 5/31/16.
  */
 public class CobControllerAUTH extends HttpControllerSTATIC {
-    public IOResponse execute(IORequest request) throws IOException {
-        IOResponse response = new HttpResponse(request.getSocket());
+    public IHResponse execute(IHRequest request) throws IOException {
+        IHResponse response = new HttpResponse(request.getSocket());
         if (this.isAuthorized(request)) {
             response = super.execute(request);
         } else {
@@ -20,7 +20,7 @@ public class CobControllerAUTH extends HttpControllerSTATIC {
         return response;
     }
 
-    private boolean isAuthorized(IORequest request)
+    private boolean isAuthorized(IHRequest request)
             throws UnsupportedEncodingException {
         boolean result = false;
         for (String header : request.getHeaders()) {
