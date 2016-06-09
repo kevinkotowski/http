@@ -105,7 +105,7 @@ public class HttpRouter implements IHRouter {
         // NOTE: This could just assign 404, but this way a "default" http
         //       server actually serves directories, files, and images via GET
         if (controller == null && method == HttpMethod.GET) {
-            controller = new HttpControllerFILE();
+            controller = new HttpControllerSTATIC();
         }
 
         // all remaining cases are invalid methods

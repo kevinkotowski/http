@@ -27,7 +27,7 @@ public class _ControllerHttpTest {
 
     @Test
     public void executeFILE() throws Exception {
-        IHController controller = new HttpControllerFILE();
+        IHController controller = new HttpControllerSTATIC();
         assertTrue(controller.execute(this.request) instanceof IOResponse);
     }
 

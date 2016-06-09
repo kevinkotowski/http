@@ -7,7 +7,7 @@ import java.util.Base64;
 /**
  * Created by kevinkotowski on 5/31/16.
  */
-public class CobControllerAUTH extends HttpControllerFILE {
+public class CobControllerAUTH extends HttpControllerSTATIC {
     public IOResponse execute(IORequest request) throws IOException {
         IOResponse response = new HttpResponse(request.getSocket());
         if (this.isAuthorized(request)) {

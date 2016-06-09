@@ -16,16 +16,16 @@ public class HttpServer implements IHServer{
     private IONetwork network;
     private IHRouter router;
 
-    HttpServer(int port, String docRoot) throws IOException {
+    HttpServer(int port, IHRouter router) throws IOException {
         this.port = port;
-        this.docRoot = docRoot;
+        this.docRoot = router.getDocRoot();
         this.network = new HttpNetwork(port);
 
-        IHRouter router = new HttpRouter(this.docRoot);
-        router.registerRoute(new HttpRoute (
-                "/",
-                HttpMethod.GET, new HttpControllerFILE() ));
-        this.setRouter(router);
+//        IHRouter router = new HttpRouter(this.docRoot);
+//        router.registerRoute(new HttpRoute (
+//                "/",
+//                HttpMethod.GET, new HttpControllerSTATIC() ));
+        this.router = router;
     }
 
     public void listen() throws IOException {
@@ -56,11 +56,11 @@ public class HttpServer implements IHServer{
     public String status() {
         String message = this.isListening ? "Listening" : "Waiting";
         message += " on port " + Integer.toString(this.port);
-        message += " for dir " + (this.docRoot);
+        message += " for dir " + (this.router.getDocRoot());
         return message;
     }
 
-    public void setRouter(IHRouter router) {
-        this.router = router;
-    }
+//    public void setRouter(IHRouter router) {
+//        this.router = router;
+//    }
 }

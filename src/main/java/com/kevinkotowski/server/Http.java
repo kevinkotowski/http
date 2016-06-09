@@ -13,7 +13,12 @@ public class http {
         int portNumber = Integer.parseInt(parsedArgs[0]);
         String docRoot = parsedArgs[1];
 
-        IHServer httpServer = new HttpServer(portNumber, docRoot);
+        IHRouter router = new HttpRouter(docRoot);
+        router.registerRoute(new HttpRoute (
+                "/",
+                HttpMethod.GET, new HttpControllerSTATIC() ));
+
+        IHServer httpServer = new HttpServer(portNumber, router);
         httpServer.listen();
     }
 
