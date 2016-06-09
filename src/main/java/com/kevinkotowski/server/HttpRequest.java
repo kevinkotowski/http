@@ -49,7 +49,6 @@ public class HttpRequest implements IORequest {
 
     public void addHeader(String header) {
         this.headers.add(header);
-//        System.out.println("...request.addHeader: " + header);
     }
 
     public List<String> getHeaders() {
@@ -89,7 +88,6 @@ public class HttpRequest implements IORequest {
 
     public void addContent(String content) {
         this.content.add(content);
-//        System.out.println("...request.addContent: " + content);
     }
 
     public int getContentLength() {
@@ -98,7 +96,6 @@ public class HttpRequest implements IORequest {
             if (header.contains("Content-Length")) {
                 String[] contentHeader = header.split(":");
                 contentLength = Integer.parseInt(contentHeader[1].trim());
-//            System.out.println("...request.handleContent found contentLength: " + Integer.toString(this.contentLength));
             }
         }
         return contentLength;

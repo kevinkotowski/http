@@ -42,7 +42,6 @@ public class HttpControllerIFMATCH extends HttpControllerUPDATE {
         boolean result = false;
         String[] ifMatchHeader = headerIfMatch.split(":");
         String headerEtag = ifMatchHeader[1].trim();
-//            System.out.println("...request.handleIfMatch: " + this.ifMatch);
         // TODO: implement GET to run SHA1 algo for etag check
         result = (headerEtag.equals(this.getFileEtag(fullPath)));
         return result;

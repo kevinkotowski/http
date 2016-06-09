@@ -20,11 +20,6 @@ public class HttpServer implements IHServer{
         this.port = port;
         this.docRoot = router.getDocRoot();
         this.network = new HttpNetwork(port);
-
-//        IHRouter router = new HttpRouter(this.docRoot);
-//        router.registerRoute(new HttpRoute (
-//                "/",
-//                HttpMethod.GET, new HttpControllerSTATIC() ));
         this.router = router;
     }
 
@@ -59,8 +54,4 @@ public class HttpServer implements IHServer{
         message += " for dir " + (this.router.getDocRoot());
         return message;
     }
-
-//    public void setRouter(IHRouter router) {
-//        this.router = router;
-//    }
 }

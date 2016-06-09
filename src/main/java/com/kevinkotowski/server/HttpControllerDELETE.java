@@ -12,7 +12,6 @@ public class HttpControllerDELETE implements IHController {
         File file = new File( request.getFullPath() );
 
         if (file.exists()) {
-//            System.out.println("...controller.delete deleting file: " + path);
             file.delete();
             response.setResponseCode("200");
             response.setResponseReason("OK (kk)");

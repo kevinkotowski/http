@@ -21,21 +21,6 @@ public class HttpControllerSTATIC implements IHController {
         String path;
         int ch;
 
-        // IOFileSystem
-        // is path in static directory?
-            // resolve file type
-            //      case DIR
-            //          String = HttpFileConverterDIR.convert(IHDirectory)
-            //      case TXT
-            //          String = HttpFileConverterTXT.convert(IHFile)
-            //      case IMG
-            //          resolveImageType
-            //              byte[] = HttpImageConverterGIF.convert(IHImage)
-            //              byte[] = HttpImagendlerJPG.convert(IHImage)
-            //              byte[] = HttpImageHandlerPNG.convert(IHImage)
-            // else 404
-        // else
-
 //      FileSystem(String path)
 //        boolean isDirectory()
 //        boolean isImage()
@@ -54,8 +39,7 @@ public class HttpControllerSTATIC implements IHController {
                 for (final File subFile : file.listFiles()) {
                     if (subFile.isDirectory()) {
                         response.setBody("Another directory.");
-                        // TODO? no req for subdirectory support
-//                        this.listFilesForFolder(fileEntry);
+                        // there is no req for subdirectory support
                     } else {
                         fileList += this.formatFileLink(subFile.getName());
                     }
@@ -69,7 +53,7 @@ public class HttpControllerSTATIC implements IHController {
                         byte[] imageBytes = Files.readAllBytes(Paths.get(path));
                         response.setImage(imageBytes, imageType);
                     } catch (IOException e) {
-                        System.out.println("...HttpControllerSTATIC " +
+                        System.out.println("Error: HttpControllerSTATIC " +
                                 file.getName() + "File is pretending to be " +
                                 "an image: " + file.getName() + "\n");
                     }
@@ -119,7 +103,6 @@ public class HttpControllerSTATIC implements IHController {
     private void setRange(IORequest request) {
         for (String header : request.getHeaders()) {
             if (header.contains("Range")) {
-//            System.out.println("...GET.setRange header: " + header);
                 String[] rangeHeader = header.split(":");
                 String[] rangeValue = rangeHeader[1].split("=");
                 String[] range = rangeValue[1].split("-");
@@ -129,9 +112,6 @@ public class HttpControllerSTATIC implements IHController {
                     this.rangeMin = range[0].length() == 0 ? -1 : Integer.parseInt(range[0]);
                     this.rangeMax = range.length != 2 ? -1 : Integer.parseInt(range[1]) + 1;
                 }
-//            System.out.println("...GET.setRange  last: " + this.rangeLast);
-//            System.out.println("...GET.setRange start: " + this.rangeMin);
-//            System.out.println("...GET.setRange  stop: " + this.rangeMax);
             }
         }
     }
@@ -147,9 +127,7 @@ public class HttpControllerSTATIC implements IHController {
 
     private String trimToRange(String body) {
         if (this.rangeLast != -1) {
-//            System.out.println("...request.trimToRange before: " + body);
             body = body.substring( body.length() - (this.rangeLast) );
-//            System.out.println("...request.trimToRange  after: " + body);
         }
         return body;
     }

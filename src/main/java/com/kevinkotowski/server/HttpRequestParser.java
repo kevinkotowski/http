@@ -42,7 +42,7 @@ public class HttpRequestParser implements IHRequestParser {
                 request.setParms( this.parseQuery( tokens[1] ) );
             }
         } else {
-            System.out.println("...request.constructor no first line!");
+            System.out.println("Invalid Request: No first line");
         }
         return request;
     }
@@ -77,10 +77,6 @@ public class HttpRequestParser implements IHRequestParser {
                         URLDecoder.decode(pair.substring(index + 1), "UTF-8") :
                         null;
                 parms[x] = parm;
-//              System.out.println("...requestParser.handleRequestLine key  : "
-//                      + parms[x][0]);
-//              System.out.println("...requestParser.handleRequestLine value: "
-//                      + parms[x][1]);
             }
             queryParms = parms;
         }
@@ -98,7 +94,6 @@ public class HttpRequestParser implements IHRequestParser {
             } else {
                 headersDone = true;
             }
-//            System.out.println("...request.constructor header found: " + headerLine);
         }
         return request;
     }

@@ -31,7 +31,6 @@ public class HttpNetwork implements IONetwork {
 
     public IORequest next() throws IOException {
         IOSocket socket = new HttpSocket( this.serverSocket.accept() );
-//        IORequest request = new HttpRequest(socket);
         IORequest request = this.parser.parse(socket);
         return request;
     }

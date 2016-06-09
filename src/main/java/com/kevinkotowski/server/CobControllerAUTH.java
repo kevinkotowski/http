@@ -32,9 +32,6 @@ public class CobControllerAUTH extends HttpControllerSTATIC {
                 String decoded = new String(decodedBytes, "UTF-8");
                 String[] auth = decoded.split(":");
 
-//            System.out.println("...request.handleAuthorization decoded user: " + auth[0]);
-//            System.out.println("...request.handleAuthorization decoded pass: " + auth[1]);
-
                 result = ( (auth[0].equals("admin")) && (auth[1].equals("hunter2")) );
             }
         }

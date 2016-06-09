@@ -26,11 +26,6 @@ public class HttpResponse implements IOResponse {
         this.setResponseReason("OK (kk)");
     }
 
-//    public void setSocket(IOSocket socket) throws IOException {
-//        this.socket = socket;
-//        this.out = new PrintStream(socket.getOutputStream(), true);
-//    }
-
     public void closeSocket() throws IOException {
         this.out.flush();
         this.out.close();
