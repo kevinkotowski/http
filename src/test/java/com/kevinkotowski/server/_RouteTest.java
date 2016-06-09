@@ -9,11 +9,12 @@ import static org.junit.Assert.*;
  */
 public class _RouteTest {
     @Test
-    public void routeInit() throws Exception {
+    public void routeInitGetSet() throws Exception {
         String path = "/mock/path";
         IHController controller = new MockController();
         IHRoute route = new HttpRoute(path, HttpMethod.GET,
                 controller);
+        assertEquals( HttpMethod.GET, route.getMethod() );
         assertEquals( path, route.getPath() );
     }
 

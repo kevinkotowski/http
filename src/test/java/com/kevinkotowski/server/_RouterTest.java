@@ -17,6 +17,7 @@ public class _RouterTest {
 
     @Test
     public void routerLifecycle() throws Exception {
+        // this test needs multiple routes to have any meaning
         String docRoot = "/home/mock";
         String path = "/mock/path";
 

@@ -14,19 +14,19 @@ public class HttpRoute implements IHRoute {
         this.controller = controller;
     }
 
-    public IHController getController(String path, HttpMethod method) {
-        IHController response = null;
-        if (this.path.equals(path) && this.method == method) {
-            response = this.controller;
-        }
-        return response;
-    }
-
     public String getPath() {
         return this.path;
     }
 
     public HttpMethod getMethod() {
         return this.method;
+    }
+
+    public IHController getController(String path, HttpMethod method) {
+        IHController response = null;
+        if (this.path.equals(path) && this.method == method) {
+            response = this.controller;
+        }
+        return response;
     }
 }

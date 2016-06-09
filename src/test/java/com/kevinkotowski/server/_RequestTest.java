@@ -12,7 +12,7 @@ import static org.junit.Assert.*;
  */
 public class _RequestTest {
     @Test
-    public void setNewSocketAndGetIt() throws Exception {
+    public void setNewWithSocketAndGetIt() throws Exception {
         IOSocket socket = new MockSocket();
         HttpRequest request = new HttpRequest(socket);
 

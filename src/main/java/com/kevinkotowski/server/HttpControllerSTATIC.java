@@ -51,7 +51,7 @@ public class HttpControllerSTATIC implements IHController {
                 if (imageType != null) {
                     try {
                         byte[] imageBytes = Files.readAllBytes(Paths.get(path));
-                        response.setImage(imageBytes, imageType);
+                        response.setImage(imageBytes);
                     } catch (IOException e) {
                         System.out.println("Error: HttpControllerSTATIC " +
                                 file.getName() + "File is pretending to be " +

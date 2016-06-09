@@ -26,6 +26,31 @@ public class HttpResponse implements IHResponse {
         this.setResponseReason("OK (kk)");
     }
 
+    public void run() throws Exception {
+        if (!this.socket.isClosed()) {
+            this.writeln( this.getStatusLine() );
+
+            List<String> headers = this.getHeaders();
+            int length = headers.size();
+            for (int x = 0; x < length; x++) {
+                this.writeln( headers.get(x) );
+            }
+            this.writeln( "" );
+
+            String body = this.getBody();
+            if (body != null) {
+                this.write( body );
+            } else {
+                if (this.isImage) {
+                    this.writeImage();
+                }
+            }
+            this.closeSocket();
+        } else {
+            throw new IllegalStateException("Error: Socket is closed.");
+        }
+    }
+
     public void closeSocket() throws IOException {
         this.out.flush();
         this.out.close();
@@ -34,7 +59,8 @@ public class HttpResponse implements IHResponse {
 
     public void setResponseCode(String code) {
         if (code.length() > 3) {
-            throw new RuntimeException("ERROR: Response code too long: " + code);
+            throw new RuntimeException("ERROR: Response code too long: " +
+                    code);
         }
         this.responseCode = code;
     }
@@ -71,30 +97,8 @@ public class HttpResponse implements IHResponse {
         return this.body;
     }
 
-    public void run() throws IOException {
-        this.writeln( this.getStatusLine() );
-
-        List<String> headers = this.getHeaders();
-        int length = headers.size();
-        for (int x = 0; x < length; x++) {
-            this.writeln( headers.get(x) );
-        }
-        this.writeln( "" );
-
-        String body = this.getBody();
-        if (body != null) {
-            this.write( body );
-        } else {
-            if (this.isImage) {
-                this.writeImage();
-            }
-        }
-        this.closeSocket();
-    }
-
-    public void setImage(byte[] imageBytes, String imageType) {
+    public void setImage(byte[] imageBytes) {
         this.image = imageBytes;
-        this.imageType = imageType;
         this.isImage = true;
     }
 

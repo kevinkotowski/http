@@ -17,7 +17,7 @@ public class MockResponse implements IHResponse {
     public String getBody() {
         return "<mock>body</mock>";
     }
-    public void setImage(byte[] imageBytes, String imageType) {};
+    public void setImage(byte[] imageBytes) {};
     public void writeImage() throws IOException {};
     public void setResponseCode(String code) {}
     public String getResponseCode() {
