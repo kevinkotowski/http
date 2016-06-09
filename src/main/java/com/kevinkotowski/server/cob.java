@@ -7,7 +7,7 @@ import java.io.IOException;
  */
 public class cob extends http {
     public static void main(String[] args) throws IOException {
-        String[] parsedArgs = http.handleArguments(args);
+        String[] parsedArgs = HttpArguments.parse(args);
         int portNumber = Integer.parseInt(parsedArgs[0]);
         String docRoot = parsedArgs[1];
 

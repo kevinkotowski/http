@@ -14,7 +14,7 @@ public class _httpTest {
         String port = "5000";
         String dir = "/mock/dir";
         String[] response = new String[2];
-        response = http.handleArguments( new String[]{"-p", port, "-d", dir} );
+        response = HttpArguments.parse( new String[]{"-p", port, "-d", dir} );
         assertEquals( port, response[0] );
         assertEquals( dir, response[1] );
     }
@@ -24,7 +24,7 @@ public class _httpTest {
         String port = "5000";
         String dir = "/mock/dir";
         String[] response = new String[2];
-        response = http.handleArguments( new String[]{"-p", "-d", dir} );
+        response = HttpArguments.parse( new String[]{"-p", "-d", dir} );
     }
 
     @Test(expected = RuntimeException.class)
@@ -32,7 +32,7 @@ public class _httpTest {
         String port = "5000";
         String dir = "/mock/dir";
         String[] response = new String[2];
-        response = http.handleArguments( new String[]{"p", port, "-d", dir} );
+        response = HttpArguments.parse( new String[]{"p", port, "-d", dir} );
     }
 
     @Test
