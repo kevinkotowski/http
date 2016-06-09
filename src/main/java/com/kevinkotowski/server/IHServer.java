@@ -9,4 +9,5 @@ public interface IHServer {
     public void listen() throws IOException;
     public void close() throws IOException;
     public String status();
+    public void setRouter(IHRouter router);
 }

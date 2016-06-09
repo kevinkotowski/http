@@ -5,6 +5,7 @@ package com.kevinkotowski.server;
  */
 public class MockServer implements IHServer {
     String status;
+    IHRouter router;
 
     public MockServer() {
         this.status = "MockServer is waiting.";
@@ -19,5 +20,9 @@ public class MockServer implements IHServer {
 
     public String status() {
         return this.status;
+    }
+
+    public void setRouter(IHRouter router) {
+        this.router = router;
     }
 }

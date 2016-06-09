@@ -20,8 +20,12 @@ public class HttpServer implements IHServer{
         this.port = port;
         this.docRoot = docRoot;
         this.network = new HttpNetwork(port);
-        this.router = new HttpRouter(this.docRoot);
-        this.setRoutes();
+
+        IHRouter router = new HttpRouter(this.docRoot);
+        router.registerRoute(new HttpRoute (
+                "/",
+                HttpMethod.GET, new HttpControllerFILE() ));
+        this.setRouter(router);
     }
 
     public void listen() throws IOException {
@@ -56,13 +60,7 @@ public class HttpServer implements IHServer{
         return message;
     }
 
-    public void registerRoute(String path, HttpMethod method, IHController
-                               controller) {
-        this.router.registerRoute(new HttpRoute ( path, method, controller));
-    }
-
-    public void setRoutes() {
-        this.registerRoute( "/",
-                HttpMethod.GET, new HttpControllerFILE() );
+    public void setRouter(IHRouter router) {
+        this.router = router;
     }
 }
