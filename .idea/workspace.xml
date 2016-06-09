@@ -7,12 +7,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4f96e1eb-65be-488a-a524-f2f879f891e9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_cobTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpServerSocket.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IOServerSocket.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockRequestParser.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockServerSocket.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_RequestParserTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/http_jar.jar" afterPath="$PROJECT_DIR$/out/artifacts/http_jar.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/Http.java" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/Http.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpControllerSTATIC.java" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpControllerSTATIC.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpNetwork.java" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpNetwork.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpRequest.java" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpRequest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpRequestParser.java" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpRequestParser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpServer.java" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpServer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IHNetwork.java" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IHNetwork.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IHRequest.java" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IHRequest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/cob.java" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/cob.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_httpTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_httpTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockSocket.java" afterPath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockSocket.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_NetworkTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_NetworkTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_RequestTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_RequestTest.java" />
     </list>
     <ignored path="http.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,6 +50,41 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="HttpRouter.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpRouter.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="238">
+                  <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#259#268#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="HttpControllerSTATIC.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpControllerSTATIC.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="190">
+                  <caret line="105" column="27" selection-start-line="105" selection-start-column="23" selection-end-line="105" selection-end-column="27" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="_ControllerHEADTest.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ControllerHEADTest.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="330">
+                  <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file leaf-file-name="HttpProducer.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpProducer.java">
               <provider selected="true" editor-type-id="text-editor">
@@ -47,51 +95,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="HttpConsumer.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpConsumer.java">
+          <file leaf-file-name="HttpRequestParser.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpRequestParser.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="150">
-                  <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="IHNetwork.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IHNetwork.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="165">
-                  <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="InputStreamHook.java" pinned="false" current-in-tab="false">
-            <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/src.zip!/com/sun/corba/se/impl/io/InputStreamHook.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="223">
-                  <caret line="322" column="27" selection-start-line="322" selection-start-column="27" selection-end-line="322" selection-end-column="27" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="MockResponse.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockResponse.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="375">
-                  <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="HttpServer.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpServer.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="160">
-                  <caret line="21" column="44" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
+                <state relative-caret-position="757">
+                  <caret line="106" column="22" selection-start-line="106" selection-start-column="22" selection-end-line="106" selection-end-column="22" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -99,34 +107,63 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="CobControllerAUTH.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/CobControllerAUTH.java">
+          <file leaf-file-name="IHRequest.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IHRequest.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="465">
-                  <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+                <state relative-caret-position="255">
+                  <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="cob.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="HttpRequest.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpRequest.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="337">
+                  <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#1125#1126#0" expanded="true" />
+                    <element signature="e#1157#1158#0" expanded="true" />
+                    <element signature="e#1188#1189#0" expanded="true" />
+                    <element signature="e#1220#1221#0" expanded="true" />
+                    <element signature="e#1425#1426#0" expanded="true" />
+                    <element signature="e#1463#1464#0" expanded="true" />
+                    <element signature="e#1923#1924#0" expanded="true" />
+                    <element signature="e#1957#1958#0" expanded="true" />
+                    <element signature="e#2768#2769#0" expanded="true" />
+                    <element signature="e#2803#2804#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="HttpControllerDELETE.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpControllerDELETE.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="195">
+                  <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="cob.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/cob.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="285">
-                  <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
+                <state relative-caret-position="120">
+                  <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="_cobTest.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_cobTest.java">
+          <file leaf-file-name="CobControllerPARMS.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/CobControllerPARMS.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="240">
-                  <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
+                <state relative-caret-position="270">
+                  <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -135,91 +172,11 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="HttpRouter.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpRouter.java">
+          <file leaf-file-name="IHRequestParser.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IHRequestParser.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1300">
-                  <caret line="125" column="25" selection-start-line="125" selection-start-column="25" selection-end-line="125" selection-end-column="25" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#259#268#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="MockRouter.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockRouter.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="285">
-                  <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#240#249#0" expanded="true" />
-                    <element signature="e#447#448#0" expanded="true" />
-                    <element signature="e#485#486#0" expanded="true" />
-                    <element signature="e#756#757#0" expanded="true" />
-                    <element signature="e#783#784#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="_ConsumerTest.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ConsumerTest.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="285">
-                  <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="_httpTest.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_httpTest.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="315">
-                  <caret line="24" column="15" selection-start-line="24" selection-start-column="15" selection-end-line="24" selection-end-column="15" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="http.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/http.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="300">
-                  <caret line="20" column="54" selection-start-line="20" selection-start-column="54" selection-end-line="20" selection-end-column="54" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="_ProducerTest.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ProducerTest.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="210">
-                  <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="HttpRequest.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpRequest.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="640">
-                  <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="_ControllerCobTest.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ControllerCobTest.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="420">
-                  <caret line="31" column="75" selection-start-line="31" selection-start-column="75" selection-end-line="31" selection-end-column="75" />
+                <state relative-caret-position="120">
+                  <caret line="8" column="62" selection-start-line="8" selection-start-column="62" selection-end-line="8" selection-end-column="62" />
                   <folding />
                 </state>
               </provider>
@@ -228,8 +185,18 @@
           <file leaf-file-name="_NetworkTest.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_NetworkTest.java">
               <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="135">
+                  <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="_RequestParserTest.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_RequestParserTest.java">
+              <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="225">
-                  <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
+                  <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
                   <folding />
                 </state>
               </provider>
@@ -238,8 +205,70 @@
           <file leaf-file-name="_RequestTest.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_RequestTest.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="180">
-                  <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+                <state relative-caret-position="990">
+                  <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#1349#1357#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="_ResponseTest.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ResponseTest.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="105">
+                  <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="MockSocket.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockSocket.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="135">
+                  <caret line="14" column="49" selection-start-line="14" selection-start-column="49" selection-end-line="14" selection-end-column="49" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="IOSocket.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IOSocket.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="105">
+                  <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="HttpMethod.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpMethod.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="75">
+                  <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="MockRequestParser.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockRequestParser.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="150">
+                  <caret line="10" column="30" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="MockServerSocket.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockServerSocket.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="120">
+                  <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
                   <folding />
                 </state>
               </provider>
@@ -269,15 +298,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpControllerPATCH.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockResponse.java" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpController418.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ControllerCobTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpControllerAUTH.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/CobControllerPARMS.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/CobControllerREDIRECT.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpControllerGET.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpControllerUPDATE.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ResponseTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpControllerETAG.java" />
@@ -288,7 +308,6 @@
         <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ControllerTEACUPTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ControllerHttpTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ControllerETAGTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockSocket.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IORequest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpControllerFILE.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ControllerIFMATCHTest.java" />
@@ -297,29 +316,39 @@
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/CobServer.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ArgumentsTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpArguments.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpNetwork.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpServer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpRouter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpRoute.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpResponse.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpRequestParser.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpRequest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpControllerSTATIC.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpControllerIFMATCH.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpControllerDELETE.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/CobControllerAUTH.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockRouter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IHNetwork.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IOSharedQueue.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpSharedQueue.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpProducer.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ProducerTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpConsumer.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ConsumerTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/http.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/cob.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_cobTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_httpTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/IOServerSocket.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IHNetwork.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IOServerSocket.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpNetwork.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpServer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpServerSocket.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/http.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/cob.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockServerSocket.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockRequestParser.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_NetworkTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockSocket.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_RequestParserTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpRouter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IHRequest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpRequestParser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpControllerSTATIC.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_RequestTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpRequest.java" />
       </list>
     </option>
   </component>
@@ -553,7 +582,27 @@
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit._cobTest">
+  <component name="RunManager" selected="JUnit.com.kevinkotowski.server in http">
+    <configuration default="false" name="cob" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.kevinkotowski.server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.kevinkotowski.server.cob" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="-p 5000 -d $PROJECT_DIR$/../cob_spec/public" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="http" />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="false" name="com.kevinkotowski.server in http" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -580,7 +629,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="_httpTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="_RequestTest.addParmsAndGetThem" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.kevinkotowski.server.*" />
@@ -591,34 +640,8 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.kevinkotowski.server" />
-      <option name="MAIN_CLASS_NAME" value="com.kevinkotowski.server._httpTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="_httpTest.getDefaultRouter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.kevinkotowski.server.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="http" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.kevinkotowski.server" />
-      <option name="MAIN_CLASS_NAME" value="com.kevinkotowski.server._httpTest" />
-      <option name="METHOD_NAME" value="getDefaultRouter" />
+      <option name="MAIN_CLASS_NAME" value="com.kevinkotowski.server._RequestTest" />
+      <option name="METHOD_NAME" value="addParmsAndGetThem" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -632,7 +655,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="_cobTest.getOverriddenRouter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="_RequestTest.addContentAndHasGetLengthIt" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.kevinkotowski.server.*" />
@@ -643,8 +666,8 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.kevinkotowski.server" />
-      <option name="MAIN_CLASS_NAME" value="com.kevinkotowski.server._cobTest" />
-      <option name="METHOD_NAME" value="getOverriddenRouter" />
+      <option name="MAIN_CLASS_NAME" value="com.kevinkotowski.server._RequestTest" />
+      <option name="METHOD_NAME" value="addContentAndHasGetLengthIt" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -658,7 +681,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="_cobTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="_RequestTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.kevinkotowski.server.*" />
@@ -669,7 +692,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.kevinkotowski.server" />
-      <option name="MAIN_CLASS_NAME" value="com.kevinkotowski.server._cobTest" />
+      <option name="MAIN_CLASS_NAME" value="com.kevinkotowski.server._RequestTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -977,19 +1000,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.com.kevinkotowski.server in http" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit._httpTest" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit._httpTest.getDefaultRouter" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit._cobTest.getOverriddenRouter" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit._cobTest" />
+      <item index="0" class="java.lang.String" itemvalue="Application.cob" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.com.kevinkotowski.server in http" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit._RequestTest.addParmsAndGetThem" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit._RequestTest.addContentAndHasGetLengthIt" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit._RequestTest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit._cobTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit._httpTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit._httpTest.getDefaultRouter" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit._cobTest.getOverriddenRouter" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.com.kevinkotowski.server in http" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.com.kevinkotowski.server in http" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit._RequestTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit._RequestTest.addContentAndHasGetLengthIt" />
+        <item index="3" class="java.lang.String" itemvalue="Application.cob" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit._RequestTest.addParmsAndGetThem" />
       </list>
     </recent_temporary>
   </component>
@@ -1015,35 +1038,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="_cobTest - 2016.06.09 at 12h 32m 35s.xml">
-      <configuration name="_cobTest" configurationId="JUnit" />
+    <history-entry file="_RequestTest - 2016.06.09 at 16h 13m 35s.xml">
+      <configuration name="_RequestTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="_cobTest_getOverriddenRouter - 2016.06.09 at 12h 30m 01s.xml">
-      <configuration name="_cobTest.getOverriddenRouter" configurationId="JUnit" />
+    <history-entry file="_RequestTest_addContentAndHasGetLengthIt - 2016.06.09 at 16h 03m 41s.xml">
+      <configuration name="_RequestTest.addContentAndHasGetLengthIt" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="_cobTest_getOverriddenRouter - 2016.06.09 at 12h 30m 18s.xml">
-      <configuration name="_cobTest.getOverriddenRouter" configurationId="JUnit" />
+    <history-entry file="_RequestTest_addContentAndHasGetLengthIt - 2016.06.09 at 16h 03m 58s.xml">
+      <configuration name="_RequestTest.addContentAndHasGetLengthIt" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="_cobTest_getOverriddenRouter - 2016.06.09 at 12h 31m 22s.xml">
-      <configuration name="_cobTest.getOverriddenRouter" configurationId="JUnit" />
+    <history-entry file="_RequestTest_addContentAndHasGetLengthIt - 2016.06.09 at 16h 05m 15s.xml">
+      <configuration name="_RequestTest.addContentAndHasGetLengthIt" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="_cobTest_getOverriddenRouter - 2016.06.09 at 12h 31m 50s.xml">
-      <configuration name="_cobTest.getOverriddenRouter" configurationId="JUnit" />
+    <history-entry file="_RequestTest_addContentAndHasGetLengthIt - 2016.06.09 at 16h 11m 34s.xml">
+      <configuration name="_RequestTest.addContentAndHasGetLengthIt" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="_cobTest_getOverriddenRouter - 2016.06.09 at 12h 31m 57s.xml">
-      <configuration name="_cobTest.getOverriddenRouter" configurationId="JUnit" />
+    <history-entry file="_RequestTest_addParmsAndGetThem - 2016.06.09 at 15h 16m 06s.xml">
+      <configuration name="_RequestTest.addParmsAndGetThem" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="_httpTest - 2016.06.09 at 12h 21m 00s.xml">
-      <configuration name="_httpTest" configurationId="JUnit" />
+    <history-entry file="com_kevinkotowski_server_in_http - 2016.06.09 at 15h 24m 50s.xml">
+      <configuration name="com.kevinkotowski.server in http" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="_httpTest - 2016.06.09 at 12h 32m 31s.xml">
-      <configuration name="_httpTest" configurationId="JUnit" />
+    <history-entry file="com_kevinkotowski_server_in_http - 2016.06.09 at 15h 30m 47s.xml">
+      <configuration name="com.kevinkotowski.server in http" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="_httpTest_getDefaultRouter - 2016.06.09 at 12h 28m 25s.xml">
-      <configuration name="_httpTest.getDefaultRouter" configurationId="JUnit" />
+    <history-entry file="com_kevinkotowski_server_in_http - 2016.06.09 at 15h 44m 30s.xml">
+      <configuration name="com.kevinkotowski.server in http" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="_httpTest_getDefaultRouter - 2016.06.09 at 12h 32m 27s.xml">
-      <configuration name="_httpTest.getDefaultRouter" configurationId="JUnit" />
+    <history-entry file="com_kevinkotowski_server_in_http - 2016.06.09 at 16h 13m 48s.xml">
+      <configuration name="com.kevinkotowski.server in http" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -1124,7 +1147,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="143" />
+      <option name="time" value="146" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1133,115 +1156,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IHRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="25" column="28" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
-          <folding>
-            <element signature="e#441#442#0" expanded="true" />
-            <element signature="e#475#476#0" expanded="true" />
-            <element signature="e#521#522#0" expanded="true" />
-            <element signature="e#557#558#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IHRouter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IHServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/CobServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ControllerHEADTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="14" column="45" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ControllerHttpTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ControllerIFMATCHTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ControllerINVALIDTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ControllerOPTIONSTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ControllerTEACUPTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="17" column="32" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_RouterTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_SocketTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ArgumentsTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -1266,22 +1180,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpRequestParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="44" column="62" selection-start-line="44" selection-start-column="62" selection-end-line="44" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpControllerUPDATE.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -1295,16 +1193,6 @@
         <state relative-caret-position="105">
           <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpControllerSTATIC.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="147" column="0" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1334,22 +1222,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpControllerHEAD.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpControllerDELETE.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpArguments.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -1366,14 +1238,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/CobControllerPARMS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="30" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/CobControllerAUTH.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
@@ -1382,68 +1246,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpNetwork.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="640">
-          <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_RequestTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockRouter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#240#249#0" expanded="true" />
-            <element signature="e#447#448#0" expanded="true" />
-            <element signature="e#485#486#0" expanded="true" />
-            <element signature="e#756#757#0" expanded="true" />
-            <element signature="e#783#784#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockResponse.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IHNetwork.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="21" column="44" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1471,26 +1278,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_NetworkTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ControllerCobTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="31" column="75" selection-start-line="31" selection-start-column="75" selection-end-line="31" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpProducer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
           <folding />
         </state>
       </provider>
@@ -1503,22 +1294,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpConsumer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/http.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="54" selection-start-line="20" selection-start-column="54" selection-end-line="20" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ProducerTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -1527,13 +1302,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpRouter.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_cobTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1300">
-          <caret line="125" column="25" selection-start-line="125" selection-start-column="25" selection-end-line="125" selection-end-column="25" />
+        <state relative-caret-position="240">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#259#268#0" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1546,10 +1320,208 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_cobTest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockRouter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#240#249#0" expanded="false" />
+            <element signature="e#447#448#0" expanded="false" />
+            <element signature="e#485#486#0" expanded="false" />
+            <element signature="e#756#757#0" expanded="false" />
+            <element signature="e#783#784#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/IOServerSocket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="7" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IOServerSocket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpSocket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IHNetwork.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpServerSocket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/http.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockServerSocket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IHRequestParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="62" selection-start-line="8" selection-start-column="62" selection-end-line="8" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockRequestParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="30" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_NetworkTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpConsumer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpNetwork.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IOSocket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockSocket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="14" column="49" selection-start-line="14" selection-start-column="49" selection-end-line="14" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_RequestParserTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpControllerHEAD.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ControllerHEADTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpProducer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpRouter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#259#268#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IHRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpRequestParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="757">
+          <caret line="106" column="22" selection-start-line="106" selection-start-column="22" selection-end-line="106" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1558,9 +1530,72 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/cob.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
+        <state relative-caret-position="120">
+          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/CobControllerPARMS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpControllerSTATIC.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="105" column="27" selection-start-line="105" selection-start-column="23" selection-end-line="105" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpControllerDELETE.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_RequestTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="990">
+          <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+          <folding>
+            <element signature="e#1349#1357#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ResponseTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+          <folding>
+            <element signature="e#1125#1126#0" expanded="true" />
+            <element signature="e#1157#1158#0" expanded="true" />
+            <element signature="e#1188#1189#0" expanded="true" />
+            <element signature="e#1220#1221#0" expanded="true" />
+            <element signature="e#1425#1426#0" expanded="true" />
+            <element signature="e#1463#1464#0" expanded="true" />
+            <element signature="e#1923#1924#0" expanded="true" />
+            <element signature="e#1957#1958#0" expanded="true" />
+            <element signature="e#2768#2769#0" expanded="true" />
+            <element signature="e#2803#2804#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

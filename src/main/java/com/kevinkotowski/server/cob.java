@@ -10,8 +10,9 @@ public class cob extends http {
         String[] parsedArgs = HttpArguments.parse(args);
         int portNumber = Integer.parseInt(parsedArgs[0]);
         String docRoot = parsedArgs[1];
+        IOServerSocket serverSocket = new HttpServerSocket(portNumber);
 
-        IHServer server = new HttpServer(portNumber, getRouter(docRoot));
+        IHServer server = new HttpServer(serverSocket, getRouter(docRoot));
         server.listen();
     }
 

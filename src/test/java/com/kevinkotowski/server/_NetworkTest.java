@@ -9,17 +9,11 @@ import static org.junit.Assert.*;
  */
 public class _NetworkTest {
     @Test
-    public void startListeningToPort() throws Exception {
-        int port = 3210;
-        IHNetwork mockNetwork = new MockNetwork(port);
-        assertEquals( port, mockNetwork.getPort() );
-    }
-
-    @Test
-    public void getNextRequestFromPort() throws Exception {
-        int port = 3210;
-        IHNetwork mockNetwork = new MockNetwork(port);
-        IHRequest request = mockNetwork.next();
-        assertEquals( HttpMethod.GET, request.getMethod() );
+    public void getNextRequest() throws Exception {
+        IOServerSocket serverSocket = new MockServerSocket();
+        IHNetwork network = new HttpNetwork(serverSocket,
+                new MockRequestParser());
+        IHRequest request = network.next();
+        assertEquals( HttpMethod.HEAD, request.getMethod() );
     }
 }

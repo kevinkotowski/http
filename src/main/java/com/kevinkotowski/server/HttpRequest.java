@@ -11,7 +11,7 @@ public class HttpRequest implements IHRequest {
     private HttpMethod method = null;
     private String path = null;
     private List<String> headers = new ArrayList(0);
-    private List<String> content = new ArrayList(0);
+    private String content = null;
     private String[][] parms = null;
 
     private IOSocket socket = null;
@@ -43,8 +43,12 @@ public class HttpRequest implements IHRequest {
         return this.method;
     }
 
-    public void setDocRoot(String docRoot) {
-        this.docRoot = docRoot;
+    public void setPath(String path) {
+        this.path = path;
+    }
+
+    public String getPath() {
+        return this.path;
     }
 
     public void addHeader(String header) {
@@ -55,20 +59,16 @@ public class HttpRequest implements IHRequest {
         return this.headers;
     }
 
-    public void setPath(String path) {
-        this.path = path;
-    }
-
-    public String getPath() {
-        return this.path;
+    public void setDocRoot(String docRoot) {
+        this.docRoot = docRoot;
     }
 
     public String getFullPath() {
         String fullPath;
         if ( this.path.substring(0, 1).equals("/") ) {
-            fullPath = docRoot + path;
+            fullPath = this.docRoot + path;
         } else {
-            fullPath = docRoot + "/" + path;
+            fullPath = this.docRoot + "/" + path;
         }
 
         int fileIndex = fullPath.indexOf("?");
@@ -86,12 +86,16 @@ public class HttpRequest implements IHRequest {
         return this.parms;
     }
 
-    public void addContent(String content) {
-        this.content.add(content);
+    public void setContent(String content) {
+        this.content = content;
+        this.addHeader("Content-Length: " +
+                Integer.toString( content.length() ) );
     }
 
     public int getContentLength() {
         int contentLength = 0;
+
+        // trust the request this is required header for content
         for ( String header : this.headers ) {
             if (header.contains("Content-Length")) {
                 String[] contentHeader = header.split(":");
@@ -102,10 +106,10 @@ public class HttpRequest implements IHRequest {
     }
 
     public boolean hasContent() {
-        return (this.content.size() == 0) ? false : true;
+        return (this.content == null) ? false : true;
     }
 
     public String getContent() {
-        return this.content.get(0);
+        return this.content;
     }
 }

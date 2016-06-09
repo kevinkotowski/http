@@ -7,5 +7,4 @@ import java.io.*;
  */
 public interface IHNetwork {
     public IHRequest next() throws IOException;
-    public int getPort();
 }

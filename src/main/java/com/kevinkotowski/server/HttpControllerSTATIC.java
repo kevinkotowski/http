@@ -70,7 +70,8 @@ public class HttpControllerSTATIC implements IHController {
                         rangeCounter += 1;
                     }
                     body += this.trimToRange(stringBuilder.toString());
-                    if (-1 != this.rangeMin  || -1 != this.rangeMax || -1 != this.rangeLast) {
+                    if (-1 != this.rangeMin  || -1 != this.rangeMax || -1 !=
+                            this.rangeLast) {
                         response.setResponseCode("206");
                     }
 

@@ -18,12 +18,11 @@ public interface IHRequest {
     public HttpMethod getMethod();
     public void addHeader(String header);
     public List<String> getHeaders();
-    public void addContent(String content);
+    public void setContent(String content);
     public boolean hasContent();
     public int getContentLength();
     public String getContent();
 
     public void setDocRoot(String docRoot);
-//    public String getDocRoot();
     public String getFullPath();
 }

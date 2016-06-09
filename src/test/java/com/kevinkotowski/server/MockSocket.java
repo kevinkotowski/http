@@ -11,13 +11,9 @@ import static java.nio.charset.StandardCharsets.UTF_8;
  * Created by kevinkotowski on 5/12/16.
  */
 public class MockSocket implements IOSocket {
-    public InputStream getInputStream() {
-        return new InputStream() {
-            @Override
-            public int read() throws IOException {
-                return 0;
-            }
-        };
+    public InputStream getInputStream() throws IOException {
+        String rawRequest = "GET /mock HTTP/1.1\n\n";
+        return new ByteArrayInputStream( rawRequest.getBytes(UTF_8) );
     }
 
     public OutputStream getOutputStream() {

@@ -10,14 +10,12 @@ import java.util.Scanner;
  * Created by kevinkotowski on 6/2/16.
  */
 public class HttpRequestParser implements IHRequestParser {
-//    private List<IHRequestHeaderParser> headerParsers = new ArrayList(0);
-
     public IHRequest parse(IOSocket socket) throws IOException {
         Scanner scanner;
-        IHRequest request = new HttpRequest(socket);
         InputStream in;
         in = socket.getInputStream();
         scanner = new Scanner(in, "UTF8");
+        IHRequest request = new HttpRequest(socket);
 
         request = this.parseRequestLine( request, scanner );
         request = this.parseHeaders( request, scanner );
@@ -106,7 +104,7 @@ public class HttpRequestParser implements IHRequestParser {
             for (int x = 0; x < contentLength; x++) {
                 content += scanner.next();
             }
-            request.addContent(content);
+            request.setContent(content);
         }
         return request;
     }

@@ -16,11 +16,11 @@ public class HttpServer implements IHServer{
     private IHNetwork network;
     private IHRouter router;
 
-    HttpServer(int port, IHRouter router) throws IOException {
-        this.port = port;
+    HttpServer(IOServerSocket serverSocket, IHRouter router)
+            throws IOException {
         this.docRoot = router.getDocRoot();
-        this.network = new HttpNetwork(port);
         this.router = router;
+        this.network = new HttpNetwork(serverSocket, new HttpRequestParser());
     }
 
     public void listen() throws IOException {

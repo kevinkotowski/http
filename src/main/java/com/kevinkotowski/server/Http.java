@@ -12,8 +12,9 @@ public class http {
         String[] parsedArgs = HttpArguments.parse(args);
         int portNumber = Integer.parseInt(parsedArgs[0]);
         String docRoot = parsedArgs[1];
+        IOServerSocket serverSocket = new HttpServerSocket(portNumber);
 
-        IHServer httpServer = new HttpServer(portNumber,
+        IHServer httpServer = new HttpServer(serverSocket,
                 getRouter(docRoot));
         httpServer.listen();
     }
