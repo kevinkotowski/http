@@ -10,35 +10,19 @@ import static org.junit.Assert.assertTrue;
  */
 public class _httpTest {
     @Test
-    public void validateGoodArguments() throws Exception {
-        String port = "5000";
-        String dir = "/mock/dir";
-        String[] response = new String[2];
-        response = HttpArguments.parse( new String[]{"-p", port, "-d", dir} );
-        assertEquals( port, response[0] );
-        assertEquals( dir, response[1] );
-    }
-
-    @Test(expected = RuntimeException.class)
-    public void validateBadArgumentCount() throws Exception {
-        String port = "5000";
-        String dir = "/mock/dir";
-        String[] response = new String[2];
-        response = HttpArguments.parse( new String[]{"-p", "-d", dir} );
-    }
-
-    @Test(expected = RuntimeException.class)
-    public void validateBadPortArgument() throws Exception {
-        String port = "5000";
-        String dir = "/mock/dir";
-        String[] response = new String[2];
-        response = HttpArguments.parse( new String[]{"p", port, "-d", dir} );
-    }
-
-    @Test
     public void createServerAndListen() throws Exception {
         IHServer server = new MockServer();
         http http = new http(server);
         assertTrue( server.status().contains("listening") );
+    }
+
+    @Test
+    public void getDefaultRouter() throws Exception {
+        String docRoot = "httpRoot";
+        IHRouter router = http.getRouter(docRoot);
+
+        assertEquals(docRoot, router.getDocRoot());
+        String options = router.getOptions("/");
+        assertEquals("OPTIONS,GET,HEAD", options);
     }
 }
