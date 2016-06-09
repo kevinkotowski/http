@@ -7,13 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4f96e1eb-65be-488a-a524-f2f879f891e9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpArguments.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ArgumentsTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/http_jar.jar" afterPath="$PROJECT_DIR$/out/artifacts/http_jar.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/Http.java" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/Http.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/cob.java" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/cob.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_httpTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_httpTest.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_SocketTest.java" afterPath="" />
     </list>
     <ignored path="http.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -1280,14 +1274,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_SocketTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpSocket.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -1555,6 +1541,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_SocketTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
           <folding />
         </state>
       </provider>
