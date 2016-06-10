@@ -5,7 +5,9 @@ package com.kevinkotowski.server;
  */
 public interface IHRouter {
     public String getDocRoot();
+    public void registerMiddleware(IHMiddleware middleware);
     public void registerRoute(IHRoute route);
+    public void registerPostware(IHPostware postware);
     public String getOptions(String path);
     public IHResponse route(IHRequest request) throws Exception;
 }

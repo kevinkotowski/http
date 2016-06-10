@@ -18,7 +18,8 @@ public class _cobTest {
     @Test
     public void getOverriddenRouter() throws Exception {
         String docRoot = "cobRoot";
-        IHRouter router = cob.getRouter(docRoot);
+        IHLogger logger = new MockLogger();
+        IHRouter router = cob.getRouter(docRoot, logger);
 
         assertEquals(docRoot, router.getDocRoot());
 

@@ -8,7 +8,6 @@ import static org.junit.Assert.assertTrue;
  * Created by kevinkotowski on 5/3/16.
  */
 public class _ServerTest {
-
     @Test
     public void listenToServer() throws Exception {
         IHNetwork network = new MockNetwork();

@@ -19,7 +19,8 @@ public class _httpTest {
     @Test
     public void getDefaultRouter() throws Exception {
         String docRoot = "httpRoot";
-        IHRouter router = http.getRouter(docRoot);
+        IHLogger logger = new MockLogger();
+        IHRouter router = http.getRouter(docRoot, logger);
 
         assertEquals(docRoot, router.getDocRoot());
         String options = router.getOptions("/");

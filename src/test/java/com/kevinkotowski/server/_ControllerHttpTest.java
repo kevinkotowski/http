@@ -32,7 +32,7 @@ public class _ControllerHttpTest {
     }
 
     @Test
-    public void executeETAG() throws Exception {
+    public void executeIFMATCH() throws Exception {
         IHController controller = new HttpControllerIFMATCH();
         assertTrue(controller.execute(this.request) instanceof IHResponse);
     }

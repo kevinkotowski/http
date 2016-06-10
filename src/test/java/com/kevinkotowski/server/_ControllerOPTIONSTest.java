@@ -14,11 +14,12 @@ public class _ControllerOPTIONSTest {
     public void executeOPTIONS() throws Exception {
         IOSocket socket = new MockSocket();
         String path = "/docroot/file";
+        IHLogger logger = new MockLogger();
         HttpRequest request = new HttpRequest(socket);
         request.setMethod("OPTIONS");
         request.setPath(path);
 
-        HttpRouter router = new HttpRouter(path);
+        HttpRouter router = new HttpRouter(path, logger);
         IHController controller = new HttpControllerUPDATE();
         HttpRoute route = new HttpRoute(path, HttpMethod.POST, controller);
 

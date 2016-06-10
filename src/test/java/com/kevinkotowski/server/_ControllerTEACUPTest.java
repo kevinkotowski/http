@@ -12,11 +12,12 @@ public class _ControllerTEACUPTest {
     public void executeTEACUPokay() throws Exception {
         IOSocket socket = new MockSocket();
         String path = "/tea";
+        IHLogger logger = new MockLogger();
         HttpRequest request = new HttpRequest(socket);
         request.setMethod("GET");
         request.setPath(path);
 
-        HttpRouter router = new HttpRouter(path);
+        HttpRouter router = new HttpRouter(path, logger);
         IHController controller = new HttpControllerTEACUP();
         HttpRoute route = new HttpRoute(path, HttpMethod.GET, controller);
 
@@ -31,11 +32,12 @@ public class _ControllerTEACUPTest {
     public void verify418() throws Exception {
         IOSocket socket = new MockSocket();
         String path = "/coffee";
+        IHLogger logger = new MockLogger();
         HttpRequest request = new HttpRequest(socket);
         request.setMethod("GET");
         request.setPath(path);
 
-        HttpRouter router = new HttpRouter(path);
+        HttpRouter router = new HttpRouter(path, logger);
         IHController controller = new HttpControllerTEACUP();
         HttpRoute route = new HttpRoute(path, HttpMethod.GET, controller);
 

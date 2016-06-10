@@ -13,13 +13,17 @@ public class cob extends http {
         IOServerSocket serverSocket = new HttpServerSocket(portNumber);
         IHNetwork network = new HttpNetwork(serverSocket,
                 new HttpRequestParser());
+        IOFile logFile = new HttpFile(docRoot + "/logs");
+        IHLogger accessLogger = new HttpLogger(logFile);
 
-        IHServer server = new HttpServer(network, getRouter(docRoot));
+        IHServer server = new HttpServer( network,
+                getRouter(docRoot, accessLogger) );
+
         server.listen();
     }
 
-    public static IHRouter getRouter(String docRoot) {
-        IHRouter router = new HttpRouter(docRoot);
+    public static IHRouter getRouter(String docRoot, IHLogger accessLogger) {
+        IHRouter router = new HttpRouter(docRoot, accessLogger);
         router.registerRoute(new HttpRoute("/",
                 HttpMethod.GET, new HttpControllerSTATIC()));
 

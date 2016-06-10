@@ -1,6 +1,5 @@
 package com.kevinkotowski.server;
 
-import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,14 +8,22 @@ import java.util.List;
  */
 public class HttpRouter implements IHRouter {
     String docRoot;
+    List<IHMiddleware> middlewares = new ArrayList<IHMiddleware>();
     List<IHRoute> routes = new ArrayList<IHRoute>();
+    List<IHPostware> postwares = new ArrayList<IHPostware>();
+    IHLogger accessLogger;
 
-    public HttpRouter(String docRoot) {
+    public HttpRouter(String docRoot, IHLogger accessLogger) {
         this.docRoot = docRoot;
+        this.accessLogger = accessLogger;
     }
 
     public String getDocRoot() {
         return this.docRoot;
+    }
+
+    public void registerMiddleware(IHMiddleware middleware) {
+        this.middlewares.add(middleware);
     }
 
     public void registerRoute(IHRoute route) {
@@ -28,6 +35,10 @@ public class HttpRouter implements IHRouter {
         } else {
             this.routes.add(route);
         }
+    }
+
+    public void registerPostware(IHPostware postware) {
+        this.postwares.add(postware);
     }
 
     public IHResponse route(IHRequest request) throws Exception {
@@ -117,20 +128,6 @@ public class HttpRouter implements IHRouter {
 
     private void logAccess(HttpMethod method, String path) {
         String log = method + " " + path + " HTTP/1.1 (kk)\n";
-        try {
-            File logs = new File(this.docRoot + "/logs");
-            if (!logs.exists()) {
-                logs.createNewFile();
-            }
-
-            if (logs.canWrite()) {
-                FileWriter fw = new FileWriter(logs.getAbsoluteFile(), true);
-                BufferedWriter bw = new BufferedWriter(fw);
-                bw.write(log);
-                bw.close();
-            }
-        } catch (IOException e) {
-            System.out.println("Error writing log access file: " + path);
-        }
+        this.accessLogger.writeln(log);
     }
 }

@@ -12,11 +12,12 @@ public class _ControllerINVALIDTest {
     public void executeINVALID() throws Exception {
         IOSocket socket = new MockSocket();
         String path = "/docroot/file";
+        IHLogger logger = new MockLogger();
         HttpRequest request = new HttpRequest(socket);
         request.setMethod("POST");
         request.setPath(path);
 
-        HttpRouter router = new HttpRouter(path);
+        HttpRouter router = new HttpRouter(path, logger);
         IHController controller = new HttpControllerUPDATE();
         HttpRoute route = new HttpRoute(path, HttpMethod.PUT, controller);
 

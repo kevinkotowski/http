@@ -18,9 +18,11 @@ public class MockRouter implements IHRouter {
         return this.docRoot;
     }
 
+    public void registerMiddleware(IHMiddleware middleware) {}
     public void registerRoute(IHRoute route) {
         this.routes.add(route);
     }
+    public void registerPostware(IHPostware postware) {}
 
     public IHResponse route(IHRequest request) throws Exception {
         return new MockResponse();

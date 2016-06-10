@@ -11,7 +11,8 @@ public class _RouterTest {
     @Test
     public void routerInit() throws Exception {
         String docRoot = "/home/mock";
-        IHRouter router = new HttpRouter(docRoot);
+        IHLogger logger = new MockLogger();
+        IHRouter router = new HttpRouter(docRoot, logger);
         assertEquals(router.getDocRoot(), docRoot);
     }
 
@@ -19,6 +20,7 @@ public class _RouterTest {
     public void routerLifecycle() throws Exception {
         // this test needs multiple routes to have any meaning
         String docRoot = "/home/mock";
+        IHLogger logger = new MockLogger();
         String path = "/mock/path";
 
         IHController controllerGET = new MockController();
@@ -28,7 +30,7 @@ public class _RouterTest {
         IHRoute routePOST = new HttpRoute(path, HttpMethod.POST,
                 controllerPOST);
 
-        IHRouter router = new HttpRouter(docRoot);
+        IHRouter router = new HttpRouter(docRoot, logger);
         router.registerRoute(routeGET);
         router.registerRoute(routePOST);
 
@@ -53,10 +55,11 @@ public class _RouterTest {
     @Test(expected = IllegalStateException.class)
     public void duplicateRoute() throws Exception {
         String docRoot = "/home/mock";
+        IHLogger logger = new MockLogger();
         String path = "/mock/path";
 
         IHController controllerGET = new MockController();
-        IHRouter router = new HttpRouter(docRoot);
+        IHRouter router = new HttpRouter(docRoot, logger);
         IHRoute routeGET = new HttpRoute(path, HttpMethod.GET,
                 controllerGET);
         router.registerRoute(routeGET);
@@ -67,9 +70,10 @@ public class _RouterTest {
     @Test
     public void getOptions() throws Exception {
         String docRoot = "/home/mock";
+        IHLogger logger = new MockLogger();
         String path = "/mock/path";
 
-        IHRouter router = new HttpRouter(docRoot);
+        IHRouter router = new HttpRouter(docRoot, logger);
 
         IHController controller = new MockController();
         IHRoute routeGET = new HttpRoute(path, HttpMethod.GET,

@@ -12,11 +12,14 @@ public class _ControllerIFMATCHTest {
     public void executeIFMATCHnoMatch() throws Exception {
         IOSocket socket = new MockSocket();
         String path = "/file_to_edit.txt";
+        String docRoot = "/public/docRoot";
+        IHLogger accessLogger = new MockLogger();
+
         HttpRequest request = new HttpRequest(socket);
         request.setMethod("GET");
         request.setPath(path);
 
-        HttpRouter router = new HttpRouter(path);
+        HttpRouter router = new HttpRouter(docRoot, accessLogger);
         IHController controller = new HttpControllerIFMATCH();
         HttpRoute route = new HttpRoute(path, HttpMethod.GET, controller);
 
