@@ -13,7 +13,7 @@ import static org.junit.Assert.*;
 public class _ProducerTest {
     @Test
     public void produce() throws Exception {
-        IHNetwork network = new MockNetwork(5000);
+        IHNetwork network = new MockNetwork();
         BlockingQueue queue = new LinkedBlockingQueue();
 
         HttpProducer producer = new HttpProducer(network, queue);

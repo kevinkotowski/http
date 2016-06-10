@@ -13,9 +13,10 @@ public class http {
         int portNumber = Integer.parseInt(parsedArgs[0]);
         String docRoot = parsedArgs[1];
         IOServerSocket serverSocket = new HttpServerSocket(portNumber);
+        IHNetwork network = new HttpNetwork(serverSocket,
+                new HttpRequestParser());
 
-        IHServer httpServer = new HttpServer(serverSocket,
-                getRouter(docRoot));
+        IHServer httpServer = new HttpServer(network, getRouter(docRoot));
         httpServer.listen();
     }
 

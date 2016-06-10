@@ -10,16 +10,23 @@ import static org.junit.Assert.assertTrue;
 public class _ServerTest {
 
     @Test
-    public void createAndListenToServer() throws Exception {
-        IHServer server = new MockServer();
+    public void listenToServer() throws Exception {
+        IHNetwork network = new MockNetwork();
+        IHRouter router = new MockRouter("/mockRoot");
+
+        IHServer server = new HttpServer(network, router);
         server.listen();
-        assertTrue( server.status().contains("listening") );
+        assertTrue( server.status().contains("Listening") );
     }
 
     @Test
-    public void createAndCloseServer() throws Exception {
-        IHServer server = new MockServer();
+    public void closeServer() throws Exception {
+        IHNetwork network = new MockNetwork();
+        IHRouter router = new MockRouter("/mockRoot");
+
+        IHServer server = new HttpServer(network, router);
+        server.listen();
         server.close();
-        assertTrue( server.status().contains("closed") );
+        assertTrue( server.status().contains("Stopped") );
     }
 }

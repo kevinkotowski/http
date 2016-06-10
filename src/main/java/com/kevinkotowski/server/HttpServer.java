@@ -11,47 +11,56 @@ import java.util.concurrent.LinkedBlockingQueue;
  */
 public class HttpServer implements IHServer{
     private int port = 0;
-    private String docRoot = null;
-    private boolean isListening = false;
     private IHNetwork network;
     private IHRouter router;
+    private ExecutorService producerPool;
+    private ExecutorService consumerPool;
 
-    HttpServer(IOServerSocket serverSocket, IHRouter router)
+    HttpServer(IHNetwork network, IHRouter router)
             throws IOException {
-        this.docRoot = router.getDocRoot();
         this.router = router;
-        this.network = new HttpNetwork(serverSocket, new HttpRequestParser());
+        this.network = network;
     }
 
     public void listen() throws IOException {
         int poolSize = 4;
-        this.isListening = true;
-        System.out.println( this.status() );
-
         BlockingQueue sharedQueue = new LinkedBlockingQueue();
 
         //Creating Producer and Consumer thread pools
-        ExecutorService producerPool = Executors.newFixedThreadPool(poolSize);
+        this.producerPool = Executors.newFixedThreadPool(poolSize);
         for (int x = 0; x < poolSize; x++) {
             producerPool.submit(new Thread(
                     new HttpProducer(network, sharedQueue)));
         }
-        ExecutorService consumerPool = Executors.newFixedThreadPool(poolSize);
+        this.consumerPool = Executors.newFixedThreadPool(poolSize);
         for (int z = 0; z < poolSize; z++) {
             consumerPool.submit(new Thread(new HttpConsumer(this.router,
                     sharedQueue)));
         }
+        System.out.println( this.status() );
     }
 
     public void close() throws IOException {
-        this.isListening = false;
+        this.consumerPool.shutdown();
+        this.producerPool.shutdown();
         this.network = null;
     }
 
     public String status() {
-        String message = this.isListening ? "Listening" : "Waiting";
+        String message = this.isListening() ? "Listening" : "Stopped";
         message += " on port " + Integer.toString(this.port);
         message += " for dir " + (this.router.getDocRoot());
         return message;
+    }
+
+    private boolean isListening() {
+//        boolean listening = false;
+//        listening = (this.producerPool != null) && (this.consumerPool != null);
+//        if (listening) {
+//            listening = ( !this.consumerPool.isTerminated() &&
+//                    !this.producerPool.isTerminated());
+//        }
+//        return listening;
+        return (this.network != null);
     }
 }
