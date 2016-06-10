@@ -26,12 +26,17 @@ public class HttpServer implements IHServer{
         int poolSize = 4;
         BlockingQueue sharedQueue = new LinkedBlockingQueue();
 
-        //Creating Producer and Consumer thread pools
+        // creating Producer and Consumer thread pools for high concurrency
+        // Producers parse Requests from the Network and put on sharedQueue
         this.producerPool = Executors.newFixedThreadPool(poolSize);
         for (int x = 0; x < poolSize; x++) {
             producerPool.submit(new Thread(
                     new HttpProducer(network, sharedQueue)));
         }
+        // Consumers pull Requests from sharedQueue and Route to processors:
+        //      1. Middleware  -->  request  = transform(request)
+        //      2. Controllers -->  response = execute(request)
+        //      3. Postware    -->  response = transform(response)
         this.consumerPool = Executors.newFixedThreadPool(poolSize);
         for (int z = 0; z < poolSize; z++) {
             consumerPool.submit(new Thread(new HttpConsumer(this.router,
@@ -54,13 +59,6 @@ public class HttpServer implements IHServer{
     }
 
     private boolean isListening() {
-//        boolean listening = false;
-//        listening = (this.producerPool != null) && (this.consumerPool != null);
-//        if (listening) {
-//            listening = ( !this.consumerPool.isTerminated() &&
-//                    !this.producerPool.isTerminated());
-//        }
-//        return listening;
         return (this.network != null);
     }
 }

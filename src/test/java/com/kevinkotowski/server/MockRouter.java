@@ -19,14 +19,17 @@ public class MockRouter implements IHRouter {
     }
 
     public void registerMiddleware(IHMiddleware middleware) {}
+    public IHRequest processMiddleware(IHRequest request) { return request; }
+
     public void registerRoute(IHRoute route) {
         this.routes.add(route);
     }
-    public void registerPostware(IHPostware postware) {}
-
     public IHResponse route(IHRequest request) throws Exception {
         return new MockResponse();
     }
+
+    public void registerPostware(IHPostware postware) {}
+    public IHResponse processPostware(IHResponse response) { return response; }
 
     public String getOptions(String path) {
         String options = "OPTIONS";

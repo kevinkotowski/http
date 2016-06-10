@@ -26,6 +26,13 @@ public class HttpRouter implements IHRouter {
         this.middlewares.add(middleware);
     }
 
+    public IHRequest processMiddleware(IHRequest request) {
+        for (IHMiddleware middleware : this.middlewares) {
+            request = middleware.transform(request);
+        }
+        return request;
+    }
+
     public void registerRoute(IHRoute route) {
         if (hasRoute(route)) {
             throw new IllegalStateException("Route already exists: " +
@@ -39,6 +46,13 @@ public class HttpRouter implements IHRouter {
 
     public void registerPostware(IHPostware postware) {
         this.postwares.add(postware);
+    }
+
+    public IHResponse processPostware(IHResponse response) {
+        for (IHPostware postware : this.postwares) {
+            response = postware.transform(response);
+        }
+        return response;
     }
 
     public IHResponse route(IHRequest request) throws Exception {
