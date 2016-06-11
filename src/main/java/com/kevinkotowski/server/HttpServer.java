@@ -33,10 +33,7 @@ public class HttpServer implements IHServer{
             producerPool.submit(new Thread(
                     new HttpProducer(network, sharedQueue)));
         }
-        // Consumers pull Requests from sharedQueue and Route to processors:
-        //      1. Middleware  -->  request  = transform(request)
-        //      2. Controllers -->  response = execute(request)
-        //      3. Postware    -->  response = transform(response)
+        // Consumers pull Requests from sharedQueue and Route to processors
         this.consumerPool = Executors.newFixedThreadPool(poolSize);
         for (int z = 0; z < poolSize; z++) {
             consumerPool.submit(new Thread(new HttpConsumer(this.router,

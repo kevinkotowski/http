@@ -63,14 +63,15 @@ public class cob extends http {
         router.registerRoute(new HttpRoute("/patch-content.txt",
                 HttpMethod.PATCH, new HttpControllerIFMATCH()));
 
-        router.registerRoute(new HttpRoute("/redirect",
-                HttpMethod.GET, new CobControllerREDIRECT()));
-
         router.registerRoute(new HttpRoute("/tea",
                 HttpMethod.GET, new HttpControllerTEACUP()));
 
         router.registerRoute(new HttpRoute("/text-file.txt",
                 HttpMethod.GET, new HttpControllerSTATIC()));
+
+//        router.registerMiddleware(new HttpTransformREDIRECT(
+//                "/redirect", "/"
+//                ));
 
         return router;
     }

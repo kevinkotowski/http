@@ -25,10 +25,4 @@ public class _ControllerCobTest {
         IHController controller = new CobControllerAUTH();
         assertTrue(controller.execute(this.request) instanceof IHResponse);
     }
-
-    @Test
-    public void executeREDIRECT() throws Exception {
-        IHController controller = new CobControllerREDIRECT();
-        assertTrue(controller.execute(this.request) instanceof IHResponse);
-    }
 }

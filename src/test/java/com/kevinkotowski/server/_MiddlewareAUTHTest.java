@@ -13,7 +13,7 @@ public class _MiddlewareAUTHTest {
 //        IHRequest request = new HttpRequest(new MockSocket());
 //        String user = "admin";
 //        String pass = "password";
-//        IHMiddleware middleAUTH =
+//        IHTransformer middleAUTH =
 //                new HttpMiddleAUTH(user, pass);
 //        String auth64 = user + pass;
 //        request.addHeader("Authorize: Basic " + auth64);

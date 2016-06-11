@@ -24,31 +24,14 @@ public class _RouterTest {
         String middlewarePath = "/middleware/path";
         IHRouter router = new HttpRouter(docRoot, logger);
 
-        router.registerMiddleware(new MockMiddleware());
+//        router.registerMiddleware(new MockMiddleware());
 
         IHRequest request = new HttpRequest(new MockSocket());
         request.setMethod("GET");
         request.setPath(originalPath);
 
-        request = router.processMiddleware(request);
+//        request = router.processMiddleware(request);
         assertEquals(middlewarePath, request.getPath());
-    }
-
-    @Test
-    public void routerPostwareRegistration() throws Exception {
-        IHLogger logger = new MockLogger();
-        String docRoot = "/home/mock";
-        String originalBody = "original body";
-        String postwareBody = "postware body";
-        IHRouter router = new HttpRouter(docRoot, logger);
-
-        router.registerPostware(new MockPostware());
-
-        IHResponse response = new HttpResponse(new MockSocket());
-        response.setBody(originalBody);
-
-        response = router.processPostware(response);
-        assertEquals(postwareBody, response.getBody());
     }
 
     @Test

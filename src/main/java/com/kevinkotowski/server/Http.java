@@ -30,7 +30,6 @@ public class http {
                 "/",
                 HttpMethod.GET, new HttpControllerSTATIC() ));
 
-        router.registerPostware(new HttpPostwareETAG("SHA1"));
         return router;
     }
 

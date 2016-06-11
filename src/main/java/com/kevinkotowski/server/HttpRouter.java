@@ -8,7 +8,7 @@ import java.util.List;
  */
 public class HttpRouter implements IHRouter {
     String docRoot;
-    List<IHMiddleware> middlewares = new ArrayList<IHMiddleware>();
+    List<IHTransformer> middlewares = new ArrayList<IHTransformer>();
     List<IHRoute> routes = new ArrayList<IHRoute>();
     List<IHPostware> postwares = new ArrayList<IHPostware>();
     IHLogger accessLogger;
@@ -22,16 +22,25 @@ public class HttpRouter implements IHRouter {
         return this.docRoot;
     }
 
-    public void registerMiddleware(IHMiddleware middleware) {
-        this.middlewares.add(middleware);
-    }
-
-    public IHRequest processMiddleware(IHRequest request) {
-        for (IHMiddleware middleware : this.middlewares) {
-            request = middleware.transform(request);
-        }
-        return request;
-    }
+//    public void registerMiddleware(IHTransformer middleware) {
+//        this.middlewares.add(middleware);
+//    }
+//
+//    public IHRequest transformRequest(IHRequest request) {
+//        if (this.middlewares.size() > 0) {
+//            request = this.middlewares.get(0).recurseRequest(
+//                    request, middlewares);
+//        }
+//        return request;
+//    }
+//
+//    public IHResponse transformResponse(IHResponse response) {
+//        if (this.middlewares.size() > 0) {
+//            response = this.middlewares.get(0).recurseResponse(
+//                    response, middlewares);
+//        }
+//        return response;
+//    }
 
     public void registerRoute(IHRoute route) {
         if (hasRoute(route)) {
@@ -42,17 +51,6 @@ public class HttpRouter implements IHRouter {
         } else {
             this.routes.add(route);
         }
-    }
-
-    public void registerPostware(IHPostware postware) {
-        this.postwares.add(postware);
-    }
-
-    public IHResponse processPostware(IHResponse response) {
-        for (IHPostware postware : this.postwares) {
-            response = postware.transform(response);
-        }
-        return response;
     }
 
     public IHResponse route(IHRequest request) throws Exception {
