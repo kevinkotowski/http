@@ -13,13 +13,15 @@ public class HttpServer implements IHServer{
     private int port = 0;
     private IHNetwork network;
     private IHRouter router;
+    private IHHandler handler;
     private ExecutorService producerPool;
     private ExecutorService consumerPool;
 
-    HttpServer(IHNetwork network, IHRouter router)
+    HttpServer(IHNetwork network, IHMiddleware middleware, IHRouter router)
             throws IOException {
-        this.router = router;
         this.network = network;
+        this.router = router;
+        this.handler = new HttpHandler(middleware, router);
     }
 
     public void listen() throws IOException {
@@ -36,7 +38,7 @@ public class HttpServer implements IHServer{
         // Consumers pull Requests from sharedQueue and Route to processors
         this.consumerPool = Executors.newFixedThreadPool(poolSize);
         for (int z = 0; z < poolSize; z++) {
-            consumerPool.submit(new Thread(new HttpConsumer(this.router,
+            consumerPool.submit(new Thread(new HttpConsumer(this.handler,
                     sharedQueue)));
         }
         System.out.println( this.status() );

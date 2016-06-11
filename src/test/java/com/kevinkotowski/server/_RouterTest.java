@@ -17,24 +17,6 @@ public class _RouterTest {
     }
 
     @Test
-    public void routerMiddlewareRegistration() throws Exception {
-        IHLogger logger = new MockLogger();
-        String docRoot = "/home/mock";
-        String originalPath = "/original/path";
-        String middlewarePath = "/middleware/path";
-        IHRouter router = new HttpRouter(docRoot, logger);
-
-//        router.registerMiddleware(new MockMiddleware());
-
-        IHRequest request = new HttpRequest(new MockSocket());
-        request.setMethod("GET");
-        request.setPath(originalPath);
-
-//        request = router.processMiddleware(request);
-        assertEquals(middlewarePath, request.getPath());
-    }
-
-    @Test
     public void routerRouteRegistration() throws Exception {
         // this test needs multiple routes to have any meaning
         String docRoot = "/home/mock";

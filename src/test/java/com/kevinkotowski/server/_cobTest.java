@@ -15,18 +15,18 @@ public class _cobTest {
         assertTrue( server.status().contains("listening") );
     }
 
-    @Test
-    public void getOverriddenRouter() throws Exception {
-        String docRoot = "cobRoot";
-        IHLogger logger = new MockLogger();
-        IHRouter router = cob.getRouter(docRoot, logger);
-
-        assertEquals(docRoot, router.getDocRoot());
-
-        String dynamicOptions = router.getOptions("/redirect");
-        assertEquals("OPTIONS,GET,HEAD", dynamicOptions);
-
-        String staticOptions = router.getOptions("/file1");
-        assertEquals("OPTIONS,GET,HEAD", staticOptions);
-    }
+//    @Test
+//    public void getOverriddenRouter() throws Exception {
+//        String docRoot = "cobRoot";
+//        IHLogger logger = new MockLogger();
+//        IHRouter router = cob.getRouter(docRoot, logger);
+//
+//        assertEquals(docRoot, router.getDocRoot());
+//
+//        String dynamicOptions = router.getOptions("/redirect");
+//        assertEquals("OPTIONS,GET,HEAD", dynamicOptions);
+//
+//        String staticOptions = router.getOptions("/file1");
+//        assertEquals("OPTIONS,GET,HEAD", staticOptions);
+//    }
 }

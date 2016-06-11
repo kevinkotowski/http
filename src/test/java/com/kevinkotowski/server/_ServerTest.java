@@ -13,7 +13,7 @@ public class _ServerTest {
         IHNetwork network = new MockNetwork();
         IHRouter router = new MockRouter("/mockRoot");
 
-        IHServer server = new HttpServer(network, router);
+        IHServer server = new HttpServer(network, new HttpMiddleware(), router);
         server.listen();
         assertTrue( server.status().contains("Listening") );
     }
@@ -23,7 +23,7 @@ public class _ServerTest {
         IHNetwork network = new MockNetwork();
         IHRouter router = new MockRouter("/mockRoot");
 
-        IHServer server = new HttpServer(network, router);
+        IHServer server = new HttpServer(network, new HttpMiddleware(), router);
         server.listen();
         server.close();
         assertTrue( server.status().contains("Stopped") );

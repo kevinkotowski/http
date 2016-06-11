@@ -18,7 +18,8 @@ public class _ConsumerTest {
         IOSocket socket = new MockSocket();
         queue.put(new HttpRequest(socket));
 
-        HttpConsumer consumer = new HttpConsumer(router, queue);
+        HttpConsumer consumer = new HttpConsumer(new HttpHandler(
+                new HttpMiddleware(), router ), queue);
 
         assertEquals(1, queue.size());
         consumer.consume();

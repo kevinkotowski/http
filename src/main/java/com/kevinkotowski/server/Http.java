@@ -19,9 +19,18 @@ public class http {
         IOFile logFile = new HttpFile(docRoot + "/logs");
         IHLogger accessLogger = new HttpLogger(logFile);
         IHServer httpServer = new HttpServer( network,
+                getMiddleware(),
                 getRouter(docRoot, accessLogger) );
 
         httpServer.listen();
+    }
+
+    public static IHMiddleware getMiddleware() {
+        IHMiddleware middleware = new HttpMiddleware();
+
+//        middleware.registerTransformer(new HttpTransformETAG ();
+
+        return middleware;
     }
 
     public static IHRouter getRouter(String docRoot, IHLogger accessLogger) {

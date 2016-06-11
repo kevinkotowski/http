@@ -6,11 +6,11 @@ import java.util.concurrent.BlockingQueue;
  * Created by kevinkotowski on 5/19/16.
  */
 public class HttpConsumer implements Runnable {
-    private IHRouter router;
+    private IHHandler handler;
     private final BlockingQueue sharedQueue;
 
-    public HttpConsumer(IHRouter router, BlockingQueue sharedQueue) {
-        this.router = router;
+    public HttpConsumer(IHHandler handler, BlockingQueue sharedQueue) {
+        this.handler = handler;
         this.sharedQueue = sharedQueue;
     }
 
@@ -30,7 +30,7 @@ public class HttpConsumer implements Runnable {
             e.printStackTrace();
         }
         try {
-            response = router.route(request);
+            response = handler.handle(request);
             response.run();
         } catch (Exception e) {
             e.printStackTrace();

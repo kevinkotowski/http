@@ -17,6 +17,7 @@ public class cob extends http {
         IHLogger accessLogger = new HttpLogger(logFile);
 
         IHServer server = new HttpServer( network,
+                getMiddleware(),
                 getRouter(docRoot, accessLogger) );
 
         server.listen();
@@ -69,11 +70,16 @@ public class cob extends http {
         router.registerRoute(new HttpRoute("/text-file.txt",
                 HttpMethod.GET, new HttpControllerSTATIC()));
 
-//        router.registerMiddleware(new HttpTransformREDIRECT(
-//                "/redirect", "/"
-//                ));
-
         return router;
+    }
+
+    public static IHMiddleware getMiddleware() {
+        IHMiddleware middleware = new HttpMiddleware();
+
+        middleware.registerTransformer(new HttpTransformREDIRECT (
+                "/redirect", "/"));
+
+        return middleware;
     }
 
     cob( IHServer server ) throws IOException {

@@ -21,11 +21,14 @@ public class HttpMiddleware implements IHMiddleware {
         for (IHTransformer transformer : this.transformers) {
             workingTransformers.add(transformer);
         }
-        System.out.println("...middleware transformer count before: " + this.transformers.size());
-//        request = this.recurseRequest(request, workingTransformers);
-        request = this.recurseRequest(request, this.transformers);
-        System.out.println("...middleware transformer count after: " + this.transformers.size());
-        return router.route(request);
+        request = this.recurseRequest(request, workingTransformers);
+
+        IHResponse response = router.route(request);
+
+        for (IHTransformer transformer : this.transformers) {
+            workingTransformers.add(transformer);
+        }
+        return this.recurseResponse(response, workingTransformers);
     }
 
     public IHRequest recurseRequest(

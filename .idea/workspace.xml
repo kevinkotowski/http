@@ -7,25 +7,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4f96e1eb-65be-488a-a524-f2f879f891e9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpMiddleware.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpTransformREDIRECT.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IHTransformer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockTransform.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_MiddlewareTest.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_MiddlewareREDIRECTTest.java" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_HandlerTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/http_jar.jar" afterPath="$PROJECT_DIR$/out/artifacts/http_jar.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/Http.java" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/Http.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpRouter.java" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpRouter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpConsumer.java" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpConsumer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpMiddleware.java" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpMiddleware.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpServer.java" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpServer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IHMIddleware.java" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IHMIddleware.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IHRouter.java" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IHRouter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IHHandler.java" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IHHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IHRequest.java" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IHRequest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/cob.java" afterPath="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/cob.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockMiddleware.java" afterPath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockMiddleware.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockRouter.java" afterPath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockRouter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ControllerCobTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ControllerCobTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_MiddlewareAUTHTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_MiddlewareAUTHTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ConsumerTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ConsumerTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_RouterTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_RouterTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ServerTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ServerTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_cobTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_cobTest.java" />
     </list>
     <ignored path="http.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,36 +46,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="HttpRouter.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpRouter.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="30">
-                  <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#252#267#0" expanded="true" />
-                    <element signature="e#311#320#0" expanded="true" />
-                    <element signature="e#370#382#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="http.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/http.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="480">
-                  <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="IHRouter.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IHRouter.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="135">
-                  <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+                <state relative-caret-position="357">
+                  <caret line="33" column="4" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
                   <folding />
                 </state>
               </provider>
@@ -90,26 +61,6 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="285">
                   <caret line="19" column="14" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="MockTransform.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockTransform.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="285">
-                  <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="IHTransformer.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IHTransformer.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="150">
-                  <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -128,8 +79,8 @@
           <file leaf-file-name="HttpMiddleware.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpMiddleware.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="480">
-                  <caret line="42" column="65" selection-start-line="42" selection-start-column="65" selection-end-line="42" selection-end-column="65" />
+                <state relative-caret-position="315">
+                  <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="e#241#256#0" expanded="true" />
@@ -139,24 +90,52 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="cob.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/cob.java">
+          <file leaf-file-name="HttpHandler.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpHandler.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="682">
-                  <caret line="73" column="20" selection-start-line="73" selection-start-column="20" selection-end-line="73" selection-end-column="20" />
+                <state relative-caret-position="75">
+                  <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="HttpPostwareETAG.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpPostwareETAG.java">
+          <file leaf-file-name="cob.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/cob.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="150">
-                  <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
+                <state relative-caret-position="577">
+                  <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="_ServerTest.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ServerTest.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="345">
+                  <caret line="25" column="70" selection-start-line="25" selection-start-column="70" selection-end-line="25" selection-end-column="70" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="_ConsumerTest.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ConsumerTest.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="240">
+                  <caret line="21" column="44" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="HttpArguments.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpArguments.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="75">
+                  <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -168,19 +147,62 @@
           <file leaf-file-name="_RouterTest.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_RouterTest.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="300">
-                  <caret line="28" column="26" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
+                <state relative-caret-position="150">
+                  <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="IHHandler.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IHHandler.java">
+          <file leaf-file-name="_cobTest.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_cobTest.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="420">
+                  <caret line="30" column="6" selection-start-line="30" selection-start-column="6" selection-end-line="30" selection-end-column="6" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="_HandlerTest.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_HandlerTest.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="300">
+                  <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="HttpRequest.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpRequest.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="285">
+                  <caret line="45" column="33" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="IHRequest.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IHRequest.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="195">
+                  <caret line="16" column="38" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="MockController.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockController.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="105">
-                  <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-                  <folding />
+                  <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+                  <folding>
+                    <element signature="e#186#187#0" expanded="true" />
+                    <element signature="e#227#228#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -188,8 +210,8 @@
           <file leaf-file-name="MockRouter.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockRouter.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="285">
-                  <caret line="24" column="11" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
+                <state relative-caret-position="210">
+                  <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
                   <folding>
                     <element signature="e#695#696#0" expanded="true" />
                     <element signature="e#733#734#0" expanded="true" />
@@ -198,31 +220,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="MockMiddleware.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockMiddleware.java">
+          <file leaf-file-name="MockResponse.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockResponse.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="75">
-                  <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="_ControllerCobTest.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ControllerCobTest.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="360">
-                  <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="_PostwareETAGTest.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_PostwareETAGTest.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="240">
-                  <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
+                <state relative-caret-position="300">
+                  <caret line="29" column="30" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
                   <folding />
                 </state>
               </provider>
@@ -231,8 +233,8 @@
           <file leaf-file-name="HttpServer.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpServer.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="195">
-                  <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
+                <state relative-caret-position="252">
+                  <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -240,35 +242,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="IHServer.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IHServer.java">
+          <file leaf-file-name="HttpConsumer.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpConsumer.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="105">
-                  <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="_MiddlewareTest.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_MiddlewareTest.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="682">
-                  <caret line="66" column="60" selection-start-line="66" selection-start-column="60" selection-end-line="66" selection-end-column="60" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#914#929#0" expanded="true" />
-                    <element signature="e#1973#1988#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="CobControllerREDIRECT.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/CobControllerREDIRECT.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="150">
-                  <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+                <state relative-caret-position="480">
+                  <caret line="32" column="18" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
                   <folding />
                 </state>
               </provider>
@@ -282,8 +260,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="JUnit4 Test Class" />
         <option value="Class" />
+        <option value="JUnit4 Test Class" />
       </list>
     </option>
   </component>
@@ -298,14 +276,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpControllerSTATIC.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockResponse.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpResponse.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ResponseTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ProducerTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockNetwork.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ServerTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ControllerHttpTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IHMIddleware.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IHPostware.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IOFile.java" />
@@ -317,7 +287,6 @@
         <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ControllerHEADTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_httpTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockFile.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_cobTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ControllerOPTIONSTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ControllerTEACUPTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_LoggerTest.java" />
@@ -328,14 +297,12 @@
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpPostwareETAG.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockPostware.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ControllerCobTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpServer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpMiddleREDIRECT.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpMiddlewareBase.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockMiddleware.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockRouter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpMiddlewareREDIRECT.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpMiddlewareAbstract.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/http.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IHRouter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IHTransformerX.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IHTransformer.java" />
@@ -343,12 +310,23 @@
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpTransformREDIRECT.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IHMiddleware.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpRouter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/cob.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_RouterTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_MiddlewareREDIRECTTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockTransform.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpMiddleware.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_MiddlewareTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IHHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpServer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpConsumer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/http.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ServerTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ConsumerTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_RouterTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpMiddleware.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/cob.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_cobTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IHRequest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_HandlerTest.java" />
       </list>
     </option>
   </component>
@@ -582,7 +560,7 @@
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.com.kevinkotowski.server in http">
+  <component name="RunManager" selected="JUnit._HandlerTest.handle">
     <configuration default="false" name="com.kevinkotowski.server in http" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -635,32 +613,6 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="_MiddlewareTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.kevinkotowski.server.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="http" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.kevinkotowski.server" />
-      <option name="MAIN_CLASS_NAME" value="com.kevinkotowski.server._MiddlewareTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
     <configuration default="false" name="_MiddlewareTest.recursiveRequestTransformation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -700,6 +652,32 @@
       <option name="PACKAGE_NAME" value="com.kevinkotowski.server" />
       <option name="MAIN_CLASS_NAME" value="com.kevinkotowski.server._MiddlewareTest" />
       <option name="METHOD_NAME" value="recursiveResponseTransformation" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="_HandlerTest.handle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.kevinkotowski.server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="http" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.kevinkotowski.server" />
+      <option name="MAIN_CLASS_NAME" value="com.kevinkotowski.server._HandlerTest" />
+      <option name="METHOD_NAME" value="handle" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -1008,17 +986,17 @@
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JUnit.com.kevinkotowski.server in http" />
       <item index="1" class="java.lang.String" itemvalue="JUnit._MiddlewareTest.transform" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit._MiddlewareTest" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit._MiddlewareTest.recursiveRequestTransformation" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit._MiddlewareTest.recursiveResponseTransformation" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit._MiddlewareTest.recursiveRequestTransformation" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit._MiddlewareTest.recursiveResponseTransformation" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit._HandlerTest.handle" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.com.kevinkotowski.server in http" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit._MiddlewareTest.recursiveResponseTransformation" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit._MiddlewareTest.recursiveRequestTransformation" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit._MiddlewareTest.transform" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit._MiddlewareTest" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit._HandlerTest.handle" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.com.kevinkotowski.server in http" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit._MiddlewareTest.recursiveResponseTransformation" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit._MiddlewareTest.recursiveRequestTransformation" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit._MiddlewareTest.transform" />
       </list>
     </recent_temporary>
   </component>
@@ -1044,34 +1022,34 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="_MiddlewareTest_recursiveResponseTransformation - 2016.06.11 at 10h 49m 42s.xml">
-      <configuration name="_MiddlewareTest.recursiveResponseTransformation" configurationId="JUnit" />
+    <history-entry file="_HandlerTest_handle - 2016.06.11 at 12h 40m 38s.xml">
+      <configuration name="_HandlerTest.handle" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="_MiddlewareTest_recursiveResponseTransformation - 2016.06.11 at 10h 50m 18s.xml">
-      <configuration name="_MiddlewareTest.recursiveResponseTransformation" configurationId="JUnit" />
+    <history-entry file="_HandlerTest_handle - 2016.06.11 at 12h 41m 09s.xml">
+      <configuration name="_HandlerTest.handle" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="_MiddlewareTest_recursiveResponseTransformation - 2016.06.11 at 10h 53m 05s.xml">
-      <configuration name="_MiddlewareTest.recursiveResponseTransformation" configurationId="JUnit" />
+    <history-entry file="_HandlerTest_handle - 2016.06.11 at 12h 41m 48s.xml">
+      <configuration name="_HandlerTest.handle" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="_MiddlewareTest_recursiveResponseTransformation - 2016.06.11 at 10h 54m 48s.xml">
-      <configuration name="_MiddlewareTest.recursiveResponseTransformation" configurationId="JUnit" />
+    <history-entry file="_HandlerTest_handle - 2016.06.11 at 12h 45m 22s.xml">
+      <configuration name="_HandlerTest.handle" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="_MiddlewareTest_recursiveResponseTransformation - 2016.06.11 at 10h 59m 42s.xml">
-      <configuration name="_MiddlewareTest.recursiveResponseTransformation" configurationId="JUnit" />
+    <history-entry file="_HandlerTest_handle - 2016.06.11 at 12h 46m 00s.xml">
+      <configuration name="_HandlerTest.handle" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="_MiddlewareTest_recursiveResponseTransformation - 2016.06.11 at 11h 02m 17s.xml">
-      <configuration name="_MiddlewareTest.recursiveResponseTransformation" configurationId="JUnit" />
+    <history-entry file="com_kevinkotowski_server_in_http - 2016.06.11 at 12h 24m 29s.xml">
+      <configuration name="com.kevinkotowski.server in http" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="_MiddlewareTest_recursiveResponseTransformation - 2016.06.11 at 11h 03m 44s.xml">
-      <configuration name="_MiddlewareTest.recursiveResponseTransformation" configurationId="JUnit" />
+    <history-entry file="com_kevinkotowski_server_in_http - 2016.06.11 at 12h 25m 03s.xml">
+      <configuration name="com.kevinkotowski.server in http" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="_MiddlewareTest_recursiveResponseTransformation - 2016.06.11 at 11h 04m 21s.xml">
-      <configuration name="_MiddlewareTest.recursiveResponseTransformation" configurationId="JUnit" />
+    <history-entry file="com_kevinkotowski_server_in_http - 2016.06.11 at 12h 25m 42s.xml">
+      <configuration name="com.kevinkotowski.server in http" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="_MiddlewareTest_recursiveResponseTransformation - 2016.06.11 at 11h 04m 43s.xml">
-      <configuration name="_MiddlewareTest.recursiveResponseTransformation" configurationId="JUnit" />
+    <history-entry file="com_kevinkotowski_server_in_http - 2016.06.11 at 12h 28m 21s.xml">
+      <configuration name="com.kevinkotowski.server in http" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="com_kevinkotowski_server_in_http - 2016.06.11 at 11h 07m 02s.xml">
+    <history-entry file="com_kevinkotowski_server_in_http - 2016.06.11 at 12h 28m 29s.xml">
       <configuration name="com.kevinkotowski.server in http" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -1086,7 +1064,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1676" height="1027" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1096,7 +1074,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25347593" sideWeight="0.44124848" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985386" sideWeight="0.49761337" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25347593" sideWeight="0.5587515" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25347593" sideWeight="0.5587515" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27165776" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1106,7 +1084,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24812834" sideWeight="0.46181384" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24812834" sideWeight="0.46181384" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1162,70 +1140,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11.jar!/org/junit/runners/ParentRunner.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="155" column="0" selection-start-line="155" selection-start-column="0" selection-end-line="155" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_NetworkTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ProducerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockNetwork.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ServerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ConsumerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ControllerHttpTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpControllerDELETE.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IOFile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -1298,14 +1212,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_cobTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="21" column="54" selection-start-line="21" selection-start-column="54" selection-end-line="21" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ControllerIFMATCHTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -1322,22 +1228,6 @@
             <element signature="e#208#209#0" expanded="false" />
             <element signature="e#238#239#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IHRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="795">
-          <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1471,43 +1361,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockRouter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="24" column="11" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
-          <folding>
-            <element signature="e#695#696#0" expanded="true" />
-            <element signature="e#733#734#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IHServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/http.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IHRouter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -1529,22 +1382,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/cob.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="682">
-          <caret line="73" column="20" selection-start-line="73" selection-start-column="20" selection-end-line="73" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpTransformREDIRECT.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="14" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IHTransformer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -1553,22 +1390,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IHMiddleware.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_MiddlewareTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpMiddleware.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="42" column="65" selection-start-line="42" selection-start-column="65" selection-end-line="42" selection-end-column="65" />
+        <state relative-caret-position="990">
+          <caret line="66" column="60" selection-start-line="66" selection-start-column="60" selection-end-line="66" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#241#256#0" expanded="true" />
-            <element signature="e#555#570#0" expanded="true" />
+            <element signature="e#914#929#0" expanded="true" />
+            <element signature="e#1973#1988#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1581,30 +1410,182 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_MiddlewareTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpTransformREDIRECT.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="682">
-          <caret line="66" column="60" selection-start-line="66" selection-start-column="60" selection-end-line="66" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#914#929#0" expanded="true" />
-            <element signature="e#1973#1988#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_RouterTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="28" column="26" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
+        <state relative-caret-position="285">
+          <caret line="19" column="14" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IHHandler.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="46" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IHServer.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpConsumer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="18" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpArguments.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/http.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="33" column="4" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ServerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="25" column="70" selection-start-line="25" selection-start-column="70" selection-end-line="25" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_ConsumerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="21" column="44" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IHMiddleware.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_RouterTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpMiddleware.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#241#256#0" expanded="true" />
+            <element signature="e#555#570#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_cobTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="30" column="6" selection-start-line="30" selection-start-column="6" selection-end-line="30" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/cob.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="577">
+          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockRouter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="e#695#696#0" expanded="true" />
+            <element signature="e#733#734#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="29" column="30" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/MockController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding>
+            <element signature="e#186#187#0" expanded="true" />
+            <element signature="e#227#228#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/HttpRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="45" column="33" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kevinkotowski/server/IHRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="16" column="38" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/kevinkotowski/server/_HandlerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding />
         </state>
       </provider>

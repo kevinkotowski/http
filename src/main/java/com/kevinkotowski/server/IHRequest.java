@@ -14,7 +14,7 @@ public interface IHRequest {
     public String getPath();
     public void setParms(String[][] parms);
     public String[][] getParms();
-    public void setMethod(String path);
+    public void setMethod(String method);
     public HttpMethod getMethod();
     public void addHeader(String header);
     public List<String> getHeaders();
