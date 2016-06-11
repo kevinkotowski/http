@@ -68,6 +68,20 @@ public class _RequestTest {
         IOSocket socket = new MockSocket();
         HttpRequest request = new HttpRequest(socket);
 
+        String docRoot = "/test/root";
+        String path = "/path";
+        request.setDocRoot(docRoot);
+        request.setPath(path);
+        assertEquals(docRoot + path, request.getFullPath());
+    }
+
+    @Test
+    public void setAuthorizedAndCheckIt() throws Exception {
+        HttpRequest request = new HttpRequest(new MockSocket());
+
+        assertTrue(request.isAuthorized());
+        request.setAuthorized(false);
+        assertFalse(request.isAuthorized());
     }
 
     @Test

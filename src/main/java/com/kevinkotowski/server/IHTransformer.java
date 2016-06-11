@@ -1,5 +1,6 @@
 package com.kevinkotowski.server;
 
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 /**
@@ -8,9 +9,4 @@ import java.util.List;
 public interface IHTransformer {
     public IHRequest transformRequest(IHRequest request);
     public IHResponse transformResponse(IHResponse response);
-
-//    public IHRequest recurseRequest(
-//            IHRequest request, List<IHTransformer> middlewares);
-//    public IHResponse recurseResponse(
-//            IHResponse response, List<IHTransformer> middlewares);
 }

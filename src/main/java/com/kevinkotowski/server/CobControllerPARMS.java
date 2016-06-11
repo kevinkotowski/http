@@ -6,6 +6,8 @@ import java.io.IOException;
  * Created by kevinkotowski on 6/7/16.
  */
 public class CobControllerPARMS implements IHController {
+    // NOTE: realistically, only cob_spec would use this transformer
+
     public IHResponse execute(IHRequest request) throws IOException {
         IHResponse response = new HttpResponse(request.getSocket());
         String[][] parms = request.getParms();

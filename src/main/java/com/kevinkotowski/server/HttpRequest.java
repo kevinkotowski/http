@@ -10,15 +10,15 @@ import java.util.List;
 public class HttpRequest implements IHRequest {
     private HttpMethod method = null;
     private String host = "";
-    private String path = null;
+    private String path = "";
     private List<String> headers = new ArrayList(0);
     private String content = null;
     private String[][] parms = null;
 
     private IOSocket socket = null;
-    private String docRoot = null;
+    private String docRoot = "";
 
-    private boolean isAuthorized = false;
+    private boolean authorized = true;
 
     public HttpRequest(IOSocket socket) throws IOException {
         this.setSocket(socket);
@@ -64,19 +64,27 @@ public class HttpRequest implements IHRequest {
         this.docRoot = docRoot;
     }
     public String getFullPath() {
-        String fullPath;
-        if ( this.path.substring(0, 1).equals("/") ) {
-            fullPath = this.docRoot + path;
-        } else {
-            fullPath = this.docRoot + "/" + path;
-        }
+        String fullPath = "";
+        if (this.path.length() > 0) {
+            if ( this.path.substring(0, 1).equals("/") ) {
+                fullPath = this.docRoot + path;
+            } else {
+                fullPath = this.docRoot + "/" + path;
+            }
 
-        int fileIndex = fullPath.indexOf("?");
-        fullPath = (fileIndex > 0) ?
-                fullPath.substring(0, fileIndex) : fullPath;
+            int fileIndex = fullPath.indexOf("?");
+            fullPath = (fileIndex > 0) ?
+                    fullPath.substring(0, fileIndex) : fullPath;
+        } else {
+            fullPath = this.docRoot;
+        }
 
         return fullPath;
     }
+
+    public void setAuthorized(boolean authorized)
+            { this.authorized = authorized; }
+    public boolean isAuthorized() { return this.authorized; }
 
     public void setParms(String[][] parms) {
         this.parms = parms;

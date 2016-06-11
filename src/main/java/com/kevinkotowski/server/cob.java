@@ -43,9 +43,6 @@ public class cob extends http {
         router.registerRoute(new HttpRoute("/form",
                 HttpMethod.DELETE, new HttpControllerDELETE()));
 
-        router.registerRoute(new HttpRoute("/logs",
-                HttpMethod.GET, new CobControllerAUTH()));
-
         router.registerRoute(new HttpRoute("/method_options",
                 HttpMethod.GET, new HttpControllerSTATIC()));
 
@@ -78,6 +75,9 @@ public class cob extends http {
 
         middleware.registerTransformer(new HttpTransformREDIRECT (
                 "/redirect", "/"));
+
+        middleware.registerTransformer(new HttpTransformAUTH (
+                "/logs", "WallyWorld", "admin", "hunter2") );
 
         middleware.registerTransformer(new HttpTransformETAG("SHA1") );
 

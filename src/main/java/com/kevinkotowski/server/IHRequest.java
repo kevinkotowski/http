@@ -20,6 +20,9 @@ public interface IHRequest {
     public void setDocRoot(String docRoot);
     public String getFullPath();
 
+    public void setAuthorized(boolean authorized);
+    public boolean isAuthorized();
+
     public void setParms(String[][] parms);
     public String[][] getParms();
 
