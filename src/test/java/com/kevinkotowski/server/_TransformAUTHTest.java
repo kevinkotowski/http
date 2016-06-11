@@ -7,7 +7,7 @@ import static org.junit.Assert.*;
 /**
  * Created by kevinkotowski on 6/9/16.
  */
-public class _MiddlewareAUTHTest {
+public class _TransformAUTHTest {
     @Test
     public void transform() throws Exception {
 //        IHRequest request = new HttpRequest(new MockSocket());

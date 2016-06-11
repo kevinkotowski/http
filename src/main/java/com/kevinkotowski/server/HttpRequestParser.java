@@ -99,6 +99,10 @@ public class HttpRequestParser implements IHRequestParser {
                 headersDone = true;
             }
         }
+        if (!foundHost) {
+            System.out.println("Invalid Request: No host header " +
+                request.getPath());
+        }
         return request;
     }
 

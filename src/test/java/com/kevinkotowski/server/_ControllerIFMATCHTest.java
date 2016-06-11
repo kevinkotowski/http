@@ -32,13 +32,19 @@ public class _ControllerIFMATCHTest {
 
     @Test
     public void executeIFMATCH() throws Exception {
-       // TODO: needs mock File/Directory
-    }
+        // TODO: abstract static file GET to help test this. "getFileEtag"
+        // TODO:     should not be a method implemented in IFMATCH
 
-    @Test
-    public void makeSHA1Hash() throws Exception {
-        HttpControllerIFMATCH controller = new HttpControllerIFMATCH();
-        String sha = controller.makeSHA1Hash("boo");
-        assertEquals("78b371f0ea1410abc62ccb9b7f40c34288a72e1a", sha);
+//        String text = "sample text for SHA1 to convert";
+//        String correctHash = "5e6a4c69c960170ccb97c325ac62b23d498bb08d";
+//
+//        HttpRequest request = new HttpRequest(new MockSocket());
+//        request.setContent(text);
+//        request.addHeader("If-Match: " + correctHash);
+//
+//        IHController controller = new HttpControllerIFMATCH();
+//
+//        IHResponse response = controller.execute(request);
+//        assertEquals("204", response.getResponseCode());
     }
 }

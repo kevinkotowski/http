@@ -10,7 +10,6 @@ import java.util.concurrent.LinkedBlockingQueue;
  * Created by kevinkotowski on 5/3/16.
  */
 public class HttpServer implements IHServer{
-    private int port = 0;
     private IHNetwork network;
     private IHRouter router;
     private IHHandler handler;
@@ -52,8 +51,7 @@ public class HttpServer implements IHServer{
 
     public String status() {
         String message = this.isListening() ? "Listening" : "Stopped";
-        message += " on port " + Integer.toString(this.port);
-        message += " for dir " + (this.router.getDocRoot());
+        message += " using docroot: " + (this.router.getDocRoot());
         return message;
     }
 

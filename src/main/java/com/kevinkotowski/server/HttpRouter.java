@@ -22,26 +22,6 @@ public class HttpRouter implements IHRouter {
         return this.docRoot;
     }
 
-//    public void registerMiddleware(IHTransformer middleware) {
-//        this.middlewares.add(middleware);
-//    }
-//
-//    public IHRequest transformRequest(IHRequest request) {
-//        if (this.middlewares.size() > 0) {
-//            request = this.middlewares.get(0).recurseRequest(
-//                    request, middlewares);
-//        }
-//        return request;
-//    }
-//
-//    public IHResponse transformResponse(IHResponse response) {
-//        if (this.middlewares.size() > 0) {
-//            response = this.middlewares.get(0).recurseResponse(
-//                    response, middlewares);
-//        }
-//        return response;
-//    }
-
     public void registerRoute(IHRoute route) {
         if (hasRoute(route)) {
             throw new IllegalStateException("Route already exists: " +

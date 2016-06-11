@@ -79,6 +79,8 @@ public class cob extends http {
         middleware.registerTransformer(new HttpTransformREDIRECT (
                 "/redirect", "/"));
 
+        middleware.registerTransformer(new HttpTransformETAG("SHA1") );
+
         return middleware;
     }
 
