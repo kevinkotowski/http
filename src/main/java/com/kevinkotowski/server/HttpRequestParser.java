@@ -84,16 +84,27 @@ public class HttpRequestParser implements IHRequestParser {
     private IHRequest parseHeaders(IHRequest request, Scanner scanner) {
         String headerLine;
         boolean headersDone = false;
+        boolean foundHost = false;
+
         while ( !headersDone ) {
             scanner.hasNextLine();
             headerLine = scanner.nextLine();
             if ( headerLine.length() > 0 ) {
                 request.addHeader(headerLine);
+                if (headerLine.startsWith("Host")) {
+                    foundHost = true;
+                    request.setHost(this.parseHost(headerLine));
+                }
             } else {
                 headersDone = true;
             }
         }
         return request;
+    }
+
+    private String parseHost(String header) {
+        String host = "http://" + header.substring(6);
+        return host;
     }
 
     private IHRequest parseContent(IHRequest request, Scanner scanner) {

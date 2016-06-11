@@ -10,19 +10,27 @@ import java.util.List;
  */
 public interface IHRequest {
     public IOSocket getSocket();
+
+    public void setHost(String host);
+    public String getHost();
+
     public void setPath(String path);
     public String getPath();
+
+    public void setDocRoot(String docRoot);
+    public String getFullPath();
+
     public void setParms(String[][] parms);
     public String[][] getParms();
+
     public void setMethod(String method);
     public HttpMethod getMethod();
+
     public void addHeader(String header);
     public List<String> getHeaders();
+
     public void setContent(String content);
     public boolean hasContent();
     public int getContentLength();
     public String getContent();
-
-    public void setDocRoot(String docRoot);
-    public String getFullPath();
 }

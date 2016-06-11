@@ -54,6 +54,16 @@ public class _RequestTest {
     }
 
     @Test
+    public void setHostAndGetIt() throws Exception {
+        String host = "http://localhost:5000";
+        IOSocket socket = new MockSocket();
+        HttpRequest request = new HttpRequest(socket);
+
+        request.setHost(host);
+        assertEquals(host, request.getHost());
+    }
+
+    @Test
     public void setDocRootAndGetFullPath() throws Exception {
         IOSocket socket = new MockSocket();
         HttpRequest request = new HttpRequest(socket);

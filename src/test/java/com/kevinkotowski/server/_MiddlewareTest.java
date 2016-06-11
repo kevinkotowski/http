@@ -51,8 +51,8 @@ public class _MiddlewareTest {
         response.setBody(origText);
 
         IHTransformer transform1 = new MockTransform(path, "Kevin");
-        IHTransformer transform2 = new MockTransform(path, "FAIL");
-        IHTransformer transform3 = new MockTransform(path, newText);
+        IHTransformer transform2 = new MockTransform(path, newText);
+        IHTransformer transform3 = new MockTransform("/wrong/path", "FAIL");
 
         List<IHTransformer> transformers = new ArrayList<IHTransformer>();
 

@@ -9,6 +9,7 @@ import java.util.List;
  */
 public class HttpRequest implements IHRequest {
     private HttpMethod method = null;
+    private String host = "";
     private String path = null;
     private List<String> headers = new ArrayList(0);
     private String content = null;
@@ -26,7 +27,6 @@ public class HttpRequest implements IHRequest {
     public void setSocket(IOSocket socket) {
         this.socket = socket;
     }
-
     public IOSocket getSocket() {
         return this.socket;
     }
@@ -38,7 +38,6 @@ public class HttpRequest implements IHRequest {
             // null value is handled later, just need to catch exception here
         }
     }
-
     public HttpMethod getMethod() {
         return this.method;
     }
@@ -46,7 +45,6 @@ public class HttpRequest implements IHRequest {
     public void setPath(String path) {
         this.path = path;
     }
-
     public String getPath() {
         return this.path;
     }
@@ -54,15 +52,17 @@ public class HttpRequest implements IHRequest {
     public void addHeader(String header) {
         this.headers.add(header);
     }
-
     public List<String> getHeaders() {
         return this.headers;
     }
 
+    public void setHost(String host) { this.host = host; }
+    public String getHost() { return this.host; }
+
+
     public void setDocRoot(String docRoot) {
         this.docRoot = docRoot;
     }
-
     public String getFullPath() {
         String fullPath;
         if ( this.path.substring(0, 1).equals("/") ) {
@@ -81,7 +81,6 @@ public class HttpRequest implements IHRequest {
     public void setParms(String[][] parms) {
         this.parms = parms;
     }
-
     public String[][] getParms() {
         return this.parms;
     }
@@ -91,7 +90,6 @@ public class HttpRequest implements IHRequest {
         this.addHeader("Content-Length: " +
                 Integer.toString( content.length() ) );
     }
-
     public int getContentLength() {
         int contentLength = 0;
 
@@ -104,11 +102,9 @@ public class HttpRequest implements IHRequest {
         }
         return contentLength;
     }
-
     public boolean hasContent() {
         return (this.content == null) ? false : true;
     }
-
     public String getContent() {
         return this.content;
     }

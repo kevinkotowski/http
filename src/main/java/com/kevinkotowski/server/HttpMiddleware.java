@@ -15,19 +15,13 @@ public class HttpMiddleware implements IHMiddleware {
 
     public IHResponse transform(IHRequest request, IHRouter router)
             throws Exception {
-        List<IHTransformer> workingTransformers =
-                new ArrayList<IHTransformer>();
 
-        for (IHTransformer transformer : this.transformers) {
-            workingTransformers.add(transformer);
-        }
+        List<IHTransformer> workingTransformers = this.clone(this.transformers);
         request = this.recurseRequest(request, workingTransformers);
 
         IHResponse response = router.route(request);
 
-        for (IHTransformer transformer : this.transformers) {
-            workingTransformers.add(transformer);
-        }
+        workingTransformers = this.clone(this.transformers);
         return this.recurseResponse(response, workingTransformers);
     }
 
@@ -51,5 +45,14 @@ public class HttpMiddleware implements IHMiddleware {
             response = this.recurseResponse(response, transformers);
         }
         return response;
+    }
+
+    private List<IHTransformer> clone(List<IHTransformer> original) {
+        List<IHTransformer> cloneOfOriginal =
+                new ArrayList<IHTransformer>();
+        for (IHTransformer transformer : original) {
+            cloneOfOriginal.add(transformer);
+        }
+        return cloneOfOriginal;
     }
 }
