@@ -13,9 +13,9 @@ public class HttpServerSocket implements IOServerSocket {
         try {
             this.serverSocket = new ServerSocket(port);
         } catch (IOException e) {
-            System.out.println("Exception caught when trying to initialize on "
+            System.err.println("ERROR: Trying to initialize on "
                     + " port " + port + " to listen for a connection");
-            System.out.println(e.getMessage());
+            System.err.println(e.getMessage());
         }
     }
 

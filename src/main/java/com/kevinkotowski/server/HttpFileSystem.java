@@ -58,7 +58,7 @@ public class HttpFileSystem implements IHFileSystem {
         try {
             return Files.readAllBytes(Paths.get(this.file.getAbsolutePath()));
         } catch (IOException e) {
-            System.out.println("ERROR: FileSystem can't read: " +
+            System.err.println("ERROR: FileSystem can't read: " +
                     this.file.getAbsolutePath() + "\n");
             return null;
         }

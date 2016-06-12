@@ -1,9 +1,6 @@
 package com.kevinkotowski.server;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 
 /**
  * Created by kevinkotowski on 5/28/16.
@@ -17,7 +14,7 @@ public class HttpControllerSTATIC implements IHController {
         String fullPath;
 
         fullPath = request.getFullPath();
-        File file = new File(fullPath);
+        IOFile file = new HttpFile(fullPath);
         IHFileSystem fileSystem = new HttpFileSystem(fullPath);
 
         try {
@@ -32,7 +29,9 @@ public class HttpControllerSTATIC implements IHController {
                             this.range[2]) {
                         response.setResponseCode("206");
                     }
-                    response.setBody(this.getText(this.range, fullPath));
+                    FileInputStream fileStream =
+                            new FileInputStream(fullPath);
+                    response.setBody(this.getText(this.range, fileStream));
                 }
             } else {
                 response.setResponseCode("404");
@@ -46,9 +45,9 @@ public class HttpControllerSTATIC implements IHController {
         return response;
     }
 
-    public String getDirectory(File file) {
-        String fileList = new String();
-        for (final File subFile : file.listFiles()) {
+    public String getDirectory(IOFile file) {
+        String fileList = "";
+        for (final IOFile subFile : file.listFiles()) {
             if (subFile.isDirectory()) {
                 // there is no req for subdirectory support
             } else {
@@ -58,14 +57,12 @@ public class HttpControllerSTATIC implements IHController {
         return fileList;
     }
 
-    public String getText(int[] range, String fullPath) throws IOException {
+    public String getText(int[] range, InputStream fileStream) throws IOException {
         String body = "";
         int ch;
         StringBuilder stringBuilder = new StringBuilder();
 
         try {
-            FileInputStream fileStream =
-                    new FileInputStream(fullPath);
             int rangeCounter = 0;
 
             while ((ch = fileStream.read()) != -1) {
@@ -103,9 +100,9 @@ public class HttpControllerSTATIC implements IHController {
 
     public boolean inRange(int[] range, int rangeCounter) {
         boolean inRange = true;
-        inRange = rangeCounter >= this.range[0];
-        if (inRange && this.range[1] != -1) {
-            inRange = rangeCounter < this.range[1];
+        inRange = rangeCounter >= range[0];
+        if (inRange && range[1] != -1) {
+            inRange = rangeCounter < range[1];
         }
         return inRange;
     }

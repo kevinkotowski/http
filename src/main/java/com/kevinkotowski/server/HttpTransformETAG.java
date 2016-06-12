@@ -28,7 +28,7 @@ public class HttpTransformETAG implements IHTransformer {
                     etag = HttpHashAlgoSHA1.hash(body);
                     response.addHeader("ETag: \"" + etag + "\"");
                 } catch (NoSuchAlgorithmException e) {
-                    System.out.println("ERROR: SHA1 algo not " +
+                    System.err.println("ERROR: SHA1 algo not " +
                             "supported");
                 }
             }

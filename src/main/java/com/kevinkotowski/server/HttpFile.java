@@ -19,6 +19,11 @@ public class HttpFile implements IOFile {
         this.file = new File(fullPath);
     }
 
+    public HttpFile(File file) {
+        this.fullPath = file.getAbsolutePath();
+        this.file = file;
+    }
+
     public boolean exists() {
         return this.file.exists();
     }
@@ -47,17 +52,18 @@ public class HttpFile implements IOFile {
 
     public String getName() { return this.file.getName(); }
 
-    public byte[] getBytes() {
-        try {
-            return Files.readAllBytes(Paths.get(this.file.getAbsolutePath()));
-        } catch (IOException e) {
-            System.out.println("ERROR: File can't read: " +
-                    this.file.getName() + "\n");
-            return null;
-        }
-    }
-
     public boolean delete() {
         return this.file.delete();
+    }
+
+    public IOFile[] listFiles() {
+        File[] files = this.file.listFiles();
+        IOFile[] ioFiles = new IOFile[files.length];
+        int x = 0;
+        for (File file : files) {
+            ioFiles[x] = new HttpFile(file);
+            x++;
+        }
+        return ioFiles;
     }
 }

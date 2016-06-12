@@ -32,7 +32,7 @@ public class HttpRequestParser implements IHRequestParser {
         if (scanner.hasNextLine()) {
             tokens = requestLine.split("\\s");
             if (tokens.length != 3) {
-                System.out.println("Invalid request: " +
+                System.err.println("ERROR: Invalid request: " +
                         requestLine);
             } else {
                 request.setMethod( tokens[0] );
@@ -40,7 +40,7 @@ public class HttpRequestParser implements IHRequestParser {
                 request.setParms( this.parseQuery( tokens[1] ) );
             }
         } else {
-            System.out.println("Invalid Request: No first line");
+            System.err.println("ERROR: Invalid Request: No first line");
         }
         return request;
     }
@@ -100,7 +100,7 @@ public class HttpRequestParser implements IHRequestParser {
             }
         }
         if (!foundHost) {
-            System.out.println("Invalid Request: No host header " +
+            System.err.println("ERROR: Invalid Request: No host header " +
                 request.getPath());
         }
         return request;

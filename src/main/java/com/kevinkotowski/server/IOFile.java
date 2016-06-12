@@ -12,8 +12,8 @@ public interface IOFile {
     public boolean canWrite();
     public void writeln(String line) throws IOException;
     public String getAbsoluteFile();
-    public boolean isDirectory();
     public String getName();
-    public byte[] getBytes();
     public boolean delete();
+    public boolean isDirectory();
+    public IOFile[] listFiles();
 }

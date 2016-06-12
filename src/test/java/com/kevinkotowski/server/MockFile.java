@@ -7,6 +7,7 @@ import java.io.File;
  */
 public class MockFile implements IOFile {
     String path;
+    boolean directory = true;
 
     public MockFile(String path) {
         this.path = path;
@@ -16,8 +17,16 @@ public class MockFile implements IOFile {
     public boolean canWrite() { return true; }
     public void writeln(String line) {}
     public String getAbsoluteFile() { return this.path; }
-    public boolean isDirectory() { return true; }
+    public void setDirectory(boolean directory) { this.directory = directory; }
+    public boolean isDirectory() { return this.directory; }
     public String getName() { return "filename.txt"; }
-    public byte[] getBytes() { return null; }
     public boolean delete() { return true; }
+    public IOFile[] listFiles() {
+        MockFile[] files = new MockFile[3];
+        for (int x = 0; x < files.length; x++) {
+            files[x] = new MockFile("boo");
+            files[x].setDirectory(false);
+        }
+        return files;
+    }
 }

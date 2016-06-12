@@ -15,7 +15,7 @@ public class HttpControllerIFMATCH extends HttpControllerUPDATE {
                 try {
                     isEtagOkay = ifMatchEtag(header, request.getFullPath());
                 } catch (Exception e) {
-                    System.out.println("Patch etag check failed: " + e);
+                    System.err.println("ERROR: Etag check failed: " + e);
                 }
             }
         }

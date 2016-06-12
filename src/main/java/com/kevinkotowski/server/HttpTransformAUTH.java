@@ -29,7 +29,7 @@ public class HttpTransformAUTH implements IHTransformer {
                 this.isAuthorized = checkCredentials(request);
                 request.setAuthorized(this.isAuthorized);
             } catch (UnsupportedEncodingException e) {
-                System.out.println("ERROR: HttpTransformAUTH no Base64 conversion");
+                System.err.println("ERROR: HttpTransformAUTH no Base64 conversion");
             }
             request.setAuthorized(this.isAuthorized);
         } else {

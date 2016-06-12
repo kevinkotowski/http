@@ -22,7 +22,7 @@ public class HttpLogger implements IHLogger {
                 this.log.writeln(message);
             }
         } catch (IOException e) {
-            System.out.println("Error writing log file: " +
+            System.err.println("ERROR: Writing log file: " +
                     this.log.getAbsoluteFile());
         }
     }

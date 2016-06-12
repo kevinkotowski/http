@@ -31,7 +31,7 @@ public class HttpControllerUPDATE implements IHController {
             bw.write(content);
             bw.close();
         } else {
-            System.out.println("ERROR: Can't write to file! " + fullPath);
+            System.err.println("ERROR: Can't write to file! " + fullPath);
         }
     }
 }

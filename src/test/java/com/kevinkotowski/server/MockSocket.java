@@ -14,7 +14,7 @@ public class MockSocket implements IOSocket {
     boolean socketClosed = false;
 
     public InputStream getInputStream() throws IOException {
-        String rawRequest = "GET /mock HTTP/1.1\n\n";
+        String rawRequest = "GET /mock HTTP/1.1\nHost: test.com\n\n";
         return new ByteArrayInputStream( rawRequest.getBytes(UTF_8) );
     }
 

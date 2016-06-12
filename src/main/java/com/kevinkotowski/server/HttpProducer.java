@@ -28,7 +28,7 @@ public class HttpProducer implements Runnable {
             if (request != null) {
                 this.sharedQueue.put(request);
             } else {
-                System.out.println("...producer no request!");
+                System.err.println("ERROR: Invalid state: null request");
             }
         } catch (IOException e) {
             e.printStackTrace();

@@ -2,6 +2,11 @@ package com.kevinkotowski.server;
 
 import org.junit.Test;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 import static org.junit.Assert.*;
 
 /**
@@ -57,20 +62,30 @@ public class _FileSystemTest {
     @Test
     public void getBytesImage() throws Exception {
         String path = this.workingDir + this.testDir + "/TestImage.gif";
-        IOFile file = new HttpFile(path);
+        File file = new File(path);
         IHFileSystem fileSystem = new HttpFileSystem(path);
 
         assertTrue( fileSystem.getBytes().length > 0 );
-        assertEquals(file.getBytes().length, fileSystem.getBytes().length);
+        assertEquals(getBytes(file).length, fileSystem.getBytes().length);
     }
 
     @Test
     public void getBytesText() throws Exception {
         String path = this.workingDir + this.testDir + "/TestTextFile.txt";
-        IOFile file = new HttpFile(path);
+        File file = new File(path);
         IHFileSystem fileSystem = new HttpFileSystem(path);
 
         assertTrue( fileSystem.getBytes().length > 0 );
-        assertEquals(file.getBytes().length, fileSystem.getBytes().length);
+        assertEquals(getBytes(file).length, fileSystem.getBytes().length);
+    }
+
+    public byte[] getBytes(File file) {
+        try {
+            return Files.readAllBytes(Paths.get(file.getAbsolutePath()));
+        } catch (IOException e) {
+            System.out.println("ERROR: File can't read: " +
+                    file.getName() + "\n");
+            return null;
+        }
     }
 }
