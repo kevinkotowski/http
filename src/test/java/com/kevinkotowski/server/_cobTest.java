@@ -15,18 +15,61 @@ public class _cobTest {
         assertTrue( server.status().contains("listening") );
     }
 
-//    @Test
-//    public void getOverriddenRouter() throws Exception {
-//        String docRoot = "cobRoot";
-//        IHLogger logger = new MockLogger();
-//        IHRouter router = cob.getRouter(docRoot, logger);
-//
-//        assertEquals(docRoot, router.getDocRoot());
-//
-//        String dynamicOptions = router.getOptions("/redirect");
-//        assertEquals("OPTIONS,GET,HEAD", dynamicOptions);
-//
-//        String staticOptions = router.getOptions("/file1");
-//        assertEquals("OPTIONS,GET,HEAD", staticOptions);
-//    }
+    @Test
+    public void getDefaultRouter() throws Exception {
+        String docRoot = "httpRoot";
+        IHLogger logger = new MockLogger();
+        IHRouter router = cob.getRouter(docRoot, logger);
+
+        assertEquals(docRoot, router.getDocRoot());
+        String options = router.getOptions("/");
+        assertEquals("OPTIONS,GET,HEAD", options);
+    }
+
+    @Test
+    public void routerConfigured() throws Exception {
+        String docRoot = "httpRoot";
+        IHLogger logger = new MockLogger();
+        IHRouter router = cob.getRouter(docRoot, logger);
+
+        IHMiddleware middleware = cob.getMiddleware();
+
+        // cob custom configures route to controllerTEACUP
+        IHRequest request = new HttpRequest(new MockSocket());
+        request.setPath("/coffee");
+        request.setMethod("GET");
+        IHResponse response = middleware.transform(request, router);
+        assertEquals("418", response.getResponseCode());
+    }
+
+    @Test
+    public void getDefaultMiddleware() throws Exception {
+        String docRoot = "httpRoot";
+        IHLogger logger = new MockLogger();
+        IHRouter router = cob.getRouter(docRoot, logger);
+
+        IHMiddleware middleware = cob.getMiddleware();
+
+        // the default controller if no method is controllerINVALID
+        IHRequest request = new HttpRequest(new MockSocket());
+        IHResponse response = middleware.transform(request, router);
+        assertEquals("405", response.getResponseCode());
+
+    }
+
+    @Test
+    public void customMiddleware() throws Exception {
+        String docRoot = "httpRoot";
+        IHLogger logger = new MockLogger();
+        IHRouter router = cob.getRouter(docRoot, logger);
+
+        IHMiddleware middleware = cob.getMiddleware();
+
+        // cob Custom middleware is controllerREDIRECT
+        IHRequest request = new HttpRequest(new MockSocket());
+        request.setPath("/redirect");
+        request.setMethod("GET");
+        IHResponse response = middleware.transform(request, router);
+        assertEquals("302", response.getResponseCode());
+    }
 }

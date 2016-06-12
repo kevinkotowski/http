@@ -9,9 +9,7 @@ import java.io.IOException;
  * Created by kevinkotowski on 5/28/16.
  */
 public class HttpControllerSTATIC implements IHController {
-    private int rangeMin = -1;
-    private int rangeMax = -1;
-    private int rangeLast = -1;
+    private int[] range;
 
     public IHResponse execute(IHRequest request) throws IOException {
         IHResponse response = new HttpResponse(request.getSocket());
@@ -29,12 +27,12 @@ public class HttpControllerSTATIC implements IHController {
                 } else if (fileSystem.isImage()) {
                     response.setImage(fileSystem.getBytes());
                 } else {
-                    this.setRange(request);
-                    if (-1 != this.rangeMin || -1 != this.rangeMax || -1 !=
-                            this.rangeLast) {
+                    this.range = setRange(request);
+                    if (-1 != this.range[0] || -1 != this.range[1] || -1 !=
+                            this.range[2]) {
                         response.setResponseCode("206");
                     }
-                    response.setBody(this.getText(fullPath));
+                    response.setBody(this.getText(this.range, fullPath));
                 }
             } else {
                 response.setResponseCode("404");
@@ -49,7 +47,6 @@ public class HttpControllerSTATIC implements IHController {
     }
 
     public String getDirectory(File file) {
-        String formatted;
         String fileList = new String();
         for (final File subFile : file.listFiles()) {
             if (subFile.isDirectory()) {
@@ -58,12 +55,10 @@ public class HttpControllerSTATIC implements IHController {
                 fileList += this.formatFileLink(subFile.getName());
             }
         }
-        formatted = htmlBodyWrapperBefore() + fileList +
-                htmlBodyWrapperAfter();
-        return formatted;
+        return fileList;
     }
 
-    public String getText(String fullPath) throws IOException {
+    public String getText(int[] range, String fullPath) throws IOException {
         String body = "";
         int ch;
         StringBuilder stringBuilder = new StringBuilder();
@@ -74,62 +69,55 @@ public class HttpControllerSTATIC implements IHController {
             int rangeCounter = 0;
 
             while ((ch = fileStream.read()) != -1) {
-                if (this.inRange(rangeCounter)) {
+                if (this.inRange(range, rangeCounter)) {
                     stringBuilder.append((char) ch);
                 }
                 rangeCounter += 1;
             }
-            body += this.trimToRange(stringBuilder.toString());
+            body += this.trimToRange(range[2], stringBuilder.toString());
+
         }
         catch (FileNotFoundException e) {}
         return body;
     }
 
-    private void setRange(IHRequest request) {
+    private int[] setRange(IHRequest request) {
+        int[] range = { -1, -1, -1 };
         for (String header : request.getHeaders()) {
             if (header.contains("Range")) {
                 String[] rangeHeader = header.split(":");
                 String[] rangeValue = rangeHeader[1].split("=");
-                String[] range = rangeValue[1].split("-");
-                if (range[0].length() == 0) {
-                    this.rangeLast = Integer.parseInt(range[1]);
+                String[] rangeSplit = rangeValue[1].split("-");
+                if (rangeSplit[0].length() == 0) {
+                    range[2] = Integer.parseInt(rangeSplit[1]);
                 } else {
-                    this.rangeMin = range[0].length() == 0 ?
-                            -1 : Integer.parseInt(range[0]);
-                    this.rangeMax = range.length != 2 ?
-                            -1 : Integer.parseInt(range[1]) + 1;
+                    range[0] = rangeSplit[0].length() == 0 ?
+                            -1 : Integer.parseInt(rangeSplit[0]);
+                    range[1] = rangeSplit.length != 2 ?
+                            -1 : Integer.parseInt(rangeSplit[1]) + 1;
                 }
             }
         }
+        return range;
     }
 
-    private boolean inRange(int rangeCounter) {
+    public boolean inRange(int[] range, int rangeCounter) {
         boolean inRange = true;
-        inRange = rangeCounter >= this.rangeMin;
-        if (inRange && this.rangeMax != -1) {
-            inRange = rangeCounter < this.rangeMax;
+        inRange = rangeCounter >= this.range[0];
+        if (inRange && this.range[1] != -1) {
+            inRange = rangeCounter < this.range[1];
         }
         return inRange;
     }
 
-    private String trimToRange(String body) {
-        if (this.rangeLast != -1) {
-            body = body.substring( body.length() - (this.rangeLast) );
+    public String trimToRange(int rangeLast, String body) {
+        if (rangeLast != -1) {
+            body = body.substring( body.length() - (rangeLast) );
         }
         return body;
     }
 
-    private String formatFileLink(String fileName) {
-        return "\n<a href=\"/" + fileName + "\">" + fileName + "</a><br/>";
-    }
-
-    private String htmlBodyWrapperBefore() {
-        String html;
-        html = "<html>\n    <header></header>\n    <body>\n";
-        return html;
-    }
-
-    private String htmlBodyWrapperAfter() {
-        return "\n    </body>\n</html>";
+    public String formatFileLink(String fileName) {
+        return "<a href=\"/" + fileName + "\">" + fileName + "</a><br/>\n";
     }
 }
