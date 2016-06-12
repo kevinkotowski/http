@@ -1,11 +1,9 @@
 package com.kevinkotowski.server;
 
-import javax.activation.MimetypesFileTypeMap;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 
 /**
  * Created by kevinkotowski on 5/28/16.
@@ -18,87 +16,73 @@ public class HttpControllerSTATIC implements IHController {
     public IHResponse execute(IHRequest request) throws IOException {
         IHResponse response = new HttpResponse(request.getSocket());
 
-        String path;
-        int ch;
+        String fullPath;
 
-//      FileSystem(String path)
-//        boolean isDirectory()
-//        boolean isImage()
-//        boolean isTextFile()
-//        byte[] getBytes
-
-
-        path = request.getFullPath();
-        File file = new File(path);
-        StringBuilder stringBuilder = new StringBuilder();
+        fullPath = request.getFullPath();
+        File file = new File(fullPath);
+        IHFileSystem fileSystem = new HttpFileSystem(fullPath);
 
         try {
-            String fileList = new String();
-
-            if (file.isDirectory()) {
-                for (final File subFile : file.listFiles()) {
-                    if (subFile.isDirectory()) {
-                        response.setBody("Another directory.");
-                        // there is no req for subdirectory support
-                    } else {
-                        fileList += this.formatFileLink(subFile.getName());
-                    }
-                }
-                response.setBody(htmlBodyWrapperBefore() + fileList +
-                        htmlBodyWrapperAfter());
-            } else {
-                String imageType = this.imageType(file);
-                if (imageType != null) {
-                    try {
-                        byte[] imageBytes = Files.readAllBytes(Paths.get(path));
-                        response.setImage(imageBytes);
-                    } catch (IOException e) {
-                        System.out.println("Error: HttpControllerSTATIC " +
-                                file.getName() + "File is pretending to be " +
-                                "an image: " + file.getName() + "\n");
-                    }
+            if (fileSystem.exists()) {
+                if (fileSystem.isDirectory()) {
+                    response.setBody(this.getDirectory(file));
+                } else if (fileSystem.isImage()) {
+                    response.setImage(fileSystem.getBytes());
                 } else {
-                    String body = "";
                     this.setRange(request);
-                    FileInputStream fileStream = new FileInputStream(path);
-                    int rangeCounter = 0;
-
-                    while ((ch = fileStream.read()) != -1) {
-                        if (this.inRange(rangeCounter)) {
-                            stringBuilder.append((char) ch);
-                        }
-                        rangeCounter += 1;
-                    }
-                    body += this.trimToRange(stringBuilder.toString());
-                    if (-1 != this.rangeMin  || -1 != this.rangeMax || -1 !=
+                    if (-1 != this.rangeMin || -1 != this.rangeMax || -1 !=
                             this.rangeLast) {
                         response.setResponseCode("206");
                     }
-
-                    response.setBody(body);
+                    response.setBody(this.getText(fullPath));
                 }
+            } else {
+                response.setResponseCode("404");
+                response.setResponseReason("File not found (kk)");
             }
         } catch (IOException e) {
             response.setResponseCode("404");
             response.setResponseReason("File not found (kk)");
         }
+
         return response;
     }
 
-    private String imageType(File file) {
-        String imageType;
-
-        String mimeType = new MimetypesFileTypeMap().getContentType(file);
-        String type = mimeType.split("/")[0].toLowerCase();
-        if (mimeType.equals("application/octet-stream") &&
-                file.getName().matches(".+\\.png")) {
-            imageType = "png";
-        } else if (type.equals("image")) {
-            imageType = mimeType.split("/")[1].toLowerCase();
-        } else {
-            imageType = null;
+    public String getDirectory(File file) {
+        String formatted;
+        String fileList = new String();
+        for (final File subFile : file.listFiles()) {
+            if (subFile.isDirectory()) {
+                // there is no req for subdirectory support
+            } else {
+                fileList += this.formatFileLink(subFile.getName());
+            }
         }
-        return imageType;
+        formatted = htmlBodyWrapperBefore() + fileList +
+                htmlBodyWrapperAfter();
+        return formatted;
+    }
+
+    public String getText(String fullPath) throws IOException {
+        String body = "";
+        int ch;
+        StringBuilder stringBuilder = new StringBuilder();
+
+        try {
+            FileInputStream fileStream =
+                    new FileInputStream(fullPath);
+            int rangeCounter = 0;
+
+            while ((ch = fileStream.read()) != -1) {
+                if (this.inRange(rangeCounter)) {
+                    stringBuilder.append((char) ch);
+                }
+                rangeCounter += 1;
+            }
+            body += this.trimToRange(stringBuilder.toString());
+        }
+        catch (FileNotFoundException e) {}
+        return body;
     }
 
     private void setRange(IHRequest request) {
@@ -110,8 +94,10 @@ public class HttpControllerSTATIC implements IHController {
                 if (range[0].length() == 0) {
                     this.rangeLast = Integer.parseInt(range[1]);
                 } else {
-                    this.rangeMin = range[0].length() == 0 ? -1 : Integer.parseInt(range[0]);
-                    this.rangeMax = range.length != 2 ? -1 : Integer.parseInt(range[1]) + 1;
+                    this.rangeMin = range[0].length() == 0 ?
+                            -1 : Integer.parseInt(range[0]);
+                    this.rangeMax = range.length != 2 ?
+                            -1 : Integer.parseInt(range[1]) + 1;
                 }
             }
         }

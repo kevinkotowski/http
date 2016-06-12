@@ -21,6 +21,7 @@ public class _TransformAUTHTest {
         String auth64 = new String(bytesEncoded);
 
         IHRequest request = new HttpRequest(new MockSocket());
+        request.setPath("/");
         request.addHeader("Authorization: Basic " + auth64);
 
         IHMiddleware middleware = new HttpMiddleware();
@@ -53,7 +54,6 @@ public class _TransformAUTHTest {
                 "/", "WallyWorld", "scott", "tiger" );
         transformers.add(transformAUTH);
 
-        assertFalse(request.isAuthorized());
         request = middleware.recurseRequest(request, transformers);
         assertTrue(request.isAuthorized());
     }

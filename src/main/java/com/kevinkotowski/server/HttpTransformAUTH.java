@@ -40,6 +40,7 @@ public class HttpTransformAUTH implements IHTransformer {
 
     public IHResponse transformResponse(IHResponse response) {
         if (!this.isAuthorized) {
+            response.setBody(null);
             response.setResponseCode("401");
             response.setResponseReason("Unauthorized (kk)");
             response.addHeader("WWW-Authenticate: Basic realm=\"" +
