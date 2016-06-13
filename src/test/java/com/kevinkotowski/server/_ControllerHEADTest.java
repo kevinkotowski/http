@@ -24,5 +24,6 @@ public class _ControllerHEADTest {
         router.registerRoute(route);
         IHResponse response = router.route(request);
         assertEquals("200", response.getResponseCode());
+        assertEquals(null, response.getBody());
     }
 }
