@@ -13,7 +13,6 @@ public interface IOFile {
     public void writeln(String line) throws IOException;
     public String getAbsoluteFile();
     public String getName();
-    public boolean delete();
     public boolean isDirectory();
     public IOFile[] listFiles();
 }

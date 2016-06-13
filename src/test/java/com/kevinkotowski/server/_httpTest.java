@@ -52,10 +52,9 @@ public class _httpTest {
 
         // the default controller if no method is controllerSTATIC
         IHRequest request = new HttpRequest(new MockSocket());
-        IHResponse response = middleware.transform(request, router);
         request.setPath("/");
         request.setMethod("GET");
-        response = middleware.transform(request, router);
+        IHResponse response = middleware.transform(request, router);
         assertEquals("404", response.getResponseCode());
     }
 }

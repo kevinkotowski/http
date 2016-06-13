@@ -50,10 +50,6 @@ public class HttpFile implements IOFile {
 
     public String getName() { return this.file.getName(); }
 
-    public boolean delete() {
-        return this.file.delete();
-    }
-
     public IOFile[] listFiles() {
         File[] files = this.file.listFiles();
         IOFile[] ioFiles = new IOFile[files.length];

@@ -8,9 +8,6 @@ import java.util.List;
  */
 public class MockResponse implements IHResponse {
     List<String> headers;
-    public void MockResponse() {
-        headers.add("Host: localhost");
-    }
     public void setSocket(IOSocket socket) throws IOException {}
     public void closeSocket() throws IOException {}
     public void setBody(String body) {}

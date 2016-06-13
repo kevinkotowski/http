@@ -18,12 +18,6 @@ public class MockRouter implements IHRouter {
         return this.docRoot;
     }
 
-    public void registerMiddleware(IHTransformer middleware) {}
-    public IHRequest transformRequest(IHRequest request)
-            { return request; }
-    public IHResponse transformResponse(IHResponse response)
-            { return response; }
-
     public void registerRoute(IHRoute route) {
         this.routes.add(route);
     }
@@ -34,17 +28,6 @@ public class MockRouter implements IHRouter {
     public String getOptions(String path) {
         String options = "OPTIONS";
         return options;
-    }
-
-    private boolean hasRoute(IHRoute checkRoute) {
-        return true;
-    }
-
-    private IHController resolveController(IHRequest request) {
-        return new MockController();
-    }
-
-    private void logAccess(HttpMethod method, String path) {
     }
 }
 
