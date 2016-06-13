@@ -39,7 +39,7 @@ public class _ControllerHttpTest {
 
     @Test
     public void executeUPDATE() throws Exception {
-        IHController controller = new HttpControllerUPDATE();
+        IHController controller = new HttpControllerUPSERT();
         assertTrue(controller.execute(this.request) instanceof IHResponse);
     }
 }

@@ -18,7 +18,7 @@ public class _ControllerINVALIDTest {
         request.setPath(path);
 
         HttpRouter router = new HttpRouter(path, logger);
-        IHController controller = new HttpControllerUPDATE();
+        IHController controller = new HttpControllerUPSERT();
         HttpRoute route = new HttpRoute(path, HttpMethod.PUT, controller);
 
         router.registerRoute(route);

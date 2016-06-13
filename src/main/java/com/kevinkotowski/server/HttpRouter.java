@@ -8,9 +8,7 @@ import java.util.List;
  */
 public class HttpRouter implements IHRouter {
     String docRoot;
-    List<IHTransformer> middlewares = new ArrayList<IHTransformer>();
     List<IHRoute> routes = new ArrayList<IHRoute>();
-    List<IHPostware> postwares = new ArrayList<IHPostware>();
     IHLogger accessLogger;
 
     public HttpRouter(String docRoot, IHLogger accessLogger) {

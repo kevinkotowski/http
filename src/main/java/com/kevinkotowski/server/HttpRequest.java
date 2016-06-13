@@ -111,7 +111,11 @@ public class HttpRequest implements IHRequest {
         return contentLength;
     }
     public boolean hasContent() {
-        return (this.content == null) ? false : true;
+        boolean has = false;
+        if (this.content != null) {
+            has = ( this.content.length() > 0 ) ? true : false;
+        }
+        return  has;
     }
     public String getContent() {
         return this.content;

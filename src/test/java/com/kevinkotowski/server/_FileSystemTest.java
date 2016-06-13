@@ -14,6 +14,7 @@ import static org.junit.Assert.*;
  */
 public class _FileSystemTest {
     // NOTE: this app only has requirements for image types found in cob_spec.
+
     String workingDir = System.getProperty("user.dir");
     String testDir = "/src/test/java/com/kevinkotowski/server";
 

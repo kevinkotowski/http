@@ -20,7 +20,7 @@ public class _ControllerOPTIONSTest {
         request.setPath(path);
 
         HttpRouter router = new HttpRouter(path, logger);
-        IHController controller = new HttpControllerUPDATE();
+        IHController controller = new HttpControllerUPSERT();
         HttpRoute route = new HttpRoute(path, HttpMethod.POST, controller);
 
         router.registerRoute(route);

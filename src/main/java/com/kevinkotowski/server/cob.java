@@ -35,10 +35,10 @@ public class cob extends http {
                 HttpMethod.GET, new HttpControllerSTATIC()));
 
         router.registerRoute(new HttpRoute("/form",
-                HttpMethod.POST, new HttpControllerUPDATE()));
+                HttpMethod.POST, new HttpControllerUPSERT()));
 
         router.registerRoute(new HttpRoute("/form",
-                HttpMethod.PUT, new HttpControllerUPDATE()));
+                HttpMethod.PUT, new HttpControllerUPSERT()));
 
         router.registerRoute(new HttpRoute("/form",
                 HttpMethod.DELETE, new HttpControllerDELETE()));
@@ -47,10 +47,10 @@ public class cob extends http {
                 HttpMethod.GET, new HttpControllerSTATIC()));
 
         router.registerRoute(new HttpRoute("/method_options",
-                HttpMethod.PUT, new HttpControllerUPDATE()));
+                HttpMethod.PUT, new HttpControllerUPSERT()));
 
         router.registerRoute(new HttpRoute("/method_options",
-                HttpMethod.POST, new HttpControllerUPDATE()));
+                HttpMethod.POST, new HttpControllerUPSERT()));
 
         router.registerRoute(new HttpRoute("/method_options2",
                 HttpMethod.GET, new HttpControllerSTATIC()));

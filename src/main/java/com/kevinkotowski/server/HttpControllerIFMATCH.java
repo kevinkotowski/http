@@ -5,7 +5,7 @@ import java.io.*;
 /**
  * Created by kevinkotowski on 6/1/16.
  */
-public class HttpControllerIFMATCH extends HttpControllerUPDATE {
+public class HttpControllerIFMATCH extends HttpControllerUPSERT {
     public IHResponse execute(IHRequest request) throws Exception {
         IHResponse response = new HttpResponse(request.getSocket());
         boolean isEtagOkay = false;
