@@ -41,7 +41,7 @@ public class HttpArguments {
             }
         }
         if (!foundPort || !foundDirectory) {
-            throw new IllegalArgumentException("Usage: java http " +
+            throw new IllegalArgumentException("Usage: java Http " +
                     "-p <port number> " +
                     "-d <working directory>");
         }

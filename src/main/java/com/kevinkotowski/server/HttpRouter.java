@@ -102,7 +102,7 @@ public class HttpRouter implements IHRouter {
         }
 
         // handle GET requests that don't match explicit routes
-        // NOTE: This could just assign 404, but this way a "default" http
+        // NOTE: This could just assign 404, but this way a "default" Http
         //       server actually serves directories, files, and images via GET
         if (controller == null && method == HttpMethod.GET) {
             controller = new HttpControllerSTATIC();

@@ -8,11 +8,11 @@ import static org.junit.Assert.assertTrue;
 /**
  * Created by kevinkotowski on 5/5/16.
  */
-public class _httpTest {
+public class _HttpTest {
     @Test
     public void createServerAndListen() throws Exception {
         IHServer server = new MockServer();
-        http http = new http(server);
+        Http http = new Http(server);
         assertTrue( server.status().contains("listening") );
     }
 
@@ -20,7 +20,7 @@ public class _httpTest {
     public void getDefaultRouter() throws Exception {
         String docRoot = "httpRoot";
         IHLogger logger = new MockLogger();
-        IHRouter router = http.getRouter(docRoot, logger);
+        IHRouter router = Http.getRouter(docRoot, logger);
 
         assertEquals(docRoot, router.getDocRoot());
         String options = router.getOptions("/");
@@ -31,9 +31,9 @@ public class _httpTest {
     public void getDefaultMiddlewareINVALID() throws Exception {
         String docRoot = "httpRoot";
         IHLogger logger = new MockLogger();
-        IHRouter router = http.getRouter(docRoot, logger);
+        IHRouter router = Http.getRouter(docRoot, logger);
 
-        IHMiddleware middleware = http.getMiddleware();
+        IHMiddleware middleware = Http.getMiddleware();
 
         // the default controller if no method is controllerINVALID
         IHRequest request = new HttpRequest(new MockSocket());
@@ -46,9 +46,9 @@ public class _httpTest {
     public void getDefaultMiddlewareSTATIC() throws Exception {
         String docRoot = "httpRoot";
         IHLogger logger = new MockLogger();
-        IHRouter router = http.getRouter(docRoot, logger);
+        IHRouter router = Http.getRouter(docRoot, logger);
 
-        IHMiddleware middleware = http.getMiddleware();
+        IHMiddleware middleware = Http.getMiddleware();
 
         // the default controller if no method is controllerSTATIC
         IHRequest request = new HttpRequest(new MockSocket());

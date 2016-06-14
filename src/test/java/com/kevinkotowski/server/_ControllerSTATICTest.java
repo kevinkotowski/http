@@ -17,7 +17,7 @@ public class _ControllerSTATICTest {
         String docRoot = "/docroot/file";
         IHLogger logger = new MockLogger();
 
-        IHRouter router = http.getRouter(docRoot, logger);
+        IHRouter router = Http.getRouter(docRoot, logger);
 
         IOSocket socket = new MockSocket();
         HttpRequest request = new HttpRequest(socket);

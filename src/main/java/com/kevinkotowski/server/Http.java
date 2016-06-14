@@ -5,7 +5,7 @@ import java.io.IOException;
 /**
  * Created by kevinkotowski on 5/5/16.
  */
-public class http {
+public class Http {
     IHServer server;
 
     public static void main(String[] args) throws IOException {
@@ -43,7 +43,7 @@ public class http {
         return router;
     }
 
-    http( IHServer server ) throws IOException {
+    Http(IHServer server ) throws IOException {
         this.server = server;
         server.listen();
     }

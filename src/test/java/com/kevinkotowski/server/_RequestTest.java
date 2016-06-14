@@ -55,7 +55,7 @@ public class _RequestTest {
 
     @Test
     public void setHostAndGetIt() throws Exception {
-        String host = "http://localhost:5000";
+        String host = "Http://localhost:5000";
         IOSocket socket = new MockSocket();
         HttpRequest request = new HttpRequest(socket);
 

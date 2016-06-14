@@ -5,7 +5,7 @@ import java.io.IOException;
 /**
  * Created by kevinkotowski on 6/7/16.
  */
-public class cob extends http {
+public class Cob extends Http {
     public static void main(String[] args) throws IOException {
         String[] parsedArgs = HttpArguments.parse(args);
         int portNumber = Integer.parseInt(parsedArgs[0]);
@@ -79,12 +79,13 @@ public class cob extends http {
         middleware.registerTransformer(new HttpTransformAUTH (
                 "/logs", "WallyWorld", "admin", "hunter2") );
 
-        middleware.registerTransformer(new HttpTransformETAG("SHA1") );
+        middleware.registerTransformer(new HttpTransformETAG(
+                "SHA1") );
 
         return middleware;
     }
 
-    cob( IHServer server ) throws IOException {
+    Cob(IHServer server ) throws IOException {
         super(server);
     }
 }
