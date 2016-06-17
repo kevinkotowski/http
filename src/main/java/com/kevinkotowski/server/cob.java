@@ -5,7 +5,9 @@ import java.io.IOException;
 /**
  * Created by kevinkotowski on 6/7/16.
  */
-public class Cob extends Http {
+public class Cob implements IHHttp {
+    private IHServer server;
+
     public static void main(String[] args) throws IOException {
         String[] parsedArgs = HttpArguments.parse(args);
         int portNumber = Integer.parseInt(parsedArgs[0]);
@@ -86,6 +88,7 @@ public class Cob extends Http {
     }
 
     Cob(IHServer server ) throws IOException {
-        super(server);
+        this.server = server;
+        server.listen();
     }
 }

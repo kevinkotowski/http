@@ -5,8 +5,8 @@ import java.io.IOException;
 /**
  * Created by kevinkotowski on 5/5/16.
  */
-public class Http {
-    IHServer server;
+public class Http implements IHHttp {
+    private IHServer server;
 
     public static void main(String[] args) throws IOException {
         String[] parsedArgs = HttpArguments.parse(args);
@@ -43,7 +43,7 @@ public class Http {
         return router;
     }
 
-    Http(IHServer server ) throws IOException {
+    public Http(IHServer server ) throws IOException {
         this.server = server;
         server.listen();
     }

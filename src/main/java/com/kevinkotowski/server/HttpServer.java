@@ -16,7 +16,7 @@ public class HttpServer implements IHServer{
     private ExecutorService producerPool;
     private ExecutorService consumerPool;
 
-    HttpServer(IHNetwork network, IHMiddleware middleware, IHRouter router)
+    public HttpServer(IHNetwork network, IHMiddleware middleware, IHRouter router)
             throws IOException {
         this.network = network;
         this.router = router;
